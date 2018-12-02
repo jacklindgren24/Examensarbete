@@ -25,7 +25,7 @@ public class MouseLook : MonoBehaviour {
         y += dir.y * sensitivityY;
         y = Mathf.Clamp(y, minAngle, maxAngle);
 
-        transform.localEulerAngles = new Vector2(-y, 0); // Rotate camera vertically.
         player.localEulerAngles = new Vector2(0, x); // Rotate player horizontally.
+        transform.localEulerAngles = new Vector2(-y, 0); // Rotate camera vertically.
     }
 }
