@@ -14,9 +14,10 @@ public class MouseLook : MonoBehaviour {
 	void Start ()
     {
         player = transform.parent;
+
 	}
-	
-	void Update ()
+
+    void Update ()
     {
         Vector2 dir = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
