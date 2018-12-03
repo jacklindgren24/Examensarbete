@@ -1,16 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int health = 100;
+    public int Health
+    {
+        get { return health; }
+        set
+        {
+            health = godMode ? 100 : value;
+            if (health <= 0) Die();
+        }
+    }
+
+    public bool godMode = false;
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
 }
