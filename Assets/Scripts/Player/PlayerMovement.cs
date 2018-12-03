@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-        void Start ()
+    void Start ()
     {
         rb = GetComponent<Rigidbody>();
         height = transform.localScale.y;
@@ -46,9 +46,7 @@ public class PlayerMovement : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-
         Vector3 dir = transform.forward * z + transform.right * x;
-
 
         if (IsGrounded)
         {
@@ -67,8 +65,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-
-void Update()
+    void Update()
     {
         if (IsGrounded && Input.GetButtonDown("Jump"))
         { // Jump.

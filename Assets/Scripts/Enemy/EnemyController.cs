@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour {
 
@@ -14,6 +15,20 @@ public class EnemyController : MonoBehaviour {
     }
 
     public int damage = 34;
+
+    NavMeshAgent agent;
+    Transform target;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        target = GameObject.FindWithTag("Player").transform;
+    }
+
+    void Update()
+    {
+        if (agent != null) agent.SetDestination(target.position);
+    }
 
     void OnCollisionEnter(Collision other)
     {
