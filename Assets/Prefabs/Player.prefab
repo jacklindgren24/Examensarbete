@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206779897090054}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: -0.3, z: 0.235}
+  m_LocalPosition: {x: -0.01, y: -0.3, z: 0.235}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4965042735544536}
@@ -115,13 +115,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666831905945506}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: -0.7193398, y: 0, z: 0, w: 0.69465846}
+  m_LocalPosition: {x: 0.04, y: 1, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4759284564785328}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -92, y: 0, z: 0}
 --- !u!4 &4979085074656618
 Transform:
   m_ObjectHideFlags: 1
@@ -322,7 +322,7 @@ MonoBehaviour:
     type: 2}
   bulletSpawn: {fileID: 4965042735544536}
   lifetime: 2
-  velocity: 50
+  velocity: 20
   cooldown: 0.2
 --- !u!136 &136234861159882624
 CapsuleCollider:
