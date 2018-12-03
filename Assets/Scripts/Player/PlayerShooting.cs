@@ -37,8 +37,15 @@ public class PlayerShooting : MonoBehaviour {
     {
         timer = 0;
 
+        RaycastHit hit;
+        Vector3 dir = bulletSpawn.transform.forward;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
+        { // Player is aiming at an object, get direction from bullet spawn to point of raycast hit.
+            dir = hit.point - bulletSpawn.transform.position;
+        }
+
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bulletSpawn.transform.forward * ProjectileWeapon.velocity;
+        bullet.GetComponent<Rigidbody>().velocity = dir.normalized * ProjectileWeapon.velocity;
         Destroy(bullet, ProjectileWeapon.lifetime);
     }
 
