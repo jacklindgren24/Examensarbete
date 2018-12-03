@@ -22,7 +22,6 @@ public class PlayerShooting : MonoBehaviour {
             switch (weapon)
             {
                 case Weapon.Projectile:
-                    FMODUnity.RuntimeManager.PlayOneShot(PlayerShoot, transform.position);
                     if (timer >= ProjectileWeapon.cooldown) FireBullet();
                     break;
                 case Weapon.Hitscan:
@@ -40,6 +39,7 @@ public class PlayerShooting : MonoBehaviour {
     void FireBullet()
     {
         timer = 0;
+        FMODUnity.RuntimeManager.PlayOneShot(PlayerShoot, transform.position);
 
         RaycastHit hit;
         Vector3 dir = bulletSpawn.transform.forward;

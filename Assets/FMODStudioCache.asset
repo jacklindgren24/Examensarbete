@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 114591616897590948}
   MasterBankRef: {fileID: 114362039026344774}
   StringsBankRef: {fileID: 114866381203265096}
-  stringsBankWriteTime: 636794484054304167
+  stringsBankWriteTime: 636794497074106553
   cacheVersion: 2
 --- !u!114 &114076461835955926
 MonoBehaviour:
@@ -171,6 +171,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114299734181001982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114339886223687100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,11 +229,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\rober\Documents\GitHub\Examensarbete\Assets\FMOD\Artefakt - Individuell
     Ljuddesign\Build\Desktop\Master Bank.bank
-  lastModified: 636794484054223975
+  lastModified: 636794497074036452
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 382496
+    Value: 384032
   Exists: 1
 --- !u!114 &114378617507091070
 MonoBehaviour:
@@ -330,10 +345,10 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114557472826282068}
+  - {fileID: 114891426515914954}
   MinDistance: 0
   MaxDistance: 0
-  Length: 1480
+  Length: 1350
 --- !u!114 &114591616897590948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +368,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114106119937295468}
+  - {fileID: 114299734181001982}
   MinDistance: 1
   MaxDistance: 60
   Length: 400
@@ -436,6 +451,21 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114775363211044640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114784234440825410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,12 +508,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636794484054304167
+  lastModified: 636794497074106553
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 810
   Exists: 1
+--- !u!114 &114866799991998556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114869736128360164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +543,21 @@ MonoBehaviour:
   Name: Material
   Min: 0
   Max: 6
+  Default: 0
+--- !u!114 &114891426515914954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
   Default: 0
 --- !u!114 &114967282209723268
 MonoBehaviour:
