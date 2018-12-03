@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4759284564785328}
   - component: {fileID: 33662339942847766}
   - component: {fileID: 23776916954441714}
-  - component: {fileID: 136748828619059124}
-  - component: {fileID: 114699897086019894}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -39,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4363921686416510}
   - component: {fileID: 114468048078551338}
+  - component: {fileID: 114595194018494198}
   - component: {fileID: 54151283679550296}
   - component: {fileID: 33694820734691232}
   - component: {fileID: 23994362976179230}
@@ -103,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206779897090054}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: -0.3, z: 0.32}
+  m_LocalPosition: {x: 0.5, y: -0.3, z: 0.235}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4965042735544536}
@@ -116,13 +115,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666831905945506}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.187, z: -0.044}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4759284564785328}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4979085074656618
 Transform:
   m_ObjectHideFlags: 1
@@ -308,12 +307,12 @@ MonoBehaviour:
   sprintMaxSpeed: 8
   jumpHeight: 5
   stoppingFriction: 12
---- !u!114 &114699897086019894
+--- !u!114 &114595194018494198
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1206779897090054}
+  m_GameObject: {fileID: 1220712293117880}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2ffdb6ac4c14a4ab63905061c556f2, type: 3}
@@ -322,7 +321,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}
   bulletSpawn: {fileID: 4965042735544536}
-  bulletSpeed: 10
+  lifetime: 2
+  velocity: 50
+  cooldown: 0.2
 --- !u!136 &136234861159882624
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -336,16 +337,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136748828619059124
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1206779897090054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
