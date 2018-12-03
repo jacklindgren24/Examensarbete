@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 4979085074656618}
   - component: {fileID: 20126145031186232}
   - component: {fileID: 114203128643982190}
+  - component: {fileID: 114870156087736766}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206779897090054}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.01, y: -0.3, z: 0.15}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0.08}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4965042735544536}
@@ -117,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666831905945506}
   m_LocalRotation: {x: -0.7193398, y: 0, z: 0, w: 0.69465846}
-  m_LocalPosition: {x: 0.04, y: 1, z: -0.1}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4759284564785328}
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: 0
+  PlayerShoot: event:/Weapons/PlayerShoot (2D)
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}
   bulletSpawn: {fileID: 4965042735544536}
@@ -336,6 +338,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   godMode: 0
+--- !u!114 &114870156087736766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352141845259090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!136 &136234861159882624
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -8,6 +8,9 @@ public class PlayerShooting : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
+    [FMODUnity.EventRef]
+    public string PlayerShoot;
+
     float timer = 0;
 
     void Update()
@@ -19,6 +22,7 @@ public class PlayerShooting : MonoBehaviour {
             switch (weapon)
             {
                 case Weapon.Projectile:
+                    FMODUnity.RuntimeManager.PlayOneShot(PlayerShoot, transform.position);
                     if (timer >= ProjectileWeapon.cooldown) FireBullet();
                     break;
                 case Weapon.Hitscan:
