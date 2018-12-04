@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour {
 
     void Update()
     {
-        if (agent != null) agent.SetDestination(target.position);
+        if (agent != null && target != null) agent.SetDestination(target.position);
     }
 
     void OnCollisionEnter(Collision other)

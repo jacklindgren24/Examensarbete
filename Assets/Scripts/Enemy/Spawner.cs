@@ -20,15 +20,18 @@ public class Spawner : MonoBehaviour {
 	
 	void Update ()
     {
-        if (Vector3.Distance(player.position, transform.position) <= activationRange)
-        { // Only update timer of player is within range.
-            timer += Time.deltaTime;
+        if (player != null)
+        {
+            if (Vector3.Distance(player.position, transform.position) <= activationRange)
+            { // Only update timer of player is within range.
+                timer += Time.deltaTime;
 
-            if (timer >= spawnTime)
-            {
-                Spawn();
-                NewSpawnTime();
-                timer = 0;
+                if (timer >= spawnTime)
+                {
+                    Spawn();
+                    NewSpawnTime();
+                    timer = 0;
+                }
             }
         }
 	}
