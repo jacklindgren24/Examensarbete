@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114866381203265096}
-  - {fileID: 114449792610442032}
+  - {fileID: 114774828553280702}
   EditorEvents:
   - {fileID: 114559485086823316}
   - {fileID: 114591616897590948}
@@ -21,11 +21,11 @@ MonoBehaviour:
   - {fileID: 114634580948394398}
   - {fileID: 114668055111067778}
   - {fileID: 114773553718164372}
-  - {fileID: 114961782247067182}
-  - {fileID: 114513742388941360}
-  MasterBankRef: {fileID: 114449792610442032}
+  - {fileID: 114812961632597880}
+  - {fileID: 114602319435520760}
+  MasterBankRef: {fileID: 114774828553280702}
   StringsBankRef: {fileID: 114866381203265096}
-  stringsBankWriteTime: 636795269218147420
+  stringsBankWriteTime: 636795271510752320
   cacheVersion: 2
 --- !u!114 &114005027861281296
 MonoBehaviour:
@@ -41,6 +41,21 @@ MonoBehaviour:
   Name: Material
   Min: 0
   Max: 6
+  Default: 0
+--- !u!114 &114020302400602382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
   Default: 0
 --- !u!114 &114048460195008336
 MonoBehaviour:
@@ -195,7 +210,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/CrowdEmitter
   guid: 6d40d0752eb5a24da5aa723d77d998f7
   Banks:
-  - {fileID: 114449792610442032}
+  - {fileID: 114774828553280702}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -829,12 +844,12 @@ MonoBehaviour:
   Path: event:/Weapons/PlayerShoot (2D)
   guid: 3016bddddec6cd4183bfe867c0b9d44b
   Banks:
-  - {fileID: 114449792610442032}
+  - {fileID: 114774828553280702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114960333752426414}
+  - {fileID: 114020302400602382}
   MinDistance: 0
   MaxDistance: 0
   Length: 1185
@@ -852,12 +867,12 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerFootsteps
   guid: dd9bda6793841343839ec1c876c2f763
   Banks:
-  - {fileID: 114449792610442032}
+  - {fileID: 114774828553280702}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114697361047143136}
+  - {fileID: 114806563265996450}
   MinDistance: 1
   MaxDistance: 60
   Length: 500
@@ -876,6 +891,28 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114602319435520760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: snapshot:/New Snapshot
+  guid: fd5268a78e077843a1f8f82a3e6fd702
+  Banks:
+  - {fileID: 114774828553280702}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114620327703900578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,7 +942,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/Crowd
   guid: eb0b22e2e4e70b4eb13e7538b9d8919f
   Banks:
-  - {fileID: 114449792610442032}
+  - {fileID: 114774828553280702}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -961,7 +998,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerJump
   guid: e8865590a6c89b43a7d37b3442bcbdcf
   Banks:
-  - {fileID: 114449792610442032}
+  - {fileID: 114774828553280702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1149,6 +1186,21 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114751272796264036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114773553718164372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,7 +1215,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerLand
   guid: beec37ab1b61a845977af0fbad4adc1b
   Banks:
-  - {fileID: 114449792610442032}
+  - {fileID: 114774828553280702}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1171,6 +1223,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &114774828553280702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: F:\GitHub\Exjobb\Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636795271510717606
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 781152
+  Exists: 1
 --- !u!114 &114775363211044640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1231,6 +1302,43 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114806563265996450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114812961632597880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Outdoor/CrowdAmbience
+  guid: a91aa8a3e187b34a8a968d88423bac54
+  Banks:
+  - {fileID: 114774828553280702}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 11000
 --- !u!114 &114825543861812394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,7 +1381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636795269218147420
+  lastModified: 636795271510752320
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1325,6 +1433,21 @@ MonoBehaviour:
   Max: 6
   Default: 0
 --- !u!114 &114891426515914954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114899507095008660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
