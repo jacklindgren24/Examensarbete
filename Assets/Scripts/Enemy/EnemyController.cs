@@ -3,6 +3,11 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour {
 
+    [FMODUnity.EventRef]
+    public string EnemySpawn;
+    [FMODUnity.EventRef]
+    public string EnemyDeath;
+
     public int health = 100;
     public int Health
     {
@@ -23,6 +28,7 @@ public class EnemyController : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
+        FMODUnity.RuntimeManager.PlayOneShot(EnemySpawn, transform.position);
     }
 
     void Update()
@@ -41,5 +47,6 @@ public class EnemyController : MonoBehaviour {
     void Die()
     {
         Destroy(gameObject);
+        FMODUnity.RuntimeManager.PlayOneShot(EnemyDeath, transform.position);
     }
 }

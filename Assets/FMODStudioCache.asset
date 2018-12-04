@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114866381203265096}
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   EditorEvents:
   - {fileID: 114559485086823316}
   - {fileID: 114591616897590948}
@@ -23,9 +23,12 @@ MonoBehaviour:
   - {fileID: 114773553718164372}
   - {fileID: 114812961632597880}
   - {fileID: 114602319435520760}
-  MasterBankRef: {fileID: 114179185158876950}
+  - {fileID: 114391675280176322}
+  - {fileID: 114974355870866898}
+  - {fileID: 114493700395613654}
+  MasterBankRef: {fileID: 114522295348835064}
   StringsBankRef: {fileID: 114866381203265096}
-  stringsBankWriteTime: 636795323371503627
+  stringsBankWriteTime: 636795518276427062
   cacheVersion: 2
 --- !u!114 &114005027861281296
 MonoBehaviour:
@@ -181,6 +184,43 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114103328648130658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114103804000054304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/EnemyDeath
+  guid: b014342bf18b264aad0d5375401caa4d
+  Banks:
+  - {fileID: 114522295348835064}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1840
 --- !u!114 &114106119937295468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +295,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/CrowdEmitter
   guid: 6d40d0752eb5a24da5aa723d77d998f7
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -297,7 +337,52 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114200941475541606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114204810075460888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114210719938558706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114221756641737066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,7 +521,45 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114251486425485202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/PlayerFootsteps
+  guid: 20de4b2299ab944faf18b09de73c8e45
+  Banks:
+  - {fileID: 114522295348835064}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114745179951860604}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 568
 --- !u!114 &114261550145329196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114276294747637324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,6 +716,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114334387072517740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114339520396882658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +863,29 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114391675280176322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/PlayerFootsteps
+  guid: 20de4b2299ab944faf18b09de73c8e45
+  Banks:
+  - {fileID: 114522295348835064}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114911946855277520}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 568
 --- !u!114 &114392340170945302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,6 +917,21 @@ MonoBehaviour:
   Max: 6
   Default: 0
 --- !u!114 &114395530113781298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114435390337297252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -849,6 +1025,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114464312073412814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114490844815755974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +1055,28 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114493700395613654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/EnemyDeath
+  guid: b014342bf18b264aad0d5375401caa4d
+  Banks:
+  - {fileID: 114522295348835064}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1840
 --- !u!114 &114506869450033426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +1122,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114522295348835064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\rober\Documents\GitHub\Examensarbete\Assets\FMOD\Artefakt - Individuell
+    Ljuddesign\Build\Desktop\Master Bank.bank
+  lastModified: 636795518276346702
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 899616
+  Exists: 1
 --- !u!114 &114527132280687368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,12 +1245,12 @@ MonoBehaviour:
   Path: event:/Weapons/PlayerShoot (2D)
   guid: 3016bddddec6cd4183bfe867c0b9d44b
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114293857201347406}
+  - {fileID: 114848718142581734}
   MinDistance: 0
   MaxDistance: 0
   Length: 1185
@@ -1036,15 +1268,15 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerFootsteps
   guid: 6d7dcd829d3f3c40936cf4075a27cd42
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114333342686673376}
+  - {fileID: 114204810075460888}
   MinDistance: 0
   MaxDistance: 0
-  Length: 520
+  Length: 475
 --- !u!114 &114601532581928272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,7 +1306,7 @@ MonoBehaviour:
   Path: snapshot:/New Snapshot
   guid: fd5268a78e077843a1f8f82a3e6fd702
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1111,7 +1343,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/Crowd
   guid: eb0b22e2e4e70b4eb13e7538b9d8919f
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1119,6 +1351,36 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 55
   Length: 8000
+--- !u!114 &114640688604687236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114644317735566736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114653162559378644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,7 +1429,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerJump
   guid: e8865590a6c89b43a7d37b3442bcbdcf
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1250,7 +1512,37 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114692443857624630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114697361047143136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114700658960275872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1294,6 +1586,21 @@ MonoBehaviour:
   Name: Material
   Min: 0
   Max: 6
+  Default: 0
+--- !u!114 &114718831386476054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
   Default: 0
 --- !u!114 &114719732214166610
 MonoBehaviour:
@@ -1355,6 +1662,21 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114745179951860604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114751272796264036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,7 +1706,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerLand
   guid: beec37ab1b61a845977af0fbad4adc1b
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1456,6 +1778,21 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114785573565932650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114793391638333338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,6 +1808,28 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114803435508029868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/EnemySpawn
+  guid: 4e87c01b34b03f498dcc53ce1dcc7099
+  Banks:
+  - {fileID: 114522295348835064}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 30
+  Length: 1549
 --- !u!114 &114806563265996450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,7 +1859,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/CrowdAmbience
   guid: a91aa8a3e187b34a8a968d88423bac54
   Banks:
-  - {fileID: 114179185158876950}
+  - {fileID: 114522295348835064}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1557,6 +1916,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114848718142581734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114866381203265096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,11 +1943,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636795323371503627
+  lastModified: 636795518276427062
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1086
+    Value: 1252
   Exists: 1
 --- !u!114 &114866799991998556
 MonoBehaviour:
@@ -1591,6 +1965,21 @@ MonoBehaviour:
   Max: 4
   Default: 0
 --- !u!114 &114869736128360164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114883381803863786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1666,6 +2055,36 @@ MonoBehaviour:
   Max: 6
   Default: 0
 --- !u!114 &114910963766197904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114911946855277520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114924178984840466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1789,6 +2208,43 @@ MonoBehaviour:
   - Name: Desktop
     Value: 382496
   Exists: 1
+--- !u!114 &114974355870866898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/EnemySpawn
+  guid: 4e87c01b34b03f498dcc53ce1dcc7099
+  Banks:
+  - {fileID: 114522295348835064}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 30
+  Length: 1549
+--- !u!114 &114988829751246570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Bullet
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114989567308690226
 MonoBehaviour:
   m_ObjectHideFlags: 0
