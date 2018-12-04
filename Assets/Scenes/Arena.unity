@@ -569,6 +569,7 @@ Transform:
   - {fileID: 893571051}
   - {fileID: 95640901}
   - {fileID: 2038158221}
+  - {fileID: 1475091799}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2214,6 +2215,11 @@ Prefab:
         type: 2}
       propertyPath: playerLand
       value: event:/Characters/Player/PlayerLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
+        type: 2}
+      propertyPath: playerFootstepsEv
+      value: event:/Characters/Player/PlayerFootsteps
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9595a59540253184a8296c59b0739ce7, type: 2}
@@ -5594,12 +5600,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1475091797}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.996138, y: 12.278402, z: -25.184715}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.1261382, y: 9.698402, z: 57.715286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 44918064}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520473327
 GameObject:

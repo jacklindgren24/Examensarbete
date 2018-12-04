@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour {
     [FMODUnity.EventRef]
     public string playerJump; //player jump sound
 
+    [FMODUnity.EventRef]
+    public string playerFootstepsEv;
+    FMOD.Studio.EventInstance playerFootstep;
+
     const float shell = 0.02f;
 
     Rigidbody rb;
@@ -38,6 +42,12 @@ public class PlayerMovement : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         height = transform.localScale.y;
+        playerFootstep = FMODUnity.RuntimeManager.CreateInstance(playerFootstepsEv);
+    }
+
+    public void PlayFootstep()
+    {
+        playerFootstep.start();
     }
 
         void FixedUpdate ()
