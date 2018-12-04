@@ -11,32 +11,24 @@ public class PlayerController : MonoBehaviour {
         set
         {
             health = godMode ? 100 : value;
-            if (health <= 0) Die();
+            if (health <= 0) StartCoroutine(GameOver(Camera.main.transform.position, Camera.main.transform.rotation));
         }
     }
 
     public bool godMode = false;
 
-    void Die()
-    {
-        Vector3 camPos = Camera.main.transform.position;
-        Quaternion camRot = Camera.main.transform.rotation;
-
-        FMODUnity.RuntimeManager.PauseAllEvents(true);
-        StartCoroutine(GameOver(camPos, camRot));
-        Destroy(gameObject);
-
-    }
-
     IEnumerator GameOver(Vector3 camPos, Quaternion camRot)
     {
-        AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
+        Destroy(transform.GetChild(0).gameObject);
 
+        FMODUnity.RuntimeManager.PauseAllEvents(true);
+
+        AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
         yield return new WaitUntil(() => loading.isDone);
 
-        print(camPos);
-        print(camRot);
         Camera.main.transform.position = camPos;
         Camera.main.transform.rotation = camRot;
+
+        Destroy(gameObject);
     }
 }
