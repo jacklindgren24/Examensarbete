@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using FMODUnity;
 
 public class PlayerShooting : MonoBehaviour {
 
@@ -7,9 +8,6 @@ public class PlayerShooting : MonoBehaviour {
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-
-    [FMODUnity.EventRef]
-    public string PlayerShoot;
 
     float timer = 0;
 
@@ -39,7 +37,8 @@ public class PlayerShooting : MonoBehaviour {
     void FireBullet()
     {
         timer = 0;
-        FMODUnity.RuntimeManager.PlayOneShot(PlayerShoot, transform.position);
+
+        RuntimeManager.PlayOneShot(ProjectileWeapon.sound, transform.position);
 
         RaycastHit hit;
         Vector3 dir = bulletSpawn.transform.forward;
@@ -56,6 +55,8 @@ public class PlayerShooting : MonoBehaviour {
     void FireRay()
     {
         timer = 0;
+
+        RuntimeManager.PlayOneShot(HitscanWeapon.sound, transform.position);
 
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, transform.forward, out hit, HitscanWeapon.range))

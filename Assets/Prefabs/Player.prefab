@@ -309,6 +309,7 @@ MonoBehaviour:
   sprintMaxSpeed: 8
   jumpHeight: 5
   stoppingFriction: 12
+  playerJump: event:/Characters/Player/PlayerJump
 --- !u!114 &114595194018494198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,7 +322,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: 0
-  PlayerShoot: event:/Weapons/PlayerShoot (2D)
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}
   bulletSpawn: {fileID: 4965042735544536}
