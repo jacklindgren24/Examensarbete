@@ -8,6 +8,7 @@ using System;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace FMOD
 {
@@ -202,7 +203,19 @@ namespace FMOD
         public float x;        /* X co-ordinate in 3D space. */
         public float y;        /* Y co-ordinate in 3D space. */
         public float z;        /* Z co-ordinate in 3D space. */
+
+        public static explicit operator VECTOR(Vector3 v3)
+        {
+            return new VECTOR
+            {
+                x = v3.x,
+                y = v3.y,
+                z = v3.z
+            };
+        }
     }
+
+
 
     /*
     [STRUCTURE]
