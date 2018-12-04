@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour {
     }
 
     public int damage = 34;
+    public float pushback = 5;
 
     NavMeshAgent agent;
     Transform target;
@@ -41,6 +42,7 @@ public class EnemyController : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         { // Collided with player, hurt player.
             other.gameObject.GetComponent<PlayerController>().Health -= damage;
+            other.gameObject.GetComponent<Rigidbody>().AddForce(-GetComponent<Rigidbody>().velocity * pushback, ForceMode.VelocityChange);
         }
     }
 
