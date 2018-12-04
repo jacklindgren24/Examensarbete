@@ -301,6 +301,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{f29453f4-0911-4914-9c5f-853c7e4bf35e}">
+        <property name="volume">
+            <value>-4.5</value>
+        </property>
         <property name="name">
             <value>Metal</value>
         </property>
@@ -593,10 +596,10 @@
             <value>-9.5</value>
         </property>
         <property name="midGain">
-            <value>-20</value>
+            <value>-35</value>
         </property>
         <property name="highGain">
-            <value>-15.5</value>
+            <value>-22.5</value>
         </property>
         <relationship name="automators">
             <destination>{7480f124-e722-41ec-b6bb-134a17f3ae9d}</destination>

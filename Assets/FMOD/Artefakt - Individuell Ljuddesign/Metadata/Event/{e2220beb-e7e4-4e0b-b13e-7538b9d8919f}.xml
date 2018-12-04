@@ -31,6 +31,12 @@
         <relationship name="timeline">
             <destination>{91617347-9ac0-48b9-8814-b78c57ff7f1a}</destination>
         </relationship>
+        <relationship name="parameters">
+            <destination>{576e2f00-83db-48e5-89e4-d390cd677c51}</destination>
+            <destination>{5b9e8655-de23-4e21-bca1-4f3e674331f2}</destination>
+            <destination>{360c8ab5-daa2-4968-897c-e80639edec86}</destination>
+            <destination>{355d227b-4562-41b9-9240-86a18e075f93}</destination>
+        </relationship>
         <relationship name="banks">
             <destination>{572a5bc3-df23-4f85-8ff4-69e793afeda3}</destination>
         </relationship>
@@ -74,9 +80,29 @@
             <destination>{8a43ee2a-4b6e-4dad-b383-97edf0f1cc8c}</destination>
         </relationship>
     </object>
+    <object class="ParameterProxy" id="{576e2f00-83db-48e5-89e4-d390cd677c51}">
+        <relationship name="preset">
+            <destination>{74bf0fd9-0ead-4815-8686-f46660d4ab05}</destination>
+        </relationship>
+    </object>
+    <object class="ParameterProxy" id="{5b9e8655-de23-4e21-bca1-4f3e674331f2}">
+        <relationship name="preset">
+            <destination>{532f121e-54c8-4f10-b456-e4704a090776}</destination>
+        </relationship>
+    </object>
+    <object class="ParameterProxy" id="{360c8ab5-daa2-4968-897c-e80639edec86}">
+        <relationship name="preset">
+            <destination>{bee7ebf6-34cc-4b00-bf85-b3dd4f02232c}</destination>
+        </relationship>
+    </object>
+    <object class="ParameterProxy" id="{355d227b-4562-41b9-9240-86a18e075f93}">
+        <relationship name="preset">
+            <destination>{7eda1b62-0836-43a4-bc44-cf6cb7254a1a}</destination>
+        </relationship>
+    </object>
     <object class="EventMixerMaster" id="{3a252c6d-4ea3-48f8-99a9-b10bd996b0fa}">
         <property name="volume">
-            <value>10</value>
+            <value>5</value>
         </property>
         <relationship name="effectChain">
             <destination>{49a7a588-a4df-49a9-86ef-d4d4e8912e63}</destination>
@@ -196,7 +222,7 @@
     <object class="MixerBusFader" id="{060e6bb0-4f2f-434e-b175-d05ace522416}"/>
     <object class="SpatialiserEffect" id="{6e43fd7f-3249-4253-adab-d317ff999d1e}">
         <property name="maximumDistance">
-            <value>40</value>
+            <value>55</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{630872d6-d0fd-4c24-bdd3-5734ec8d9718}">

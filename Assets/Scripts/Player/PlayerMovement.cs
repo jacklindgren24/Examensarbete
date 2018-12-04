@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpHeight = 5;
     public float stoppingFriction = 12;
 
+    [FMODUnity.EventRef]
+    public string playerJump; //player jump sound
+
     const float shell = 0.02f;
 
     Rigidbody rb;
@@ -28,7 +31,6 @@ public class PlayerMovement : MonoBehaviour {
             }
 
             isGrounded = value;
-
         }
     }
 
@@ -37,8 +39,8 @@ public class PlayerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         height = transform.localScale.y;
     }
-	
-	void FixedUpdate ()
+
+        void FixedUpdate ()
     {
         rb.drag = 0;
         IsGrounded = Physics.Raycast(transform.position, -transform.up, height + shell); // Check if player is standing on something.
@@ -70,6 +72,7 @@ public class PlayerMovement : MonoBehaviour {
         if (IsGrounded && Input.GetButtonDown("Jump"))
         { // Jump.
             rb.AddForce(transform.up * jumpHeight, ForceMode.VelocityChange);
+            FMODUnity.RuntimeManager.PlayOneShot(playerJump, transform.position);
         }
     }
 }
