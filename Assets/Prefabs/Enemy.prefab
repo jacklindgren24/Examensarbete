@@ -115,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemySpawn: event:/Characters/Enemy/EnemySpawn
   EnemyDeath: event:/Characters/Enemy/EnemyDeath
+  enemyFootstepsEv: event:/Characters/Enemy/EnemyFootsteps
+  PlayerHit: event:/Characters/Player/PlayerHit
   health: 100
   damage: 34
   pushback: 5

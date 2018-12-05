@@ -7,6 +7,12 @@ public class EnemyController : MonoBehaviour {
     public string EnemySpawn;
     [FMODUnity.EventRef]
     public string EnemyDeath;
+    [FMODUnity.EventRef]
+    public string enemyFootstepsEv;
+    FMOD.Studio.EventInstance enemyFootstep;
+
+    [FMODUnity.EventRef]
+    public string PlayerHit;
 
     public int health = 100;
     public int Health
@@ -29,7 +35,20 @@ public class EnemyController : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
+
         FMODUnity.RuntimeManager.PlayOneShot(EnemySpawn, transform.position);
+
+        enemyFootstep = FMODUnity.RuntimeManager.CreateInstance(enemyFootstepsEv);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(enemyFootstep, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        EnemyFootstep();
+    }
+
+    public void EnemyFootstep()
+    {
+        FMOD.Studio.PLAYBACK_STATE state;
+        enemyFootstep.getPlaybackState(out state);
+
+        if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) enemyFootstep.start();
     }
 
     void Update()
@@ -43,6 +62,7 @@ public class EnemyController : MonoBehaviour {
         { // Collided with player, hurt player.
             other.gameObject.GetComponent<PlayerController>().Health -= damage;
             other.gameObject.GetComponent<Rigidbody>().AddForce(-GetComponent<Rigidbody>().velocity * pushback, ForceMode.VelocityChange);
+            FMODUnity.RuntimeManager.PlayOneShot(PlayerHit, transform.position);
         }
     }
 
@@ -50,5 +70,6 @@ public class EnemyController : MonoBehaviour {
     {
         Destroy(gameObject);
         FMODUnity.RuntimeManager.PlayOneShot(EnemyDeath, transform.position);
+        enemyFootstep.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

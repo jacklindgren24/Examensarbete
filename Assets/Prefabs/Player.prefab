@@ -310,6 +310,7 @@ MonoBehaviour:
   jumpHeight: 5
   stoppingFriction: 12
   playerJump: event:/Characters/Player/PlayerJump
+  playerFootstepsEv: event:/Characters/Player/PlayerFootsteps
 --- !u!114 &114595194018494198
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145c984d04a856f49b742556fb31779a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyHit: event:/Characters/Enemy/EnemyHit
 --- !u!135 &135423660642256758
 SphereCollider:
   m_ObjectHideFlags: 1
