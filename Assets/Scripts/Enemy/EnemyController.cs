@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : MonoBehaviour
+{
 
     [FMODUnity.EventRef]
     public string EnemySpawn;
@@ -61,9 +62,9 @@ public class EnemyController : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         { // Collided with player, hurt player.
             other.gameObject.GetComponent<PlayerController>().Health -= damage;
-            other.gameObject.GetComponent<Rigidbody>().AddForce(-GetComponent<Rigidbody>().velocity * pushback, ForceMode.VelocityChange);
+            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * pushback, ForceMode.VelocityChange);
             FMODUnity.RuntimeManager.PlayOneShot(PlayerHit, transform.position);
-       }
+        }
     }
 
     void Die()

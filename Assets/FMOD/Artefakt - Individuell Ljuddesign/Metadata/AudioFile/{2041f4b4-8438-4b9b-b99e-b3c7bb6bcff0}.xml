@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{2041f4b4-8438-4b9b-b99e-b3c7bb6bcff0}">
         <property name="assetPath">
-            <value>Boom (baklänges).wav</value>
+            <value>Vapen/Projectile/Boom (baklänges).wav</value>
         </property>
         <property name="frequencyInKHz">
             <value>44.0999985</value>

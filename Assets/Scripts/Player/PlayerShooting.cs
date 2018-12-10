@@ -11,6 +11,13 @@ public class PlayerShooting : MonoBehaviour {
 
     float timer = 0;
 
+    Camera cam;
+
+    private void Start()
+    {
+        cam = Camera.main;
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -38,11 +45,9 @@ public class PlayerShooting : MonoBehaviour {
     {
         timer = 0;
 
-        RuntimeManager.PlayOneShot(ProjectileWeapon.sound, transform.position);
-
         RaycastHit hit;
         Vector3 dir = bulletSpawn.transform.forward;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity))
         { // Player is aiming at an object, get direction from bullet spawn to point of raycast hit.
             dir = hit.point - bulletSpawn.transform.position;
         }
@@ -50,21 +55,23 @@ public class PlayerShooting : MonoBehaviour {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         bullet.GetComponent<Rigidbody>().velocity = dir.normalized * ProjectileWeapon.velocity;
         Destroy(bullet, ProjectileWeapon.lifetime);
+
+        RuntimeManager.PlayOneShot(ProjectileWeapon.sound, transform.position);
     }
 
     void FireRay()
     {
         timer = 0;
 
-        RuntimeManager.PlayOneShot(HitscanWeapon.sound, transform.position);
-
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, transform.forward, out hit, HitscanWeapon.range))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, HitscanWeapon.range))
         { // Raycast forward from camera.
             if (hit.transform.tag == "Enemy")
             { // Ray hit an enemy, hurt enemy.
                 hit.transform.GetComponent<EnemyController>().Health -= HitscanWeapon.damage;
             }
         }
+
+        RuntimeManager.PlayOneShot(HitscanWeapon.sound, transform.position);
     }
 }

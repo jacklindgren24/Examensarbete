@@ -5,11 +5,11 @@ public class Bullet : MonoBehaviour {
     [FMODUnity.EventRef]
     public string EnemyHit;
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         { // Hit enemy, hurt and destroy self.
-            other.gameObject.GetComponent<EnemyController>().Health -= ProjectileWeapon.damage;
+            other.GetComponent<EnemyController>().Health -= ProjectileWeapon.damage;
             Destroy(gameObject);
             FMODUnity.RuntimeManager.PlayOneShot(EnemyHit, transform.position);
         }

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{6220cf4c-5b58-495e-89c3-8e5b639db512}">
         <property name="name">
-            <value>PlayerShootNew(2D)</value>
+            <value>ProjectileShoot (2D)</value>
         </property>
         <property name="outputFormat">
             <value>1</value>
