@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{77d7d32e-bb52-44ff-9e0b-62f593f0ba07}">
+        <property name="assetPath">
+            <value>WeaponFireTail02.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.1875</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{52000304-82a4-4b98-8e8d-055b148fcc6b}</destination>
+        </relationship>
+    </object>
+</objects>

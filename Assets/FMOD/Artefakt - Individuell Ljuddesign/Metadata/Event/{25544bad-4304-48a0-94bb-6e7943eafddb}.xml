@@ -117,9 +117,6 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{a1f325a9-afac-43b1-b279-2c463f068ee1}">
-        <property name="volume">
-            <value>3</value>
-        </property>
         <relationship name="effectChain">
             <destination>{b6b1d80c-5f6d-436b-abc6-d0cfdf39fac9}</destination>
         </relationship>
@@ -152,7 +149,7 @@
     </object>
     <object class="EventMixerGroup" id="{e2b8ff5c-57cc-4de6-ad7d-f9f035bf3b25}">
         <property name="volume">
-            <value>-24.5</value>
+            <value>-30</value>
         </property>
         <property name="name">
             <value>Audio 2</value>
@@ -190,7 +187,7 @@
     </object>
     <object class="EventMixerGroup" id="{ddcb1432-ff06-4d1b-8923-bba9d6cd69e2}">
         <property name="volume">
-            <value>-2.5</value>
+            <value>-12.5</value>
         </property>
         <property name="name">
             <value>Footsteps_Main</value>

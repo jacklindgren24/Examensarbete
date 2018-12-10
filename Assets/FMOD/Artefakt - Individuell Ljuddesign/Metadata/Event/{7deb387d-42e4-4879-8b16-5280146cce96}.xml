@@ -99,6 +99,9 @@
         <relationship name="modulators">
             <destination>{9bbdd4a5-6c6f-47d4-8c76-dafe8b8f7cfc}</destination>
         </relationship>
+        <relationship name="fadeInCurve">
+            <destination>{0b1b65c6-837d-416e-94c6-4c1a8049ac02}</destination>
+        </relationship>
         <relationship name="fadeOutCurve">
             <destination>{ee2cf7fa-2709-4823-bb4f-193dde55ecd4}</destination>
         </relationship>
@@ -109,6 +112,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{e5295ba3-edd2-40c5-8474-39de5611c416}">
+        <property name="volume">
+            <value>-6.5</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -137,6 +143,14 @@
         <property name="amount">
             <value>6.5</value>
         </property>
+    </object>
+    <object class="FadeCurve" id="{0b1b65c6-837d-416e-94c6-4c1a8049ac02}">
+        <relationship name="startPoint">
+            <destination>{07d8926b-6c30-4232-a5f1-d48022694b56}</destination>
+        </relationship>
+        <relationship name="endPoint">
+            <destination>{7b770520-5ece-44e0-9b00-cd57df2aecdc}</destination>
+        </relationship>
     </object>
     <object class="FadeCurve" id="{ee2cf7fa-2709-4823-bb4f-193dde55ecd4}">
         <relationship name="startPoint">
@@ -184,6 +198,25 @@
         </property>
         <property name="maximumDistance">
             <value>50</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{07d8926b-6c30-4232-a5f1-d48022694b56}">
+        <property name="position">
+            <value>0</value>
+        </property>
+        <property name="value">
+            <value>0</value>
+        </property>
+        <property name="curveShape">
+            <value>0.206076518</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{7b770520-5ece-44e0-9b00-cd57df2aecdc}">
+        <property name="position">
+            <value>0.53000000000000003</value>
+        </property>
+        <property name="value">
+            <value>1</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{60c724b1-ddaa-4bc9-9026-527107154dd1}">
