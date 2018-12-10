@@ -14,7 +14,6 @@ public class MouseLook : MonoBehaviour {
 	void Start ()
     {
         player = transform.parent;
-
 	}
 
     void Update ()
