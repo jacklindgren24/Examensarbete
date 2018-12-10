@@ -56,7 +56,7 @@
             <destination>{7b569f5e-c3fe-4bb0-bf47-f256ffcde7ba}</destination>
         </relationship>
         <relationship name="output">
-            <destination>{55a1e4da-1fc0-4efe-8985-5f660d3838c7}</destination>
+            <destination>{7093fb7c-541d-493d-8d80-2abc9df9b63c}</destination>
         </relationship>
     </object>
     <object class="EventAutomatableProperties" id="{40dafeb3-2249-4c5b-b504-ed356e5e8428}"/>
@@ -214,7 +214,7 @@
             <value>0.059999999999999998</value>
         </property>
         <property name="length">
-            <value>0.14999999999999999</value>
+            <value>0.38</value>
         </property>
         <property name="timelockedOffset">
             <value>0.10000000000000001</value>
@@ -248,20 +248,22 @@
     </object>
     <object class="MultiSound" id="{0156195d-10f0-4acb-8108-2d2b86a50dec}">
         <property name="length">
-            <value>2.0031292517006802</value>
+            <value>0.35113063656843746</value>
         </property>
         <relationship name="modulators">
             <destination>{f5ae4319-70df-4b65-b305-c73f15183750}</destination>
         </relationship>
+        <relationship name="fadeOutCurve">
+            <destination>{e0acff83-06fc-47ba-8462-4e2cfd22a5d0}</destination>
+        </relationship>
         <relationship name="sounds">
             <destination>{07ee201f-8c56-475b-b5cf-9e88be8192e6}</destination>
             <destination>{85ffdf1b-d0e5-4849-b414-98be657c3fe3}</destination>
-            <destination>{48f35bd5-0335-46a4-9fb3-1809a5ce803b}</destination>
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{ded8361a-b382-413b-b818-823855a9f7e3}">
         <property name="volume">
-            <value>-1</value>
+            <value>-8.5</value>
         </property>
         <property name="name">
             <value>Audio 3</value>
@@ -417,6 +419,14 @@
             <value>4.5</value>
         </property>
     </object>
+    <object class="FadeCurve" id="{e0acff83-06fc-47ba-8462-4e2cfd22a5d0}">
+        <relationship name="startPoint">
+            <destination>{fe0aa4c5-4aad-4e23-a6a3-72771edbb629}</destination>
+        </relationship>
+        <relationship name="endPoint">
+            <destination>{8c89e842-40d3-40d3-8bcb-25dcb12237f8}</destination>
+        </relationship>
+    </object>
     <object class="SingleSound" id="{07ee201f-8c56-475b-b5cf-9e88be8192e6}">
         <property name="pitch">
             <value>3.79999995</value>
@@ -431,14 +441,6 @@
         </property>
         <relationship name="audioFile">
             <destination>{ee39f137-db00-451c-b41f-d5e28a03986b}</destination>
-        </relationship>
-    </object>
-    <object class="SingleSound" id="{48f35bd5-0335-46a4-9fb3-1809a5ce803b}">
-        <property name="pitch">
-            <value>3.79999995</value>
-        </property>
-        <relationship name="audioFile">
-            <destination>{1d049fc4-db64-44c8-9675-b162c1ee62eb}</destination>
         </relationship>
     </object>
     <object class="MixerBusEffectChain" id="{ba6dd157-59ea-4bbd-9b17-206fb7414b8f}">
@@ -590,10 +592,35 @@
         </property>
     </object>
     <object class="MixerBusFader" id="{d0247866-8172-4746-b98f-85a700b3e90d}"/>
+    <object class="AutomationPoint" id="{fe0aa4c5-4aad-4e23-a6a3-72771edbb629}">
+        <property name="position">
+            <value>0.23113063656843746</value>
+        </property>
+        <property name="value">
+            <value>1</value>
+        </property>
+        <property name="curveShape">
+            <value>-0.395909518</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{8c89e842-40d3-40d3-8bcb-25dcb12237f8}">
+        <property name="position">
+            <value>0.35113063656843746</value>
+        </property>
+        <property name="value">
+            <value>0</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{43e58833-fa58-4d41-8cf2-fce4fc051b14}"/>
     <object class="PitchShifterEffect" id="{1ae1b7af-7cc0-4f9e-821d-2c3cb4e41f33}">
         <property name="pitch">
             <value>0.782000065</value>
+        </property>
+        <property name="fftSize">
+            <value>4096</value>
+        </property>
+        <property name="overlap">
+            <value>32</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{ee2c301a-9082-4640-8c5c-635c02c723ce}">

@@ -53,7 +53,7 @@
             <destination>{54fd7189-998c-4541-8ae6-3d3ec52a65c8}</destination>
         </relationship>
         <relationship name="output">
-            <destination>{55a1e4da-1fc0-4efe-8985-5f660d3838c7}</destination>
+            <destination>{922bda0f-bf37-40cd-b220-7490dfbf7fcc}</destination>
         </relationship>
     </object>
     <object class="EventAutomatableProperties" id="{b6b253c1-2a27-4416-9ec3-7e90be2c0c0f}"/>
@@ -104,9 +104,6 @@
         <relationship name="modulators">
             <destination>{01d61f88-0f96-4b68-b9c0-2556bb00c655}</destination>
         </relationship>
-        <relationship name="fadeInCurve">
-            <destination>{9501b52a-fbbb-43c9-8ca4-a76af0d154ce}</destination>
-        </relationship>
         <relationship name="fadeOutCurve">
             <destination>{2b1e2eae-4f98-4d08-8431-78eefabe230a}</destination>
         </relationship>
@@ -147,14 +144,6 @@
             <value>6.20000029</value>
         </property>
     </object>
-    <object class="FadeCurve" id="{9501b52a-fbbb-43c9-8ca4-a76af0d154ce}">
-        <relationship name="startPoint">
-            <destination>{d65bde39-d6b1-4eec-95bb-81946bdbf75e}</destination>
-        </relationship>
-        <relationship name="endPoint">
-            <destination>{886974b9-8247-4518-aa17-a08ea248b3c1}</destination>
-        </relationship>
-    </object>
     <object class="FadeCurve" id="{2b1e2eae-4f98-4d08-8431-78eefabe230a}">
         <relationship name="startPoint">
             <destination>{d0ad8462-426a-4a52-9b84-b52b400dce69}</destination>
@@ -176,25 +165,6 @@
         </property>
         <property name="maximumDistance">
             <value>40</value>
-        </property>
-    </object>
-    <object class="AutomationPoint" id="{d65bde39-d6b1-4eec-95bb-81946bdbf75e}">
-        <property name="position">
-            <value>0</value>
-        </property>
-        <property name="value">
-            <value>0</value>
-        </property>
-        <property name="curveShape">
-            <value>-0.2547189</value>
-        </property>
-    </object>
-    <object class="AutomationPoint" id="{886974b9-8247-4518-aa17-a08ea248b3c1}">
-        <property name="position">
-            <value>0.059999999999999998</value>
-        </property>
-        <property name="value">
-            <value>1</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{d0ad8462-426a-4a52-9b84-b52b400dce69}">
