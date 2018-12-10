@@ -10,6 +10,7 @@ public class PlayerShooting : MonoBehaviour {
     public Transform bulletSpawn;
 
     float timer = 0;
+    float intensity = 100;
 
     Camera cam;
 
@@ -39,6 +40,15 @@ public class PlayerShooting : MonoBehaviour {
             weapon = weapon == Weapon.Projectile ? Weapon.Hitscan : Weapon.Projectile;
             timer = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        { // Increase intensity by 50 up to a maximum of 100.
+            intensity = Mathf.Clamp(intensity + 50, 0, 100);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        { // Decrease intensity by 50 down to a minimum of 0.
+            intensity = Mathf.Clamp(intensity - 50, 0, 100);
+        }
     }
 
     void FireBullet()
@@ -56,7 +66,7 @@ public class PlayerShooting : MonoBehaviour {
         bullet.GetComponent<Rigidbody>().velocity = dir.normalized * ProjectileWeapon.velocity;
         Destroy(bullet, ProjectileWeapon.lifetime);
 
-        RuntimeManager.PlayOneShot(ProjectileWeapon.sound, transform.position);
+        RuntimeManager.PlayOneShot(ProjectileWeapon.sound, "Intensity", intensity, transform.position);
     }
 
     void FireRay()
@@ -72,6 +82,6 @@ public class PlayerShooting : MonoBehaviour {
             }
         }
 
-        RuntimeManager.PlayOneShot(HitscanWeapon.sound, transform.position);
+        RuntimeManager.PlayOneShot(HitscanWeapon.sound, "Intensity", intensity, transform.position);
     }
 }
