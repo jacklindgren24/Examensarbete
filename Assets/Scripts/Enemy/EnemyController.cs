@@ -63,7 +63,7 @@ public class EnemyController : MonoBehaviour {
             other.gameObject.GetComponent<PlayerController>().Health -= damage;
             other.gameObject.GetComponent<Rigidbody>().AddForce(-GetComponent<Rigidbody>().velocity * pushback, ForceMode.VelocityChange);
             FMODUnity.RuntimeManager.PlayOneShot(PlayerHit, transform.position);
-        }
+       }
     }
 
     void Die()
