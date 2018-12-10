@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     [FMODUnity.EventRef]
     public string PlayerHit;
 
-    public int health = 100;
+    int health = 100;
     public int Health
     {
         get { return health; }
