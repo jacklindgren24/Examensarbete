@@ -60,9 +60,8 @@ GameObject:
   - component: {fileID: 4979085074656618}
   - component: {fileID: 20126145031186232}
   - component: {fileID: 114203128643982190}
-  - component: {fileID: 114870156087736766}
   - component: {fileID: 114773980170327664}
-  - component: {fileID: 114454892355887042}
+  - component: {fileID: 114870156087736766}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -294,21 +293,6 @@ MonoBehaviour:
   sensitivityY: 1
   maxAngle: 90
   minAngle: -90
---- !u!114 &114454892355887042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1352141845259090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c3154554307842478754dfefd79ddb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobbingSpeed: 0.23
-  bobbingAmount: 0.1
-  midpoint: 1
-  count: 10
 --- !u!114 &114468048078551338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,10 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3154554307842478754dfefd79ddb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingSpeed: 0.23
-  bobbingAmount: 0.1
+  bobbingSpeed: 0.17
+  bobbingAmount: 0.07
   midpoint: 1
-  count: 10
 --- !u!114 &114870156087736766
 MonoBehaviour:
   m_ObjectHideFlags: 1
