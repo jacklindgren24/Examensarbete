@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114866381203265096}
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   EditorEvents:
   - {fileID: 114591616897590948}
   - {fileID: 114156548072034234}
@@ -30,9 +30,9 @@ MonoBehaviour:
   - {fileID: 114674240849184532}
   - {fileID: 114419084660105808}
   - {fileID: 114376972753664938}
-  MasterBankRef: {fileID: 114898319031798252}
+  MasterBankRef: {fileID: 114096836040672718}
   StringsBankRef: {fileID: 114866381203265096}
-  stringsBankWriteTime: 636800700270631430
+  stringsBankWriteTime: 636800705312249369
   cacheVersion: 2
 --- !u!114 &114005027861281296
 MonoBehaviour:
@@ -78,7 +78,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemyHit
   guid: 7d38eb7de44279488b165280146cce96
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -345,6 +345,25 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114096836040672718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: F:\GitHub\Exjobb\Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636800705312204732
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1148800
+  Exists: 1
 --- !u!114 &114097208237347184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +554,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/CrowdEmitter
   guid: 6d40d0752eb5a24da5aa723d77d998f7
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1315,7 +1334,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerHit
   guid: 930b5c449daa9b4b8a43b266caad9b30
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1581,7 +1600,7 @@ MonoBehaviour:
   Path: snapshot:/IndoorReverb
   guid: fd5268a78e077843a1f8f82a3e6fd702
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1844,12 +1863,12 @@ MonoBehaviour:
   Path: event:/Weapons/HitscanShoot (2D)
   guid: 94273b7cb74563429c8c401ac9e5d826
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114718818474854446}
+  - {fileID: 114462268031716730}
   MinDistance: 0
   MaxDistance: 0
   Length: 587
@@ -1976,7 +1995,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemyFootsteps
   guid: ad4b54250443a04894bb6e7943eafddb
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2044,6 +2063,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114462268031716730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114464312073412814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2686,12 +2720,12 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerFootsteps
   guid: 6d7dcd829d3f3c40936cf4075a27cd42
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114348085762922788}
+  - {fileID: 114654531217322832}
   MinDistance: 0
   MaxDistance: 0
   Length: 902
@@ -2818,7 +2852,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerDeath
   guid: 90340230ecdfaa4f800aaabe17b7d4be
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2870,7 +2904,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/Crowd
   guid: eb0b22e2e4e70b4eb13e7538b9d8919f
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -2957,6 +2991,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 382496
   Exists: 1
+--- !u!114 &114654531217322832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114656757649634838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,7 +3050,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerJump
   guid: e8865590a6c89b43a7d37b3442bcbdcf
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3083,12 +3132,12 @@ MonoBehaviour:
   Path: event:/Weapons/ProjectileShoot (2D)
   guid: 4ccf2062585b5e4989c38e5b639db512
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114281864659346390}
+  - {fileID: 114793891425324968}
   MinDistance: 0
   MaxDistance: 0
   Length: 1140
@@ -3566,7 +3615,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerLand
   guid: beec37ab1b61a845977af0fbad4adc1b
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3698,6 +3747,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114793891425324968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114795415109992320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3816,7 +3880,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/CrowdAmbience
   guid: a91aa8a3e187b34a8a968d88423bac54
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -3917,7 +3981,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemySpawn
   guid: 4e87c01b34b03f498dcc53ce1dcc7099
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3937,7 +4001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636800700270631430
+  lastModified: 636800705312249369
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -4141,7 +4205,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemyDeath
   guid: b014342bf18b264aad0d5375401caa4d
   Banks:
-  - {fileID: 114898319031798252}
+  - {fileID: 114096836040672718}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
