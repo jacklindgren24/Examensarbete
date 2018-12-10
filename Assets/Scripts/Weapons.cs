@@ -14,5 +14,5 @@ public static class HitscanWeapon {
     public static float cooldown = 0.1f;
     public static float range = 400;
 
-    public static string sound = "event:/Weapons/PlayerShootNew(2D)";
+    public static string sound = "event:/Weapons/PlayerShootNew2(2D)";
 }
