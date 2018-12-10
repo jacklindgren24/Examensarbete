@@ -2,6 +2,8 @@
 
 public class PlayerMovement : MonoBehaviour {
 
+    public static PlayerMovement instance;
+
     public float baseAcceleration = 30;
     public float airAcceleration = 6;
     public float baseMaxSpeed = 5;
@@ -11,18 +13,16 @@ public class PlayerMovement : MonoBehaviour {
 
     [FMODUnity.EventRef]
     public string playerJump;
-
     [FMODUnity.EventRef]
     public string playerFootstepsEv;
     FMOD.Studio.EventInstance playerFootstep;
 
-    const float shell = 0.02f;
-
     Rigidbody rb;
     float height;
     Vector3 lastGroundedVelocity;
+    [HideInInspector]
     bool isGrounded = false;
-    bool IsGrounded
+    public bool IsGrounded
     {
         get { return isGrounded; }
         set
@@ -36,6 +36,13 @@ public class PlayerMovement : MonoBehaviour {
 
             isGrounded = value;
         }
+    }
+
+    const float shell = 0.02f;
+
+    void Awake()
+    {
+        if (instance == null) instance = this; else Destroy(gameObject);
     }
 
     void Start ()

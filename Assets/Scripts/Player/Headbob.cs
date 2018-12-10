@@ -1,42 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Headbob : MonoBehaviour {
 
-        private float timer = 0.0f;
-        public float bobbingSpeed = 0.18f;
-        public float bobbingAmount = 0.2f;
-        public float midpoint = 2.0f;
+    public float bobbingSpeed = 0.18f;
+    public float bobbingAmount = 0.2f;
+    public float midpoint = 1;
 
-        public float count = 0;
-        float waveslice;
-        float horizontal;
-        float vertical;
-        Vector3 cSharpConversion;
+    float timer = 0;
 
-        void Update()
+    void Update()
+    {
+        if (PlayerMovement.instance.IsGrounded)
         {
-            waveslice = 0.0f;
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
+            float waveslice = 0;
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
-            cSharpConversion = transform.localPosition;
-            if (transform.localPosition.y < 1.9f)
+            Vector3 cSharpConversion = transform.localPosition;
 
             if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0)
             {
-                timer = 0.0f;
+                timer = 0;
             }
             else
             {
                 waveslice = Mathf.Sin(timer);
                 timer = timer + bobbingSpeed;
+
                 if (timer > Mathf.PI * 2)
                 {
                     timer = timer - (Mathf.PI * 2);
                 }
             }
+
             if (waveslice != 0)
             {
                 float translateChange = waveslice * bobbingAmount;
@@ -49,6 +45,8 @@ public class Headbob : MonoBehaviour {
             {
                 cSharpConversion.y = midpoint;
             }
+
             transform.localPosition = cSharpConversion;
         }
     }
+}
