@@ -860,10 +860,31 @@ retry:
             }
         }
 
+        public static void PlayOneShot(string path, string parameter, float value, Vector3 position = new Vector3())
+        {
+            try
+            {
+                PlayOneShot(PathToGUID(path), parameter, value, position);
+            }
+            catch (EventNotFoundException)
+            {
+                Debug.LogWarning("[FMOD] Event not found: " + path);
+            }
+        }
+
         public static void PlayOneShot(Guid guid, Vector3 position = new Vector3())
         {
             var instance = CreateInstance(guid);
             instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+            instance.start();
+            instance.release();
+        }
+
+        public static void PlayOneShot(Guid guid, string parameter, float value, Vector3 position = new Vector3())
+        {
+            var instance = CreateInstance(guid);
+            instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+            instance.setParameterValue(parameter, value);
             instance.start();
             instance.release();
         }
@@ -880,10 +901,31 @@ retry:
             }
         }
 
+        public static void PlayOneShotAttached(string path, string parameter, float value, GameObject gameObject)
+        {
+            try
+            {
+                PlayOneShotAttached(PathToGUID(path), parameter, value, gameObject);
+            }
+            catch (EventNotFoundException)
+            {
+                Debug.LogWarning("[FMOD] Event not found: " + path);
+            }
+        }
+
         public static void PlayOneShotAttached(Guid guid, GameObject gameObject)
         {
             var instance = CreateInstance(guid);
             AttachInstanceToGameObject(instance, gameObject.transform, gameObject.GetComponent<Rigidbody>());
+            instance.start();
+            instance.release();
+        }
+
+        public static void PlayOneShotAttached(Guid guid, string parameter, float value, GameObject gameObject)
+        {
+            var instance = CreateInstance(guid);
+            AttachInstanceToGameObject(instance, gameObject.transform, gameObject.GetComponent<Rigidbody>());
+            instance.setParameterValue(parameter, value);
             instance.start();
             instance.release();
         }
