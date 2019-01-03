@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4759284564785328}
   - component: {fileID: 33662339942847766}
   - component: {fileID: 23776916954441714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,12 +38,11 @@ GameObject:
   - component: {fileID: 4363921686416510}
   - component: {fileID: 114685428696394502}
   - component: {fileID: 114468048078551338}
-  - component: {fileID: 114595194018494198}
   - component: {fileID: 54151283679550296}
   - component: {fileID: 33694820734691232}
   - component: {fileID: 23994362976179230}
   - component: {fileID: 136234861159882624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -62,7 +61,7 @@ GameObject:
   - component: {fileID: 114203128643982190}
   - component: {fileID: 114773980170327664}
   - component: {fileID: 114870156087736766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -77,7 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4965042735544536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,21 +311,6 @@ MonoBehaviour:
   stoppingFriction: 12
   playerJump: event:/Characters/Player/PlayerJump
   playerFootstepsEv: event:/Characters/Player/PlayerFootsteps
---- !u!114 &114595194018494198
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1220712293117880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2ffdb6ac4c14a4ab63905061c556f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: 0
-  bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
-    type: 2}
-  bulletSpawn: {fileID: 4965042735544536}
 --- !u!114 &114685428696394502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,6 +324,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   godMode: 0
+  weapon: 0
+  bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
+    type: 2}
+  bulletSpawn: {fileID: 4965042735544536}
+  meleeCooldown: 0.75
+  meleeRange: 2.5
+  meleeDamage: 100
 --- !u!114 &114773980170327664
 MonoBehaviour:
   m_ObjectHideFlags: 1
