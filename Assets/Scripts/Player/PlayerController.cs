@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         cam = Camera.main;
-        meleeMask = ~LayerMask.NameToLayer("Enemy");
+        meleeMask = LayerMask.GetMask("Enemy");
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
         meleeTimer += Time.deltaTime;
 
         if (Input.GetButtonDown("Fire1"))
-        { // Fire.
+        { // Fire (or melee if selected).
             switch (weapon)
             {
                 case Weapon.Projectile:
@@ -54,6 +54,9 @@ public class PlayerController : MonoBehaviour {
                     break;
                 case Weapon.Hitscan:
                     if (gunTimer >= HitscanWeapon.cooldown) FireRay();
+                    break;
+                case Weapon.Melee:
+                    if (meleeTimer >= MeleeWeapon.cooldown) Melee();
                     break;
             }
         }
@@ -121,7 +124,7 @@ public class PlayerController : MonoBehaviour {
         if (Physics.Raycast(transform.position, cam.transform.forward, out hit, MeleeWeapon.range, meleeMask))
         { // Ray hit an enemy, hurt enemy.
             hit.transform.GetComponent<EnemyController>().Health -= MeleeWeapon.damage;
-        }
+        } 
     }
 
     IEnumerator GameOver(Vector3 camPos, Quaternion camRot)
