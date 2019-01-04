@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using FMODUnity;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -11,16 +12,19 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpHeight = 5;
     public float stoppingFriction = 12;
 
-    [FMODUnity.EventRef]
+    [EventRef]
+    public string playerFootsteps;
+    FMOD.Studio.EventInstance playerFootstepEv;
+    [EventRef]
     public string playerJump;
-    [FMODUnity.EventRef]
-    public string playerFootstepsEv;
-    FMOD.Studio.EventInstance playerFootstep;
+    [EventRef]
+    public string playerLand;
 
     Rigidbody rb;
     float height;
     Vector3 lastGroundedVelocity;
     [HideInInspector]
+    public bool isSprinting = false;
     bool isGrounded = false;
     public bool IsGrounded
     {
@@ -28,10 +32,17 @@ public class PlayerMovement : MonoBehaviour {
         set
         {
             if (value != isGrounded)
-            { // Record velocity at the point where player is no longer grounded.
-                lastGroundedVelocity = rb.velocity;
-                lastGroundedVelocity.x = Mathf.Abs(lastGroundedVelocity.x);
-                lastGroundedVelocity.z = Mathf.Abs(lastGroundedVelocity.z);
+            { 
+                if (value == false)
+                { // Record velocity at the point where player is no longer grounded.
+                    lastGroundedVelocity = rb.velocity;
+                    lastGroundedVelocity.x = Mathf.Abs(lastGroundedVelocity.x);
+                    lastGroundedVelocity.z = Mathf.Abs(lastGroundedVelocity.z);
+                }
+                else
+                { // Play landing sound on landing.
+                    RuntimeManager.PlayOneShot(playerLand, transform.position);
+                }
             }
 
             isGrounded = value;
@@ -50,15 +61,18 @@ public class PlayerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         height = transform.localScale.y;
 
-        playerFootstep = FMODUnity.RuntimeManager.CreateInstance(playerFootstepsEv);
+        playerFootstepEv = RuntimeManager.CreateInstance(playerFootsteps);
     }
 
     public void PlayFootstep()
     {
         FMOD.Studio.PLAYBACK_STATE state;
-        playerFootstep.getPlaybackState(out state);
+        playerFootstepEv.getPlaybackState(out state);
 
-        if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) playerFootstep.start();
+        if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) playerFootstepEv.start();
+
+        if (isSprinting) playerFootstepEv.setParameterValue("Sprinting", 1);
+        else playerFootstepEv.setParameterValue("Sprinting", 0);
     }
 
     void FixedUpdate ()
@@ -73,10 +87,12 @@ public class PlayerMovement : MonoBehaviour {
 
         if (IsGrounded)
         {
+            if (Input.GetButton("Sprint")) isSprinting = true; else isSprinting = false;
+
             if (x == 0 && z == 0)
             { // No input.
                 rb.drag = stoppingFriction;
-                playerFootstep.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                playerFootstepEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
             else
             { // Input.
@@ -85,7 +101,7 @@ public class PlayerMovement : MonoBehaviour {
             }
 
             // Limit speed to max speed.
-            float ms = Input.GetButton("Sprint") ? sprintMaxSpeed : baseMaxSpeed;
+            float ms = isSprinting ? sprintMaxSpeed : baseMaxSpeed;
             if (rb.velocity.magnitude > ms) rb.velocity = rb.velocity.normalized * ms;
         }
         else
@@ -94,7 +110,7 @@ public class PlayerMovement : MonoBehaviour {
             rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -lastGroundedVelocity.x, lastGroundedVelocity.x), 
               rb.velocity.y, Mathf.Clamp(rb.velocity.z, -lastGroundedVelocity.z, lastGroundedVelocity.z));
 
-            playerFootstep.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            playerFootstepEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 
@@ -103,7 +119,7 @@ public class PlayerMovement : MonoBehaviour {
         if (IsGrounded && Input.GetButtonDown("Jump"))
         { // Jump.
             rb.AddForce(transform.up * jumpHeight, ForceMode.VelocityChange);
-            FMODUnity.RuntimeManager.PlayOneShot(playerJump, transform.position);
+            RuntimeManager.PlayOneShot(playerJump, transform.position);
         }
     }
 }

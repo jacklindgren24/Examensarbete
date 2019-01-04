@@ -309,8 +309,10 @@ MonoBehaviour:
   sprintMaxSpeed: 8
   jumpHeight: 5
   stoppingFriction: 12
+  playerFootsteps: event:/Characters/Player/PlayerFootsteps
   playerJump: event:/Characters/Player/PlayerJump
-  playerFootstepsEv: event:/Characters/Player/PlayerFootsteps
+  playerLand: event:/Characters/Player/PlayerLand
+  isSprinting: 0
 --- !u!114 &114685428696394502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,9 +330,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}
   bulletSpawn: {fileID: 4965042735544536}
-  meleeCooldown: 0.75
-  meleeRange: 2.5
-  meleeDamage: 100
 --- !u!114 &114773980170327664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,7 +341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3154554307842478754dfefd79ddb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingSpeed: 0.17
+  bobbingSpeedBase: 0.18
+  bobbingSpeedSprint: 0.18
   bobbingAmount: 0.07
   midpoint: 1
 --- !u!114 &114870156087736766

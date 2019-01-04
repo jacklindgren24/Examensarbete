@@ -30,9 +30,10 @@ MonoBehaviour:
   - {fileID: 114674240849184532}
   - {fileID: 114419084660105808}
   - {fileID: 114376972753664938}
+  - {fileID: 114876176580688530}
   MasterBankRef: {fileID: 114402266143754050}
   StringsBankRef: {fileID: 114866381203265096}
-  stringsBankWriteTime: 636821602244043480
+  stringsBankWriteTime: 636822087003690939
   cacheVersion: 2
 --- !u!114 &114005027861281296
 MonoBehaviour:
@@ -577,6 +578,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11000
+--- !u!114 &114157887889899328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114160285024112962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,6 +873,21 @@ MonoBehaviour:
   Name: Material
   Min: 0
   Max: 6
+  Default: 0
+--- !u!114 &114224637205347652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114225094314349846
 MonoBehaviour:
@@ -1295,6 +1326,21 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 568
 --- !u!114 &114299734181001982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114300686190679660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1881,11 +1927,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: F:\GitHub\Exjobb\Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master
     Bank.bank
-  lastModified: 636821602244003805
+  lastModified: 636822087003641338
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1148800
+    Value: 1201088
   Exists: 1
 --- !u!114 &114402361721346100
 MonoBehaviour:
@@ -1936,7 +1982,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114919602717804210}
+  - {fileID: 114483031215877218}
   MinDistance: 0
   MaxDistance: 0
   Length: 587
@@ -1971,6 +2017,21 @@ MonoBehaviour:
   Max: 6
   Default: 0
 --- !u!114 &114435390337297252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114445928679166406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2235,6 +2296,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1160
+--- !u!114 &114483031215877218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114483746763739298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2250,6 +2326,21 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114483970902142460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114488059070532336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2887,10 +2978,11 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114576550998168338}
+  - {fileID: 114860896283543058}
+  - {fileID: 114224637205347652}
   MinDistance: 0
   MaxDistance: 0
-  Length: 902
+  Length: 892
 --- !u!114 &114593777932866234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3022,6 +3114,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3750
+--- !u!114 &114611282530082888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114618774165040174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3052,6 +3159,21 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114626113822768894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114634580948394398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3299,7 +3421,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114955573556141568}
+  - {fileID: 114483970902142460}
   MinDistance: 0
   MaxDistance: 0
   Length: 1140
@@ -3775,16 +3897,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/Characters/Player/PlayerLand
-  guid: beec37ab1b61a845977af0fbad4adc1b
+  guid: b8cd4403d119aa4db4ae4c1ff40a1328
   Banks:
   - {fileID: 114402266143754050}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 500
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 580
 --- !u!114 &114774828553280702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4080,6 +4202,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114824764724722722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114825543861812394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4181,6 +4318,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 30
   Length: 1549
+--- !u!114 &114860896283543058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114866381203265096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4193,11 +4345,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636821602244043480
+  lastModified: 636822087003690939
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1740
+    Value: 1782
   Exists: 1
 --- !u!114 &114866799991998556
 MonoBehaviour:
@@ -4259,6 +4411,28 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114876176580688530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Melee (2D)
+  guid: e67007d874a6cc48bf751728feac6ef3
+  Banks:
+  - {fileID: 114402266143754050}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 595
 --- !u!114 &114883381803863786
 MonoBehaviour:
   m_ObjectHideFlags: 0

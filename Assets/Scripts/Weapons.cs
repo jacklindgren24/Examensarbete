@@ -19,10 +19,11 @@ public static class HitscanWeapon {
 
 public static class MeleeWeapon {
 
-    public static int damage = 100;
+    public static int damage = 50;
     public static float cooldown = 0.75f;
     public static float range = 2.5f;
-    public static float delay = 0.2f;
+    public static float delay = 0.1f;
+    public static float knockback = 15;
 
     public static string sound = "event:/Weapons/Melee (2D)";
 }

@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour {
         if (Physics.Raycast(transform.position, cam.transform.forward, out hit, MeleeWeapon.range, meleeMask))
         { // Ray hit an enemy, hurt enemy.
             hit.transform.GetComponent<EnemyController>().Health -= MeleeWeapon.damage;
+            hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * MeleeWeapon.knockback, ForceMode.Impulse);
         } 
     }
 

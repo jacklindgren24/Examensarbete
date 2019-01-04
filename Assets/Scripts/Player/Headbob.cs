@@ -2,15 +2,23 @@
 
 public class Headbob : MonoBehaviour {
 
-    public float bobbingSpeed = 0.18f;
+    public float bobbingSpeedBase = 0.18f;
+    public float bobbingSpeedSprint = 0.288f;
     public float bobbingAmount = 0.2f;
     public float midpoint = 1;
 
     float timer = 0;
 
+    PlayerMovement pm;
+
+    void Start()
+    {
+        pm = PlayerMovement.instance;
+    }
+
     void Update()
     {
-        if (PlayerMovement.instance.IsGrounded)
+        if (pm.IsGrounded)
         {
             float waveslice = 0;
             float horizontal = Input.GetAxis("Horizontal");
@@ -25,7 +33,7 @@ public class Headbob : MonoBehaviour {
             else
             {
                 waveslice = Mathf.Sin(timer);
-                timer = timer + bobbingSpeed;
+                timer = pm.isSprinting ? timer + bobbingSpeedSprint : timer + bobbingSpeedBase;
 
                 if (timer > Mathf.PI * 2)
                 {
