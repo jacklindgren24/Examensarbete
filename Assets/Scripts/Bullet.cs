@@ -2,9 +2,6 @@
 
 public class Bullet : MonoBehaviour {
 
-    [FMODUnity.EventRef]
-    public string EnemyHit;
-
     int layerMask = ~0;
     float radius = 0.1f;
 
@@ -19,7 +16,6 @@ public class Bullet : MonoBehaviour {
                 if (result.gameObject.tag == "Enemy")
                 { // Hit enemy, hurt and destroy self.
                     result.GetComponent<EnemyController>().Health -= ProjectileWeapon.damage;
-                    FMODUnity.RuntimeManager.PlayOneShot(EnemyHit, transform.position);
                     Destroy(gameObject);
                     return;
                 }

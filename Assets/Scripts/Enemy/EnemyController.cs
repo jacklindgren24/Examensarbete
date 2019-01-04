@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
-public class EnemyController : MonoBehaviour
-{
+public class EnemyController : MonoBehaviour {
 
-    [FMODUnity.EventRef]
-    public string EnemySpawn;
-    [FMODUnity.EventRef]
-    public string EnemyDeath;
-    [FMODUnity.EventRef]
-    public string enemyFootstepsEv;
-    FMOD.Studio.EventInstance enemyFootstep;
-
-    [FMODUnity.EventRef]
-    public string PlayerHit;
+    [EventRef]
+    public string enemySpawn;
+    [EventRef]
+    public string enemyDeath;
+    [EventRef]
+    public string enemyHit;
+    [EventRef]
+    public string enemyFootsteps;
+    FMOD.Studio.EventInstance enemyFootstepsEv;
 
     int health = 100;
     public int Health
@@ -21,8 +20,11 @@ public class EnemyController : MonoBehaviour
         get { return health; }
         set
         {
+            int old = health;
             health = value;
+
             if (health <= 0) Die();
+            else if (health < old) RuntimeManager.PlayOneShot(enemyHit, transform.position);
         }
     }
 
@@ -37,19 +39,19 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
 
-        FMODUnity.RuntimeManager.PlayOneShot(EnemySpawn, transform.position);
+        RuntimeManager.PlayOneShot(enemySpawn, transform.position);
 
-        enemyFootstep = FMODUnity.RuntimeManager.CreateInstance(enemyFootstepsEv);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(enemyFootstep, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        enemyFootstepsEv = RuntimeManager.CreateInstance(enemyFootsteps);
+        RuntimeManager.AttachInstanceToGameObject(enemyFootstepsEv, GetComponent<Transform>(), GetComponent<Rigidbody>());
         EnemyFootstep();
     }
 
     public void EnemyFootstep()
     {
         FMOD.Studio.PLAYBACK_STATE state;
-        enemyFootstep.getPlaybackState(out state);
+        enemyFootstepsEv.getPlaybackState(out state);
 
-        if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) enemyFootstep.start();
+        if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) enemyFootstepsEv.start();
     }
 
     void Update()
@@ -63,14 +65,13 @@ public class EnemyController : MonoBehaviour
         { // Collided with player, hurt player.
             other.gameObject.GetComponent<PlayerController>().Health -= damage;
             other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * pushback, ForceMode.VelocityChange);
-            FMODUnity.RuntimeManager.PlayOneShot(PlayerHit, transform.position);
         }
     }
 
     void Die()
     {
         Destroy(gameObject);
-        FMODUnity.RuntimeManager.PlayOneShot(EnemyDeath, transform.position);
-        enemyFootstep.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        RuntimeManager.PlayOneShot(enemyDeath, transform.position);
+        enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
