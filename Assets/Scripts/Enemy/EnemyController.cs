@@ -29,15 +29,21 @@ public class EnemyController : MonoBehaviour {
     }
 
     public int damage = 34;
+    public float cooldown = 1;
     public float pushback = 5;
+    public float range = 4;
+
+    float timer = 0;
 
     NavMeshAgent agent;
     Transform target;
+    Rigidbody rb;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
+        rb = GetComponent<Rigidbody>();
 
         RuntimeManager.PlayOneShot(enemySpawn, transform.position);
 
@@ -56,7 +62,23 @@ public class EnemyController : MonoBehaviour {
 
     void Update()
     {
-        if (agent != null && target != null) agent.SetDestination(target.position);
+        timer += Time.deltaTime;
+
+        if (agent != null && target != null)
+        {
+            if (Vector3.Distance(transform.position, target.position) > range)
+            { // Enemy is not within attacking range of target, move towards target.
+                //agent.enabled = true;
+                agent.isStopped = false;
+                agent.SetDestination(target.position);
+            }
+            else
+            { // Enemy is within attacking range of target, stop and attack target.
+                //agent.enabled = false;
+                agent.isStopped = true;
+                if (timer >= cooldown) Attack();
+            }
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -64,8 +86,17 @@ public class EnemyController : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         { // Collided with player, hurt player.
             other.gameObject.GetComponent<PlayerController>().Health -= damage;
-            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * pushback, ForceMode.VelocityChange);
+            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * pushback, ForceMode.Impulse);
         }
+    }
+
+    void Attack()
+    {
+        timer = 0;
+        GameObject player = GameObject.FindWithTag("Player");
+
+        player.GetComponent<PlayerController>().Health -= damage;
+        player.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * pushback, ForceMode.Impulse);
     }
 
     void Die()
