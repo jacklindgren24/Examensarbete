@@ -13,11 +13,17 @@ public class PlayerController : MonoBehaviour {
         get { return health; }
         set
         {
+            int old = health;
             health = godMode ? 100 : value;
+
             if (health <= 0) StartCoroutine(GameOver(Camera.main.transform.position, Camera.main.transform.rotation));
+            else if (health < old) RuntimeManager.PlayOneShot(playerHurt, transform.position);
         }
     }
 
+
+    [EventRef]
+    public string playerHurt;
     public bool godMode = false;
 
     [Space(15)]
