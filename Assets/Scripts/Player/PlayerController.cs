@@ -146,11 +146,12 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator GameOver(Vector3 camPos, Quaternion camRot)
     {
-        Destroy(transform.GetChild(0).gameObject);
         Destroy(GameObject.FindWithTag("GameCanvas"));
 
         AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
         yield return new WaitUntil(() => loading.isDone);
+
+        Destroy(transform.GetChild(0).gameObject);
 
         deathSnapEv = RuntimeManager.CreateInstance(deathSnapshot);
         deathSnapEv.start();
