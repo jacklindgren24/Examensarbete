@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
             int old = health;
             health = godMode ? 100 : value;
 
-            if (health <= 0) StartCoroutine(GameOver(Camera.main.transform.position, Camera.main.transform.rotation));
+            if (health <= 0) StartCoroutine(GameOver(cam.transform.position, cam.transform.rotation));
 
             else if (health < old)
             {
@@ -149,11 +149,13 @@ public class PlayerController : MonoBehaviour {
         Destroy(transform.GetChild(0).gameObject);
         Destroy(GameObject.FindWithTag("GameCanvas"));
 
+        AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
+        yield return new WaitUntil(() => loading.isDone);
+
         deathSnapEv = RuntimeManager.CreateInstance(deathSnapshot);
         deathSnapEv.start();
 
-        AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
-        yield return new WaitUntil(() => loading.isDone);
+        RuntimeManager.PlayOneShot(playerDie, transform.position);
 
         Camera.main.transform.position = camPos;
         Camera.main.transform.rotation = camRot;
