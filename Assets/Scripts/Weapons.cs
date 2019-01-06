@@ -21,9 +21,9 @@ public static class MeleeWeapon {
 
     public static int damage = 70;
     public static float cooldown = 0.75f;
-    public static float range = 3f;
+    public static float range = 4f;
     public static float delay = 0.1f;
-    public static float knockback = 15;
+    public static float knockback = 30;
 
     public static string sound = "event:/Weapons/Melee (2D)";
 }
