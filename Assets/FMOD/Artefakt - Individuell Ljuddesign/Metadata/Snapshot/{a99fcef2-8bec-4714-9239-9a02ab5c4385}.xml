@@ -151,7 +151,7 @@
             <value>snapshotIntensity</value>
         </property>
         <property name="attackTime">
-            <value>600</value>
+            <value>860</value>
         </property>
         <property name="peakValue">
             <value>100</value>
