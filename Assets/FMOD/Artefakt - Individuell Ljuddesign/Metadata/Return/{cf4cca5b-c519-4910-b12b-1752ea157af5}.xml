@@ -33,6 +33,9 @@
         <property name="feedback">
             <value>15</value>
         </property>
+        <property name="level">
+            <value>5</value>
+        </property>
         <property name="dryLevel">
             <value>-80</value>
         </property>

@@ -63,8 +63,11 @@
         <property name="highCut">
             <value>4600</value>
         </property>
+        <property name="earlyLateMix">
+            <value>57</value>
+        </property>
         <property name="wetLevel">
-            <value>0</value>
+            <value>-5</value>
         </property>
         <property name="dryLevel">
             <value>-80</value>
