@@ -37,13 +37,11 @@ public class EnemyController : MonoBehaviour {
 
     NavMeshAgent agent;
     Transform target;
-    Rigidbody rb;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
-        rb = GetComponent<Rigidbody>();
 
         RuntimeManager.PlayOneShot(enemySpawn, transform.position);
 

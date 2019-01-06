@@ -19,9 +19,9 @@ public static class HitscanWeapon {
 
 public static class MeleeWeapon {
 
-    public static int damage = 50;
+    public static int damage = 70;
     public static float cooldown = 0.75f;
-    public static float range = 2.5f;
+    public static float range = 3f;
     public static float delay = 0.1f;
     public static float knockback = 15;
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{5cdadc18-ae63-4227-8751-e90ced143f0f}">
+        <property name="assetPath">
+            <value>Weapon/Melee/Melee Swoosh 1.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2.4426874999999999</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{52000304-82a4-4b98-8e8d-055b148fcc6b}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="MixerReturn" id="{ae1f9905-d5f4-41b3-ac2d-b0e1c7db0d20}">
+        <property name="volume">
+            <value>-80</value>
+        </property>
+        <property name="overridingInputFormat">
+            <value>1</value>
+        </property>
+        <property name="name">
+            <value>Int. Reverb</value>
+        </property>
+        <relationship name="effectChain">
+            <destination>{3f310bf2-c6cf-4b7c-87b2-36507cb57508}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{7f8da757-663f-41ec-87b1-75f5c065b59f}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{55a1e4da-1fc0-4efe-8985-5f660d3838c7}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{3f310bf2-c6cf-4b7c-87b2-36507cb57508}">
+        <relationship name="effects">
+            <destination>{bb8dd1b1-5f17-4a43-a792-a57d24251af8}</destination>
+            <destination>{b2ebec52-1dff-45c7-b35a-eeedab3ff43f}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{7f8da757-663f-41ec-87b1-75f5c065b59f}">
+        <property name="overridingOutputFormat">
+            <value>1</value>
+        </property>
+        <property name="outputFormatOverridden">
+            <value>true</value>
+        </property>
+    </object>
+    <object class="MixerBusFader" id="{bb8dd1b1-5f17-4a43-a792-a57d24251af8}"/>
+    <object class="SFXReverbEffect" id="{b2ebec52-1dff-45c7-b35a-eeedab3ff43f}">
+        <property name="decayTime">
+            <value>950</value>
+        </property>
+        <property name="lateDelay">
+            <value>26.5</value>
+        </property>
+        <property name="HFDecayRatio">
+            <value>44.5</value>
+        </property>
+        <property name="diffusion">
+            <value>84.5</value>
+        </property>
+        <property name="density">
+            <value>89.5</value>
+        </property>
+        <property name="highCut">
+            <value>9000</value>
+        </property>
+        <property name="earlyLateMix">
+            <value>36</value>
+        </property>
+        <property name="wetLevel">
+            <value>0</value>
+        </property>
+        <property name="dryLevel">
+            <value>-80</value>
+        </property>
+    </object>
+</objects>

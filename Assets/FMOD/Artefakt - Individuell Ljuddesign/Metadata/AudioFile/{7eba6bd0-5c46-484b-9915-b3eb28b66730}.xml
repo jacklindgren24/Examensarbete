@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{7eba6bd0-5c46-484b-9915-b3eb28b66730}">
         <property name="assetPath">
-            <value>Vapen/Hitscan/Weapon 1 Max Energy 4.wav</value>
+            <value>Weapon/Hitscan/Weapon 1 Max Energy 4.wav</value>
         </property>
         <property name="frequencyInKHz">
             <value>48</value>

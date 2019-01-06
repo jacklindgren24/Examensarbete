@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{b9c4d0b8-7d5e-4e30-a8b3-b313aa5ee182}">
+        <property name="assetPath">
+            <value>Enemy/Alien Squish 1.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.17920833333333333</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{52000304-82a4-4b98-8e8d-055b148fcc6b}</destination>
+        </relationship>
+    </object>
+</objects>

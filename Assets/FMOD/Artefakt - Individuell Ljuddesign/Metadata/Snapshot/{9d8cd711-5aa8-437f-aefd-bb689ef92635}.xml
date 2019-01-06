@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="Snapshot" id="{9d8cd711-5aa8-437f-aefd-bb689ef92635}">
+        <property name="name">
+            <value>Indoor</value>
+        </property>
+        <relationship name="mixer">
+            <destination>{7c599a33-2bd3-468a-bf28-a853b9bb7248}</destination>
+        </relationship>
+        <relationship name="automatableProperties">
+            <destination>{1ae18ed1-ee1b-41da-ab24-0984c2ce5ba7}</destination>
+        </relationship>
+        <relationship name="markerTracks">
+            <destination>{c2c0aa69-f160-424f-a600-bf8afcaad969}</destination>
+        </relationship>
+        <relationship name="timeline">
+            <destination>{852c9725-58fd-40a1-9ec5-0a735a1a0a0e}</destination>
+        </relationship>
+        <relationship name="snapshotMasterTrack">
+            <destination>{32b98510-9881-4f5e-9f76-ede50386a32d}</destination>
+        </relationship>
+        <relationship name="snapshotProperties">
+            <destination>{59ada83f-1b04-45f1-96c9-6a22e6e4484d}</destination>
+            <destination>{eea46830-3ebe-4894-a617-d4f636497a96}</destination>
+        </relationship>
+        <relationship name="snapshotTracks">
+            <destination>{66101616-d90f-4db3-9cec-5a048b09e4a0}</destination>
+            <destination>{436f6d5c-cadb-41b8-90b4-91ce0c32d056}</destination>
+        </relationship>
+    </object>
+    <object class="EventAutomatableProperties" id="{1ae18ed1-ee1b-41da-ab24-0984c2ce5ba7}">
+        <relationship name="modulators">
+            <destination>{76898f0c-8b45-4178-80a8-c0e2f9130479}</destination>
+        </relationship>
+    </object>
+    <object class="MarkerTrack" id="{c2c0aa69-f160-424f-a600-bf8afcaad969}"/>
+    <object class="Timeline" id="{852c9725-58fd-40a1-9ec5-0a735a1a0a0e}"/>
+    <object class="SnapshotMasterTrack" id="{32b98510-9881-4f5e-9f76-ede50386a32d}"/>
+    <object class="SnapshotProperty" id="{59ada83f-1b04-45f1-96c9-6a22e6e4484d}">
+        <property name="propertyName">
+            <value>volume</value>
+        </property>
+        <property name="value">
+            <value>0</value>
+        </property>
+        <relationship name="automatableObject">
+            <destination>{ae1f9905-d5f4-41b3-ac2d-b0e1c7db0d20}</destination>
+        </relationship>
+    </object>
+    <object class="SnapshotProperty" id="{eea46830-3ebe-4894-a617-d4f636497a96}">
+        <property name="propertyName">
+            <value>volume</value>
+        </property>
+        <property name="value">
+            <value>-80</value>
+        </property>
+        <relationship name="automatableObject">
+            <destination>{58c808bc-24fd-473c-b96e-6ea2632e23bd}</destination>
+        </relationship>
+    </object>
+    <object class="SnapshotTrack" id="{66101616-d90f-4db3-9cec-5a048b09e4a0}">
+        <relationship name="mixerStrip">
+            <destination>{ae1f9905-d5f4-41b3-ac2d-b0e1c7db0d20}</destination>
+        </relationship>
+    </object>
+    <object class="SnapshotTrack" id="{436f6d5c-cadb-41b8-90b4-91ce0c32d056}">
+        <relationship name="mixerStrip">
+            <destination>{58c808bc-24fd-473c-b96e-6ea2632e23bd}</destination>
+        </relationship>
+    </object>
+    <object class="ADSRModulator" id="{76898f0c-8b45-4178-80a8-c0e2f9130479}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>snapshotIntensity</value>
+        </property>
+        <property name="attackTime">
+            <value>300</value>
+        </property>
+        <property name="peakValue">
+            <value>100</value>
+        </property>
+        <property name="holdTime">
+            <value>0</value>
+        </property>
+        <property name="decayTime">
+            <value>0</value>
+        </property>
+        <property name="sustainValue">
+            <value>100</value>
+        </property>
+        <property name="releaseTime">
+            <value>300</value>
+        </property>
+    </object>
+</objects>
