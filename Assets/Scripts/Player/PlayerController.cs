@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour {
 
         AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
         yield return new WaitUntil(() => loading.isDone);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("GameOver"));
 
         Destroy(transform.GetChild(0).gameObject);
 
