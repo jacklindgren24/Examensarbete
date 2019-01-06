@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="MixerGroup" id="{b59a70d8-6d34-4bc7-aefd-ed80a4492541}">
+        <property name="name">
+            <value>DeathVoice</value>
+        </property>
+        <relationship name="effectChain">
+            <destination>{36dfc853-98e4-467a-b061-ac25478d842c}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{1a765226-5ce6-4671-af31-30c192c53264}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{55a1e4da-1fc0-4efe-8985-5f660d3838c7}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{36dfc853-98e4-467a-b061-ac25478d842c}">
+        <relationship name="effects">
+            <destination>{8d56c127-06c2-480a-96cb-69ef8ac62efb}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{1a765226-5ce6-4671-af31-30c192c53264}"/>
+    <object class="MixerBusFader" id="{8d56c127-06c2-480a-96cb-69ef8ac62efb}"/>
+</objects>

@@ -19,6 +19,7 @@
             <destination>{ce0c4212-b053-4a66-bc61-8091e2febff2}</destination>
             <destination>{48d833be-1cad-4f6c-92cd-6c16d63a306c}</destination>
             <destination>{b6e4d306-6d74-4094-9a81-46a8f61462d9}</destination>
+            <destination>{e024071e-2baa-4c24-aa28-c716a3de3907}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{b46381c6-9c19-4716-a913-cb4f1b4aa4a3}"/>
@@ -45,4 +46,5 @@
             <destination>{cf4cca5b-c519-4910-b12b-1752ea157af5}</destination>
         </relationship>
     </object>
+    <object class="ThreeEQEffect" id="{e024071e-2baa-4c24-aa28-c716a3de3907}"/>
 </objects>

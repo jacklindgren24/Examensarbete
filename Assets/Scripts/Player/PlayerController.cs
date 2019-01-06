@@ -17,12 +17,16 @@ public class PlayerController : MonoBehaviour {
             health = godMode ? 100 : value;
 
             if (health <= 0) StartCoroutine(GameOver(Camera.main.transform.position, Camera.main.transform.rotation));
+
             else if (health < old) RuntimeManager.PlayOneShot(playerHurt, transform.position);
         }
     }
 
     [EventRef]
     public string playerHurt;
+    public string playerDie;
+    public string deathSnapshot;
+    FMOD.Studio.EventInstance deathSnapEv;
     public bool godMode = false;
 
     [Space(15)]
@@ -137,7 +141,10 @@ public class PlayerController : MonoBehaviour {
     {
         Destroy(transform.GetChild(0).gameObject);
 
-        RuntimeManager.PauseAllEvents(true);
+        deathSnapEv = RuntimeManager.CreateInstance(deathSnapshot);
+        deathSnapEv.start();
+
+        RuntimeManager.PlayOneShot(playerDie, transform.position);
 
         AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
         yield return new WaitUntil(() => loading.isDone);
