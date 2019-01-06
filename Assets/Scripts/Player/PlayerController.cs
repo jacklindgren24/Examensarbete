@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-
     [EventRef]
     public string playerHurt;
     public bool godMode = false;

@@ -23,17 +23,26 @@ public class EnemyController : MonoBehaviour {
             int old = health;
             health = value;
 
-            if (health <= 0) Die();
-            else if (health < old) RuntimeManager.PlayOneShot(enemyHit, transform.position);
+            if (health <= 0)
+            {
+                Die();
+            }
+            else if (health < old)
+            {
+                windUpTimer = 0;
+                RuntimeManager.PlayOneShot(enemyHit, transform.position);
+            }
         }
     }
 
     public int damage = 34;
     public float cooldown = 1;
+    public float windUp = 0.5f;
     public float pushback = 5;
     public float range = 4;
 
-    float timer = 0;
+    float attackTimer = 0;
+    float windUpTimer = 0;
 
     NavMeshAgent agent;
     Transform target;
@@ -60,21 +69,28 @@ public class EnemyController : MonoBehaviour {
 
     void Update()
     {
-        timer += Time.deltaTime;
+        attackTimer += Time.deltaTime;
 
         if (agent != null && target != null)
         {
             if (Vector3.Distance(transform.position, target.position) > range)
             { // Enemy is not within attacking range of target, move towards target.
-                //agent.enabled = true;
                 agent.isStopped = false;
+                windUpTimer = 0;
                 agent.SetDestination(target.position);
             }
             else
-            { // Enemy is within attacking range of target, stop and attack target.
-                //agent.enabled = false;
+            { // Enemy is within attacking range of target, stop and begin attacking target.
                 agent.isStopped = true;
-                if (timer >= cooldown) Attack();
+
+                if (attackTimer >= cooldown)
+                { // Attack is off cooldown.
+                    windUpTimer += Time.deltaTime;
+                    if (windUpTimer >= windUp)
+                    { // Attack has wound up.
+                        Attack();
+                    }
+                }
             }
         }
     }
@@ -90,7 +106,8 @@ public class EnemyController : MonoBehaviour {
 
     void Attack()
     {
-        timer = 0;
+        windUpTimer = 0;
+        attackTimer = 0;
         GameObject player = GameObject.FindWithTag("Player");
 
         player.GetComponent<PlayerController>().Health -= damage;
