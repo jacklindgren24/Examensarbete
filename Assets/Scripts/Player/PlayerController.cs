@@ -8,14 +8,15 @@ public class PlayerController : MonoBehaviour {
     public enum Weapon { Projectile, Hitscan, Melee };
 
     public bool godMode = false;
-    public int health = 100;
+    public int maxHealth = 100;
+    int health;
     public int Health
     {
         get { return health; }
         set
         {
             int old = health;
-            health = godMode ? 100 : value;
+            health = godMode ? maxHealth : value;
 
             if (health <= 0) StartCoroutine(GameOver(cam.transform.position, cam.transform.rotation));
 
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour {
         cam = Camera.main;
         meleeMask = LayerMask.GetMask("Enemy");
         playerHealthBar = GameObject.FindWithTag("GameCanvas").GetComponentInChildren<PlayerHealthBar>();
+
+        Health = maxHealth;
     }
 
     void Update()
