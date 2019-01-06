@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="MixerReturn" id="{cf4cca5b-c519-4910-b12b-1752ea157af5}">
+        <property name="volume">
+            <value>-80</value>
+        </property>
+        <property name="name">
+            <value>Ext. Delay</value>
+        </property>
+        <relationship name="effectChain">
+            <destination>{1394942f-214a-471a-9660-10601faa9f71}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{f1ced7d5-a13c-4fd1-9ba7-9f5f814ef07a}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{55a1e4da-1fc0-4efe-8985-5f660d3838c7}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{1394942f-214a-471a-9660-10601faa9f71}">
+        <relationship name="effects">
+            <destination>{052e0974-57c2-4ed1-96fb-b9a032605436}</destination>
+            <destination>{8268ea30-14c7-45d8-a22d-0ba3f29088cf}</destination>
+            <destination>{d0f204af-2ea0-4c49-9b8d-20a4205277e0}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{f1ced7d5-a13c-4fd1-9ba7-9f5f814ef07a}"/>
+    <object class="MixerBusFader" id="{052e0974-57c2-4ed1-96fb-b9a032605436}"/>
+    <object class="DelayEffect" id="{8268ea30-14c7-45d8-a22d-0ba3f29088cf}">
+        <property name="delay">
+            <value>220</value>
+        </property>
+        <property name="feedback">
+            <value>15</value>
+        </property>
+        <property name="dryLevel">
+            <value>-80</value>
+        </property>
+    </object>
+    <object class="MultibandEqEffect" id="{d0f204af-2ea0-4c49-9b8d-20a4205277e0}">
+        <property name="filterTypeA">
+            <value>4</value>
+        </property>
+        <property name="filterTypeB">
+            <value>1</value>
+        </property>
+        <property name="frequencyA">
+            <value>80</value>
+        </property>
+        <property name="frequencyB">
+            <value>6000</value>
+        </property>
+    </object>
+</objects>

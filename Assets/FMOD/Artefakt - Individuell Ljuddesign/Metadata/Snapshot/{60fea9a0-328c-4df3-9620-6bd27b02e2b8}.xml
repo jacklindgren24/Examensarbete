@@ -22,10 +22,12 @@
         <relationship name="snapshotProperties">
             <destination>{eb2d0131-0a52-4747-9d33-ded60e91dc3e}</destination>
             <destination>{e9581c9e-756f-475e-a2f6-6e1d92921505}</destination>
+            <destination>{dbac7fca-6025-447a-8422-f052f3a8813d}</destination>
         </relationship>
         <relationship name="snapshotTracks">
             <destination>{968eb957-1c0e-46ca-b38c-3a7a2555f6f0}</destination>
             <destination>{7ebe07e1-2c4f-46c6-b6f9-d93bfa85698e}</destination>
+            <destination>{a51f3b1a-5d70-43ff-8e1a-44264cfb5018}</destination>
         </relationship>
     </object>
     <object class="EventAutomatableProperties" id="{49ae3841-eeb9-4130-9cc8-c562376c4de0}">
@@ -58,6 +60,17 @@
             <destination>{58c808bc-24fd-473c-b96e-6ea2632e23bd}</destination>
         </relationship>
     </object>
+    <object class="SnapshotProperty" id="{dbac7fca-6025-447a-8422-f052f3a8813d}">
+        <property name="propertyName">
+            <value>volume</value>
+        </property>
+        <property name="value">
+            <value>0</value>
+        </property>
+        <relationship name="automatableObject">
+            <destination>{cf4cca5b-c519-4910-b12b-1752ea157af5}</destination>
+        </relationship>
+    </object>
     <object class="SnapshotTrack" id="{968eb957-1c0e-46ca-b38c-3a7a2555f6f0}">
         <relationship name="mixerStrip">
             <destination>{ae1f9905-d5f4-41b3-ac2d-b0e1c7db0d20}</destination>
@@ -66,6 +79,11 @@
     <object class="SnapshotTrack" id="{7ebe07e1-2c4f-46c6-b6f9-d93bfa85698e}">
         <relationship name="mixerStrip">
             <destination>{58c808bc-24fd-473c-b96e-6ea2632e23bd}</destination>
+        </relationship>
+    </object>
+    <object class="SnapshotTrack" id="{a51f3b1a-5d70-43ff-8e1a-44264cfb5018}">
+        <relationship name="mixerStrip">
+            <destination>{cf4cca5b-c519-4910-b12b-1752ea157af5}</destination>
         </relationship>
     </object>
     <object class="ADSRModulator" id="{046634e1-d4e3-4c99-a718-cbd2d6755b18}">

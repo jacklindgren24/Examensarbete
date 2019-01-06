@@ -22,10 +22,12 @@
         <relationship name="snapshotProperties">
             <destination>{59ada83f-1b04-45f1-96c9-6a22e6e4484d}</destination>
             <destination>{eea46830-3ebe-4894-a617-d4f636497a96}</destination>
+            <destination>{ace9d204-fcb0-411d-9e42-24c317daa8ba}</destination>
         </relationship>
         <relationship name="snapshotTracks">
             <destination>{66101616-d90f-4db3-9cec-5a048b09e4a0}</destination>
             <destination>{436f6d5c-cadb-41b8-90b4-91ce0c32d056}</destination>
+            <destination>{0bedd7c2-d4de-4998-96ae-270e3323cec0}</destination>
         </relationship>
     </object>
     <object class="EventAutomatableProperties" id="{1ae18ed1-ee1b-41da-ab24-0984c2ce5ba7}">
@@ -58,6 +60,17 @@
             <destination>{58c808bc-24fd-473c-b96e-6ea2632e23bd}</destination>
         </relationship>
     </object>
+    <object class="SnapshotProperty" id="{ace9d204-fcb0-411d-9e42-24c317daa8ba}">
+        <property name="propertyName">
+            <value>volume</value>
+        </property>
+        <property name="value">
+            <value>-80</value>
+        </property>
+        <relationship name="automatableObject">
+            <destination>{cf4cca5b-c519-4910-b12b-1752ea157af5}</destination>
+        </relationship>
+    </object>
     <object class="SnapshotTrack" id="{66101616-d90f-4db3-9cec-5a048b09e4a0}">
         <relationship name="mixerStrip">
             <destination>{ae1f9905-d5f4-41b3-ac2d-b0e1c7db0d20}</destination>
@@ -66,6 +79,11 @@
     <object class="SnapshotTrack" id="{436f6d5c-cadb-41b8-90b4-91ce0c32d056}">
         <relationship name="mixerStrip">
             <destination>{58c808bc-24fd-473c-b96e-6ea2632e23bd}</destination>
+        </relationship>
+    </object>
+    <object class="SnapshotTrack" id="{0bedd7c2-d4de-4998-96ae-270e3323cec0}">
+        <relationship name="mixerStrip">
+            <destination>{cf4cca5b-c519-4910-b12b-1752ea157af5}</destination>
         </relationship>
     </object>
     <object class="ADSRModulator" id="{76898f0c-8b45-4178-80a8-c0e2f9130479}">
