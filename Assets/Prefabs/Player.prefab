@@ -324,11 +324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c969a57f72c05904ab5b6226dae15208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  godMode: 0
   health: 100
   playerHurt: event:/Characters/Player/PlayerHit
   playerDie: event:/Characters/Player/PlayerDeath
-  deathSnapshot: Snapshot:/Death
-  godMode: 0
+  deathSnapshot: snapshot:/Death
   weapon: 0
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}

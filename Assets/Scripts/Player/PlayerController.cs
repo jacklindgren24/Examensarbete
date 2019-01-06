@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 
     public enum Weapon { Projectile, Hitscan, Melee };
 
+    public bool godMode = false;
     public int health = 100;
     public int Health
     {
@@ -18,21 +19,25 @@ public class PlayerController : MonoBehaviour {
 
             if (health <= 0) StartCoroutine(GameOver(Camera.main.transform.position, Camera.main.transform.rotation));
 
-            else if (health < old) RuntimeManager.PlayOneShot(playerHurt, transform.position);
+            else if (health < old)
+            {
+                RuntimeManager.PlayOneShot(playerHurt, transform.position);
+                playerHealthBar.UpdateHealthBar();
+            }
         }
     }
 
     [EventRef]
     public string playerHurt;
+    [EventRef]
     public string playerDie;
+    [EventRef]
     public string deathSnapshot;
     FMOD.Studio.EventInstance deathSnapEv;
-    public bool godMode = false;
-
+    
     [Space(15)]
 
     public Weapon weapon = Weapon.Projectile;
-
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
@@ -42,11 +47,13 @@ public class PlayerController : MonoBehaviour {
 
     Camera cam;
     LayerMask meleeMask;
+    PlayerHealthBar playerHealthBar;
 
     void Start()
     {
         cam = Camera.main;
         meleeMask = LayerMask.GetMask("Enemy");
+        playerHealthBar = GameObject.FindWithTag("GameCanvas").GetComponentInChildren<PlayerHealthBar>();
     }
 
     void Update()
@@ -140,11 +147,10 @@ public class PlayerController : MonoBehaviour {
     IEnumerator GameOver(Vector3 camPos, Quaternion camRot)
     {
         Destroy(transform.GetChild(0).gameObject);
+        Destroy(GameObject.FindWithTag("GameCanvas"));
 
         deathSnapEv = RuntimeManager.CreateInstance(deathSnapshot);
         deathSnapEv.start();
-
-        RuntimeManager.PlayOneShot(playerDie, transform.position);
 
         AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
         yield return new WaitUntil(() => loading.isDone);
