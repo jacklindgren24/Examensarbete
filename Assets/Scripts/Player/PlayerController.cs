@@ -86,16 +86,25 @@ public class PlayerController : MonoBehaviour {
         }
         else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
         { // Melee.
+            RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
             Invoke("Melee", MeleeWeapon.delay);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
-        { // Increase intensity by 50 up to a maximum of 100.
+        { // Increase intensity by 50 up to a maximum of 100 (guns).
             intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] + 50, 0, 100);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
-        { // Decrease intensity by 50 down to a minimum of 0.
+        { // Decrease intensity by 50 down to a minimum of 0 (guns).
             intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] - 50, 0, 100);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        { // Increase intensity by 50 up to a maximum of 100 (melee).
+            intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] + 50, 0, 100);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        { // Decrease intensity by 50 down to a minimum of 0 (melee).
+            intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] - 50, 0, 100);
         }
     }
 
@@ -144,8 +153,6 @@ public class PlayerController : MonoBehaviour {
             hit.transform.GetComponent<EnemyController>().Health -= MeleeWeapon.damage;
             hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * MeleeWeapon.knockback, ForceMode.Impulse);
         }
-        RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
-
     }
 
     IEnumerator GameOver(Vector3 camPos, Quaternion camRot)
