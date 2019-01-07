@@ -598,6 +598,10 @@ Prefab:
       propertyPath: activationRange
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -830,7 +834,7 @@ GameObject:
   - component: {fileID: 71139465}
   m_Layer: 0
   m_Name: Spawner (8)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -852,6 +856,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!4 &75225244
 Transform:
   m_ObjectHideFlags: 0
@@ -1099,7 +1104,7 @@ GameObject:
   - component: {fileID: 98926514}
   m_Layer: 0
   m_Name: Spawner (12)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1121,6 +1126,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &101141335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1139,7 @@ GameObject:
   - component: {fileID: 101141336}
   m_Layer: 0
   m_Name: Spawner (17)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1155,6 +1161,7 @@ MonoBehaviour:
   minSpawnTime: 3
   maxSpawnTime: 6
   activationRange: 40
+  isPaused: 0
 --- !u!1 &110117496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1174,7 @@ GameObject:
   - component: {fileID: 110117497}
   m_Layer: 0
   m_Name: Spawner (7)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1189,6 +1196,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &124169864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1483,10 @@ Prefab:
         type: 2}
       propertyPath: maxSpawnTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -1911,7 +1923,7 @@ GameObject:
   - component: {fileID: 294848316}
   m_Layer: 0
   m_Name: Spawner (23)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1933,6 +1945,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 25
+  isPaused: 0
 --- !u!4 &306080693
 Transform:
   m_ObjectHideFlags: 0
@@ -2346,6 +2359,10 @@ Prefab:
         type: 2}
       propertyPath: activationRange
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -2870,6 +2887,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -2998,7 +3019,7 @@ GameObject:
   - component: {fileID: 465780123}
   m_Layer: 0
   m_Name: Spawner (11)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3020,6 +3041,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &477882470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,6 +3184,10 @@ Prefab:
         type: 2}
       propertyPath: activationRange
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -3559,6 +3585,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -3928,7 +3958,7 @@ GameObject:
   - component: {fileID: 636714744}
   m_Layer: 0
   m_Name: Spawner (20)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3950,6 +3980,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 25
+  isPaused: 0
 --- !u!1 &653101827
 GameObject:
   m_ObjectHideFlags: 0
@@ -4173,6 +4204,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -4202,7 +4237,7 @@ GameObject:
   - component: {fileID: 705391248}
   m_Layer: 0
   m_Name: Spawner (9)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4224,6 +4259,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &749829148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4446,6 +4482,10 @@ Prefab:
         type: 2}
       propertyPath: maxSpawnTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -4689,7 +4729,7 @@ GameObject:
   - component: {fileID: 870451745}
   m_Layer: 0
   m_Name: Spawner (5)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4711,6 +4751,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &893571050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,6 +4861,10 @@ Prefab:
       propertyPath: activationRange
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -4920,7 +4965,7 @@ GameObject:
   - component: {fileID: 921276605}
   m_Layer: 0
   m_Name: Spawner (19)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4942,6 +4987,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 25
+  isPaused: 0
 --- !u!1 &929531088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5053,7 +5099,7 @@ GameObject:
   - component: {fileID: 943561127}
   m_Layer: 0
   m_Name: Spawner (16)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5075,6 +5121,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &949031589
 GameObject:
   m_ObjectHideFlags: 0
@@ -5397,6 +5444,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -5466,6 +5517,10 @@ Prefab:
         type: 2}
       propertyPath: maxSpawnTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -5949,7 +6004,7 @@ GameObject:
   - component: {fileID: 1040112607}
   m_Layer: 0
   m_Name: Spawner (21)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5971,6 +6026,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 25
+  isPaused: 0
 --- !u!4 &1061216836
 Transform:
   m_ObjectHideFlags: 0
@@ -6128,6 +6184,10 @@ Prefab:
       propertyPath: activationRange
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -6188,6 +6248,10 @@ Prefab:
         type: 2}
       propertyPath: activationRange
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -6282,7 +6346,7 @@ GameObject:
   - component: {fileID: 1110151790}
   m_Layer: 0
   m_Name: Spawner (15)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6304,6 +6368,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1001 &1114056296
 Prefab:
   m_ObjectHideFlags: 0
@@ -6357,6 +6422,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -6386,7 +6455,7 @@ GameObject:
   - component: {fileID: 1120686053}
   m_Layer: 0
   m_Name: Spawner (6)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6408,6 +6477,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &1144188165
 GameObject:
   m_ObjectHideFlags: 0
@@ -6798,6 +6868,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -6867,6 +6941,10 @@ Prefab:
         type: 2}
       propertyPath: maxSpawnTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -7053,7 +7131,7 @@ GameObject:
   - component: {fileID: 1307330848}
   m_Layer: 0
   m_Name: Spawner (18)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7075,6 +7153,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 25
+  isPaused: 0
 --- !u!1 &1344772498
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,7 +7336,7 @@ GameObject:
   - component: {fileID: 1363225751}
   m_Layer: 0
   m_Name: Spawner (13)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7279,6 +7358,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1001 &1372184532
 Prefab:
   m_ObjectHideFlags: 0
@@ -7331,6 +7411,10 @@ Prefab:
         type: 2}
       propertyPath: maxSpawnTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -7660,6 +7744,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -7869,7 +7957,7 @@ GameObject:
   - component: {fileID: 1530131733}
   m_Layer: 0
   m_Name: Spawner (4)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7891,6 +7979,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1001 &1536843894
 Prefab:
   m_ObjectHideFlags: 0
@@ -7944,6 +8033,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -7973,7 +8066,7 @@ GameObject:
   - component: {fileID: 1555533372}
   m_Layer: 0
   m_Name: Spawner (1)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7995,6 +8088,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &1559251885
 GameObject:
   m_ObjectHideFlags: 0
@@ -8124,7 +8218,7 @@ GameObject:
   - component: {fileID: 1596772831}
   m_Layer: 0
   m_Name: Spawner (24)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8146,6 +8240,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 25
+  isPaused: 0
 --- !u!1 &1597908831
 GameObject:
   m_ObjectHideFlags: 0
@@ -8243,7 +8338,7 @@ GameObject:
   - component: {fileID: 1605693321}
   m_Layer: 0
   m_Name: Spawner (3)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8265,6 +8360,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &1614049884
 GameObject:
   m_ObjectHideFlags: 0
@@ -8734,6 +8830,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -9050,7 +9150,7 @@ GameObject:
   - component: {fileID: 1815435572}
   m_Layer: 0
   m_Name: Spawner (22)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9072,6 +9172,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 25
+  isPaused: 0
 --- !u!1 &1839243142
 GameObject:
   m_ObjectHideFlags: 0
@@ -9084,7 +9185,7 @@ GameObject:
   - component: {fileID: 1839243143}
   m_Layer: 0
   m_Name: Spawner (14)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9106,6 +9207,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &1863442109
 GameObject:
   m_ObjectHideFlags: 0
@@ -9375,7 +9477,7 @@ GameObject:
   - component: {fileID: 1920392652}
   m_Layer: 0
   m_Name: Spawner (10)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9397,6 +9499,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &1933747201
 GameObject:
   m_ObjectHideFlags: 0
@@ -9535,6 +9638,10 @@ Prefab:
       propertyPath: maxSpawnTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -9671,6 +9778,10 @@ Prefab:
         type: 2}
       propertyPath: activationRange
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -9918,6 +10029,10 @@ Prefab:
         type: 2}
       propertyPath: maxSpawnTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
@@ -10599,6 +10714,10 @@ Prefab:
       propertyPath: activationRange
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1751789739948940, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0712084c86eae744ca2bdcfc0c63eb07, type: 2}
   m_IsPrefabAsset: 0
@@ -10628,7 +10747,7 @@ GameObject:
   - component: {fileID: 2133272822}
   m_Layer: 0
   m_Name: Spawner (2)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10650,6 +10769,7 @@ MonoBehaviour:
   minSpawnTime: 4
   maxSpawnTime: 7
   activationRange: 30
+  isPaused: 0
 --- !u!1 &2137921422
 GameObject:
   m_ObjectHideFlags: 0
