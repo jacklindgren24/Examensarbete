@@ -18,14 +18,18 @@ public class PlayerController : MonoBehaviour {
             int old = health;
             health = godMode ? maxHealth : value;
 
-            if (health <= 0) StartCoroutine(GameOver(cam.transform.position, cam.transform.rotation));
+            if (playerHealthBar != null) playerHealthBar.UpdateHealthBar();
+
+            if (health <= 0)
+            {
+                StartCoroutine(GameOver(cam.transform.position, cam.transform.rotation));
+            }
 
             else if (health < old)
             {
                 RuntimeManager.PlayOneShot(playerHurt, transform.position);
-
             }
-            playerHealthBar.UpdateHealthBar();
+            
         }
     }
 
