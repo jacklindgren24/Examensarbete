@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour {
         else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
         { // Melee.
             Invoke("Melee", MeleeWeapon.delay);
-            RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -144,7 +143,9 @@ public class PlayerController : MonoBehaviour {
         { // Ray hit an enemy, hurt enemy.
             hit.transform.GetComponent<EnemyController>().Health -= MeleeWeapon.damage;
             hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * MeleeWeapon.knockback, ForceMode.Impulse);
-        } 
+        }
+        RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
+
     }
 
     IEnumerator GameOver(Vector3 camPos, Quaternion camRot)
