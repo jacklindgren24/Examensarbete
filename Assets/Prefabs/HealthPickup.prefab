@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: 50
+  healthSpawn: event:/Health/HealthSpawn
+  healthPickup: event:/Health/HealthPickup
 --- !u!135 &135545045724634518
 SphereCollider:
   m_ObjectHideFlags: 1
