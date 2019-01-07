@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour {
     public float minSpawnTime = 3;
     public float maxSpawnTime = 6;
     public float activationRange = 30;
+    public bool isPaused;
 
     float spawnTime;
     float timer = 0;
@@ -20,7 +21,7 @@ public class Spawner : MonoBehaviour {
 	
 	void Update ()
     {
-        if (player != null)
+        if (!isPaused && player != null)
         {
             if (Vector3.Distance(player.position, transform.position) <= activationRange)
             { // Only update timer of player is within range.

@@ -1,18 +1,30 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
+
+    List<Spawner> spawners = new List<Spawner>();
 
 	void Awake ()
     {
         if (instance == null) instance = this; else Destroy(gameObject);
 	}
 
+    void Start()
+    {
+        foreach (GameObject spawner in GameObject.FindGameObjectsWithTag("Spawner"))
+        {
+            spawners.Add(spawner.GetComponent<Spawner>());
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.L)) ToggleCursorState();
         if (Input.GetKeyDown(KeyCode.M)) ToggleMute();
+        if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
     }
 
     void ToggleCursorState()
@@ -32,5 +44,13 @@ public class GameManager : MonoBehaviour {
         master.getMute(out isMuted);
 
         master.setMute(!isMuted); // Invert mute status.
+    }
+
+    void ToggleSpawners()
+    {
+        foreach (Spawner spawner in spawners)
+        {
+            spawner.isPaused = !spawner.isPaused;
+        }
     }
 }
