@@ -118,9 +118,13 @@ MonoBehaviour:
   enemyHit: event:/Characters/Enemy/EnemyHit
   enemyFootsteps: event:/Characters/Enemy/EnemyFootsteps
   damage: 34
+  spawnChance: 20
   cooldown: 1
+  windUp: 0.5
   pushback: 5
   range: 3
+  healthpickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
+    type: 2}
 --- !u!136 &136161750184866292
 CapsuleCollider:
   m_ObjectHideFlags: 1

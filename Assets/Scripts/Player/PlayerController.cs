@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour {
             else if (health < old)
             {
                 RuntimeManager.PlayOneShot(playerHurt, transform.position);
-                playerHealthBar.UpdateHealthBar();
+
             }
+            playerHealthBar.UpdateHealthBar();
         }
     }
 

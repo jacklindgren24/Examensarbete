@@ -36,10 +36,15 @@ public class EnemyController : MonoBehaviour {
     }
 
     public int damage = 34;
+    public float spawnChance = 100;
     public float cooldown = 1;
     public float windUp = 0.5f;
     public float pushback = 5;
     public float range = 4;
+
+
+
+    public GameObject healthpickupPrefab;
 
     float attackTimer = 0;
     float windUpTimer = 0;
@@ -114,10 +119,17 @@ public class EnemyController : MonoBehaviour {
         player.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * pushback, ForceMode.Impulse);
     }
 
+    void SpawnHealth()
+    {
+             Instantiate(healthpickupPrefab, transform.position, transform.rotation);
+    }
+
     void Die()
     {
         Destroy(gameObject);
         RuntimeManager.PlayOneShot(enemyDeath, transform.position);
         enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        float roll = Random.Range(0, 100);
+        if (roll <= spawnChance) SpawnHealth();
     }
 }
