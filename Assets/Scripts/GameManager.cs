@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
         {
             spawners.Add(spawner.GetComponent<Spawner>());
         }
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

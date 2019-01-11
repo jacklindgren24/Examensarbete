@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 
             if (health <= 0)
             {
-                StartCoroutine(GameOver(cam.transform.position, cam.transform.rotation));
+                StartCoroutine(Death(cam.transform.position, cam.transform.rotation));
             }
 
             else if (health < old)
@@ -37,9 +37,6 @@ public class PlayerController : MonoBehaviour {
     public string playerHurt;
     [EventRef]
     public string playerDie;
-    [EventRef]
-    public string deathSnapshot;
-    FMOD.Studio.EventInstance deathSnapEv;
     
     [Space(15)]
 
@@ -160,7 +157,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    IEnumerator GameOver(Vector3 camPos, Quaternion camRot)
+    IEnumerator Death(Vector3 camPos, Quaternion camRot)
     {
         Destroy(GameObject.FindWithTag("GameCanvas"));
 
@@ -170,13 +167,16 @@ public class PlayerController : MonoBehaviour {
 
         Destroy(transform.GetChild(0).gameObject);
 
-        deathSnapEv = RuntimeManager.CreateInstance(deathSnapshot);
-        deathSnapEv.start();
+        GameOver.deathSnapEv = RuntimeManager.CreateInstance(GameOver.deathSnapshot);
+        GameOver.deathSnapEv.start();
 
         RuntimeManager.PlayOneShot(playerDie, transform.position);
 
         Camera.main.transform.position = camPos;
         Camera.main.transform.rotation = camRot;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         Destroy(gameObject);
     }

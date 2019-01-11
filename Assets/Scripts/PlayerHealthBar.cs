@@ -16,7 +16,10 @@ public class PlayerHealthBar : MonoBehaviour {
 	
     public void UpdateHealthBar()
     {
-        text.text = pc.Health.ToString();
-        rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, pc.Health * (rt.rect.width / pc.maxHealth));
+        if (pc != null)
+        {
+            text.text = pc.Health.ToString();
+            rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, pc.Health * (rt.rect.width / pc.maxHealth));
+        }
     }
 }
