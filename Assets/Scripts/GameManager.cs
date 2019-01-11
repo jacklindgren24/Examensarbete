@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.L)) ToggleCursorState();
         if (Input.GetKeyDown(KeyCode.M)) ToggleMute();
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
+        if (Input.GetKeyDown(KeyCode.Escape)) Quit();
     }
 
     void ToggleCursorState()
@@ -55,5 +56,10 @@ public class GameManager : MonoBehaviour {
         {
             spawner.isPaused = !spawner.isPaused;
         }
+    }
+
+    void Quit()
+    {
+        Application.Quit();
     }
 }
