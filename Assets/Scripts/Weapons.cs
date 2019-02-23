@@ -2,7 +2,7 @@
 
     public static int damage = 50;
     public static float cooldown = 0.4f;
-    public static float velocity = 200;
+    public static float velocity = 80;
     public static float lifetime = 2;
 
     public static string sound = "event:/Weapons/ProjectileShoot (2D)";

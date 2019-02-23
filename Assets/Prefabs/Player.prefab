@@ -325,10 +325,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   godMode: 0
-  maxHealth: 100
+  baseHealth: 100
+  maxHealth: 200
+  invincibleDuration: 1
   playerHurt: event:/Characters/Player/PlayerHit
   playerDie: event:/Characters/Player/PlayerDeath
-  deathSnapshot: snapshot:/Death
   weapon: 0
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}

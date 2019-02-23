@@ -1,49 +1,23 @@
 ﻿using UnityEngine;
 
-public class Spawner : MonoBehaviour {
-
+public class Spawner : MonoBehaviour
+{
     public GameObject enemyPrefab;
-    public float minSpawnTime = 3;
-    public float maxSpawnTime = 6;
     public float activationRange = 30;
     public bool isPaused;
 
-    float spawnTime;
-    float timer = 0;
+    protected float spawnTime;
+    protected float timer = 0;
 
-    Transform player;
+    protected static Transform player;
 
-	void Start ()
+    protected virtual void Start()
     {
-        spawnTime = minSpawnTime;
-        player = GameObject.FindWithTag("Player").transform;
-	}
-	
-	void Update ()
-    {
-        if (!isPaused && player != null)
-        {
-            if (Vector3.Distance(player.position, transform.position) <= activationRange)
-            { // Only update timer of player is within range.
-                timer += Time.deltaTime;
-
-                if (timer >= spawnTime)
-                {
-                    Spawn();
-                    NewSpawnTime();
-                    timer = 0;
-                }
-            }
-        }
-	}
-
-    void NewSpawnTime()
-    {
-        spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
+        if (player == null) player = GameObject.FindWithTag("Player").transform;
     }
 
-    void Spawn()
+    public void ResetTimer()
     {
-        Instantiate(enemyPrefab, transform.position, transform.rotation);
+        timer = 0;
     }
 }

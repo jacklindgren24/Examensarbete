@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour {
     public enum Weapon { Projectile, Hitscan, Melee };
 
     public bool godMode = false;
-    public int maxHealth = 100;
+    public int baseHealth = 100;
+    public int maxHealth = 200;
+    public float invincibleDuration = 1;
     int health;
     public int Health
     {
@@ -16,7 +18,7 @@ public class PlayerController : MonoBehaviour {
         set
         {
             int old = health;
-            health = godMode ? maxHealth : value;
+            health = godMode ? health : Mathf.Clamp(value, 0, maxHealth);
 
             if (playerHealthBar != null) playerHealthBar.UpdateHealthBar();
 
@@ -24,12 +26,12 @@ public class PlayerController : MonoBehaviour {
             {
                 StartCoroutine(Death(cam.transform.position, cam.transform.rotation));
             }
-
             else if (health < old)
             {
+                if (invCo != null) StopCoroutine(invCo);
+                invCo = StartCoroutine(Invincible());
                 RuntimeManager.PlayOneShot(playerHurt, transform.position);
             }
-            
         }
     }
 
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour {
     Camera cam;
     LayerMask meleeMask;
     PlayerHealthBar playerHealthBar;
+    Coroutine invCo;
 
     void Start()
     {
@@ -58,7 +61,7 @@ public class PlayerController : MonoBehaviour {
         meleeMask = LayerMask.GetMask("Enemy");
         playerHealthBar = GameObject.FindWithTag("GameCanvas").GetComponentInChildren<PlayerHealthBar>();
 
-        Health = maxHealth;
+        Health = baseHealth;
     }
 
     void Update()
@@ -127,6 +130,8 @@ public class PlayerController : MonoBehaviour {
         Destroy(bullet, ProjectileWeapon.lifetime);
 
         RuntimeManager.PlayOneShot(ProjectileWeapon.sound, "Intensity", intensities[(int)Weapon.Projectile], transform.position);
+
+        GameManager.totalProjectilesShot++;
     }
 
     void FireRay()
@@ -139,10 +144,13 @@ public class PlayerController : MonoBehaviour {
             if (hit.transform.tag == "Enemy")
             { // Ray hit an enemy, hurt enemy.
                 hit.transform.GetComponent<EnemyController>().Health -= HitscanWeapon.damage;
+                GameManager.totalHitscanHits++;
             }
         }
 
         RuntimeManager.PlayOneShot(HitscanWeapon.sound, "Intensity", intensities[(int)Weapon.Hitscan], transform.position);
+
+        GameManager.totalHitscanShots++;
     }
 
     void Melee()
@@ -154,7 +162,10 @@ public class PlayerController : MonoBehaviour {
         { // Ray hit an enemy, hurt enemy.
             hit.transform.GetComponent<EnemyController>().Health -= MeleeWeapon.damage;
             hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * MeleeWeapon.knockback, ForceMode.Impulse);
+            GameManager.totalMeleeHits++;
         }
+
+        GameManager.totalMeleeAttacks++;
     }
 
     IEnumerator Death(Vector3 camPos, Quaternion camRot)
@@ -179,5 +190,12 @@ public class PlayerController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
 
         Destroy(gameObject);
+    }
+
+    IEnumerator Invincible()
+    {
+        godMode = true;
+        yield return new WaitForSeconds(invincibleDuration);
+        godMode = false;
     }
 }

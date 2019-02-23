@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour {
     public string enemyFootsteps;
     FMOD.Studio.EventInstance enemyFootstepsEv;
 
-    int health = 100;
+    int health;
     public int Health
     {
         get { return health; }
@@ -35,16 +35,15 @@ public class EnemyController : MonoBehaviour {
         }
     }
 
+    public int baseHealth = 100;
     public int damage = 34;
-    public float spawnChance = 100;
+    public float itemDropChance = 20;
     public float cooldown = 1;
     public float windUp = 0.5f;
     public float pushback = 5;
-    public float range = 4;
+    public float range = 3;
 
-
-
-    public GameObject healthpickupPrefab;
+    public GameObject healthPickupPrefab;
 
     float attackTimer = 0;
     float windUpTimer = 0;
@@ -54,6 +53,8 @@ public class EnemyController : MonoBehaviour {
 
     void Start()
     {
+        Health = baseHealth;
+
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
 
@@ -121,15 +122,20 @@ public class EnemyController : MonoBehaviour {
 
     void SpawnHealth()
     {
-             Instantiate(healthpickupPrefab, transform.position, transform.rotation);
+        Instantiate(healthPickupPrefab, transform.position, transform.rotation);
     }
 
     void Die()
     {
+        GameManager.instance.WaveKills++;
+        if (gameObject.name.Contains("Mob")) GameManager.totalMobKills++;
+        else GameManager.totalEliteKills++;
+
         Destroy(gameObject);
         RuntimeManager.PlayOneShot(enemyDeath, transform.position);
         enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        float roll = Random.Range(0, 100);
-        if (roll <= spawnChance) SpawnHealth();
+
+        float roll = Random.Range(0, 101);
+        if (roll <= itemDropChance) SpawnHealth();
     }
 }

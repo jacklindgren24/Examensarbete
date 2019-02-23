@@ -2,8 +2,8 @@
 
 public class Bullet : MonoBehaviour {
 
-    int layerMask = ~0;
-    float radius = 0.1f;
+    const int layerMask = ~0;
+    const float radius = 0.1f;
 
     void FixedUpdate()
     {
@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour {
                 if (result.gameObject.tag == "Enemy")
                 { // Hit enemy, hurt and destroy self.
                     result.GetComponent<EnemyController>().Health -= ProjectileWeapon.damage;
+                    GameManager.totalProjectilesHit++;
                     Destroy(gameObject);
                     return;
                 }
