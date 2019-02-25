@@ -66,20 +66,24 @@ public class GameManager : MonoBehaviour {
 
         if (currentWave > waves.Length) WinGame();
 
-        currentWave++;
         waveKills = 0;
-        MobSpawner.spawnsLeft = waves[currentWave].mobAmount;
-        MobSpawner.minSpawnTime = waves[currentWave].mobMinSpawnTime;
-        MobSpawner.maxSpawnTime = waves[currentWave].mobMaxSpawnTime;
-        EliteSpawner.spawnsLeft = waves[currentWave].eliteAmount;
-        EliteSpawner.minSpawnTime = waves[currentWave].eliteMinSpawnTime;
-        EliteSpawner.maxSpawnTime = waves[currentWave].eliteMaxSpawnTime;
+        currentWave++;
+        Wave w = waves[currentWave];
+ 
+        MobSpawner.spawnsLeft = w.mobAmount;
+        MobSpawner.minSpawnTime = w.mobMinSpawnTime;
+        MobSpawner.maxSpawnTime = w.mobMaxSpawnTime;
+        EliteSpawner.spawnsLeft = w.eliteAmount;
+        EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
+        EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
 
         foreach (Spawner s in spawners) s.ResetTimer();
 
+        PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
+
         print("Wave: " + (currentWave + 1));
 
-        Invoke("EnableSpawners", waves[currentWave].startDelay);
+        Invoke("EnableSpawners", w.startDelay);
     }
 
     void WinGame()
@@ -142,6 +146,11 @@ public class GameManager : MonoBehaviour {
 public struct Wave
 {
     public float startDelay;
+
+    [Header("Intensities")]
+    public int hitscanIntensity;
+    public int projectileIntensity;
+    public int meleeIntensity;
 
     [Header("Mob")]
     public int mobAmount;

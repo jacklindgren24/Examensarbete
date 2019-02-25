@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 
     float gunTimer = 0;
     float meleeTimer = 0;
-    float[] intensities = new float[] { 100, 100, 100 };
+    static float[] intensities = new float[] { 100, 100, 100 };
 
     Camera cam;
     LayerMask meleeMask;
@@ -166,6 +166,13 @@ public class PlayerController : MonoBehaviour {
         }
 
         GameManager.totalMeleeAttacks++;
+    }
+
+    public static void SetIntensities(float projectile, float hitscan, float melee)
+    {
+        intensities[(int)Weapon.Projectile] = projectile;
+        intensities[(int)Weapon.Hitscan] = hitscan;
+        intensities[(int)Weapon.Melee] = melee;
     }
 
     IEnumerator Death(Vector3 camPos, Quaternion camRot)
