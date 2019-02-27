@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
+using FMODUnity;
 
 public class MobSpawner : Spawner
 {
     public static int spawnsLeft;
     public static float minSpawnTime;
     public static float maxSpawnTime;
+
+    [EventRef]
+    public string countdown;
 
     protected override void Start()
     {
@@ -32,6 +36,7 @@ public class MobSpawner : Spawner
 
     void Spawn()
     {
+        RuntimeManager.PlayOneShot(countdown, transform.position);
         Instantiate(enemyPrefab, transform.position, transform.rotation);
         spawnsLeft--;
     }
