@@ -1,14 +1,22 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
-    public Wave[] waves;
+    public UnityEngine.UI.Text waveCounter;
 
-    List<Spawner> spawners = new List<Spawner>();
-    public static int currentWave = -1;
+    [Space(15)]
+
+    public Wave[] waves;
+    int currentWave = -1;
+    public int CurrentWave
+    {
+        get { return currentWave; }
+        set { currentWave = value; }
+    }
     int waveKills = 0;
     public int WaveKills
     {
@@ -17,7 +25,7 @@ public class GameManager : MonoBehaviour {
         {
             waveKills = value;
 
-            if (waveKills >= waves[currentWave].mobAmount + waves[currentWave].eliteAmount)
+            if (waveKills >= waves[CurrentWave].mobAmount + waves[CurrentWave].eliteAmount)
             {
                 NextWave();
             }
@@ -33,9 +41,16 @@ public class GameManager : MonoBehaviour {
     public static int totalMeleeAttacks;
     public static int totalMeleeHits;
 
+    List<Spawner> spawners = new List<Spawner>();
+
+    [FMODUnity.EventRef]
+    public string waveCountdownEventRef;
+
     void Awake ()
     {
         if (instance == null) instance = this; else Destroy(gameObject);
+
+        waveCounter.CrossFadeAlpha(0, 0, true); // Make wave counter transparent on awake.
 	}
 
     void Start()
@@ -45,7 +60,7 @@ public class GameManager : MonoBehaviour {
             spawners.Add(spawner.GetComponent<Spawner>());
         }
 
-        currentWave = -1;
+        CurrentWave = -1;
         NextWave();
 
         Cursor.visible = false;
@@ -64,11 +79,11 @@ public class GameManager : MonoBehaviour {
     {
         SetSpawnersPaused(true);
 
-        if (currentWave > waves.Length) WinGame();
+        if (CurrentWave > waves.Length) WinGame();
 
         waveKills = 0;
-        currentWave++;
-        Wave w = waves[currentWave];
+        CurrentWave++;
+        Wave w = waves[CurrentWave];
  
         MobSpawner.spawnsLeft = w.mobAmount;
         MobSpawner.minSpawnTime = w.mobMinSpawnTime;
@@ -81,9 +96,25 @@ public class GameManager : MonoBehaviour {
 
         PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
 
-        print("Wave: " + (currentWave + 1));
+        if (waveCounter.color.a < 1) waveCounter.CrossFadeAlpha(0, 2, false);
 
-        Invoke("EnableSpawners", w.startDelay);
+        print("Wave " + (CurrentWave + 1));
+
+        StartCoroutine(StartWave(w.startDelay));
+    }
+
+    IEnumerator StartWave(float delay)
+    {
+        yield return new WaitForSeconds(delay - 3);
+
+        FMODUnity.RuntimeManager.PlayOneShot(waveCountdownEventRef);
+
+        yield return new WaitForSeconds(3);
+
+        if (waveCounter.color.a > 0) waveCounter.CrossFadeAlpha(1, 2, false);
+        waveCounter.text = "Wave " + (currentWave + 1);
+
+        foreach (Spawner spawner in spawners) spawner.isPaused = false;
     }
 
     void WinGame()
@@ -126,16 +157,6 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void EnableSpawners()
-    {
-        foreach (Spawner spawner in spawners)
-        { // Invert paused status on every spawner.
-            spawner.isPaused = false;
-        }
-
-        print("Enabled spawners.");
-    }
-
     void Quit()
     {
         Application.Quit();
@@ -145,6 +166,7 @@ public class GameManager : MonoBehaviour {
 [System.Serializable]
 public struct Wave
 {
+    [Range(3, 10)]
     public float startDelay;
 
     [Header("Intensities")]

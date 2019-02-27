@@ -51,3 +51,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2131dfb4efdde85409cdcd0b001f7832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveCounter: {fileID: 0}
+  waves:
+  - startDelay: 5
+    hitscanIntensity: 0
+    projectileIntensity: 0
+    meleeIntensity: 0
+    mobAmount: 6
+    mobMinSpawnTime: 2
+    mobMaxSpawnTime: 4
+    eliteAmount: 1
+    eliteMinSpawnTime: 5
+    eliteMaxSpawnTime: 8
+  - startDelay: 3
+    hitscanIntensity: 50
+    projectileIntensity: 50
+    meleeIntensity: 50
+    mobAmount: 10
+    mobMinSpawnTime: 2
+    mobMaxSpawnTime: 4
+    eliteAmount: 2
+    eliteMinSpawnTime: 5
+    eliteMaxSpawnTime: 8
+  - startDelay: 4
+    hitscanIntensity: 100
+    projectileIntensity: 100
+    meleeIntensity: 100
+    mobAmount: 15
+    mobMinSpawnTime: 1
+    mobMaxSpawnTime: 2
+    eliteAmount: 4
+    eliteMinSpawnTime: 3
+    eliteMaxSpawnTime: 6
+  waveCountdownEventRef: event:/WaveCountdown

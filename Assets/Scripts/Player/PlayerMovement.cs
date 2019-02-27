@@ -12,14 +12,6 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpHeight = 5;
     public float stoppingFriction = 12;
 
-    [EventRef]
-    public string playerFootsteps;
-    FMOD.Studio.EventInstance playerFootstepEv;
-    [EventRef]
-    public string playerJump;
-    [EventRef]
-    public string playerLand;
-
     Rigidbody rb;
     float height;
     Vector3 lastGroundedVelocity;
@@ -48,6 +40,17 @@ public class PlayerMovement : MonoBehaviour {
             isGrounded = value;
         }
     }
+
+    [Space(15)]
+
+    [EventRef]
+    public string playerFootsteps;
+    [EventRef]
+    public string playerJump;
+    [EventRef]
+    public string playerLand;
+
+    FMOD.Studio.EventInstance playerFootstepEv;
 
     const float shell = 0.02f;
 

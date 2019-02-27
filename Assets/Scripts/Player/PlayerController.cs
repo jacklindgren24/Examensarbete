@@ -34,17 +34,19 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
-
-    [EventRef]
-    public string playerHurt;
-    [EventRef]
-    public string playerDie;
     
     [Space(15)]
 
     public Weapon weapon = Weapon.Projectile;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+
+    [Space(15)]
+
+    [EventRef]
+    public string playerHurt;
+    [EventRef]
+    public string playerDie;
 
     float gunTimer = 0;
     float meleeTimer = 0;
@@ -87,7 +89,7 @@ public class PlayerController : MonoBehaviour {
         else if (Input.GetButtonDown("Switch"))
         { // Switch weapon.
             weapon = weapon == Weapon.Projectile ? Weapon.Hitscan : Weapon.Projectile;
-            gunTimer = 0;
+            gunTimer = weapon == Weapon.Projectile ? ProjectileWeapon.cooldown : HitscanWeapon.cooldown;
         }
         else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
         { // Melee.

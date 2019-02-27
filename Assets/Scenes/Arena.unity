@@ -861,7 +861,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!4 &75225244
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,7 +1128,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &101141335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1160,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 40
   isPaused: 0
-  countdown: 
 --- !u!1 &110117496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1192,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &124169864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,7 +3034,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &477882470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,7 +3972,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 25
   isPaused: 0
-  countdown: 
 --- !u!1 &653101827
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,7 +4249,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &749829148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,7 +4739,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &893571050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,7 +4973,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 25
   isPaused: 0
-  countdown: 
 --- !u!1 &929531088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5113,7 +5104,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &949031589
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,6 +5561,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &991401228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991401229}
+  - component: {fileID: 991401231}
+  - component: {fileID: 991401230}
+  m_Layer: 5
+  m_Name: Wave Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &991401229
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991401228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1520473331}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -20}
+  m_SizeDelta: {x: 400, y: 60}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &991401230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991401228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 48
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 48
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Wave 1
+--- !u!222 &991401231
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991401228}
+  m_CullTransparentMesh: 0
 --- !u!1 &992840658
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,7 +6436,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1001 &1114056296
 Prefab:
   m_ObjectHideFlags: 0
@@ -6479,7 +6543,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &1144188165
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,7 +6832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 120, y: 40}
+  m_AnchoredPosition: {x: 80, y: 40}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1206276362
@@ -7155,7 +7218,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 25
   isPaused: 0
-  countdown: 
 --- !u!1 &1344772498
 GameObject:
   m_ObjectHideFlags: 0
@@ -7358,7 +7420,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1001 &1372184532
 Prefab:
   m_ObjectHideFlags: 0
@@ -7854,6 +7915,7 @@ RectTransform:
   m_Children:
   - {fileID: 1614049885}
   - {fileID: 1206276361}
+  - {fileID: 991401229}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7979,7 +8041,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1001 &1536843894
 Prefab:
   m_ObjectHideFlags: 0
@@ -8087,7 +8148,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: event:/WaveCountdown
 --- !u!1 &1559251885
 GameObject:
   m_ObjectHideFlags: 0
@@ -8354,7 +8414,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &1614049884
 GameObject:
   m_ObjectHideFlags: 0
@@ -9197,7 +9256,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &1863442109
 GameObject:
   m_ObjectHideFlags: 0
@@ -9487,7 +9545,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &1933747201
 GameObject:
   m_ObjectHideFlags: 0
@@ -10355,11 +10412,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4715000787165460, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10394,109 +10446,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
         type: 2}
-      propertyPath: waves.Array.data[0].startDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].mobAmount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].eliteAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].mobMinSpawnTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].mobMaxSpawnTime
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].eliteMinSpawnTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].eliteMaxSpawnTime
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].startDelay
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].mobAmount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].mobMinSpawnTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].mobMaxSpawnTime
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].eliteAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].eliteMinSpawnTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].eliteMaxSpawnTime
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].startDelay
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].mobAmount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].mobMinSpawnTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].mobMaxSpawnTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].eliteAmount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].eliteMinSpawnTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].eliteMaxSpawnTime
-      value: 6
-      objectReference: {fileID: 0}
+      propertyPath: waveCounter
+      value: 
+      objectReference: {fileID: 991401230}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
   m_IsPrefabAsset: 0
@@ -10875,7 +10827,6 @@ MonoBehaviour:
     type: 2}
   activationRange: 30
   isPaused: 0
-  countdown: 
 --- !u!1 &2137921422
 GameObject:
   m_ObjectHideFlags: 0
