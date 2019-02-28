@@ -18,6 +18,7 @@ public class HealthPickup : MonoBehaviour
         healthEv = RuntimeManager.CreateInstance(healthSpawn);
         RuntimeManager.AttachInstanceToGameObject(healthEv, GetComponent<Transform>(), GetComponent<Rigidbody>());
         HealthSpawner();
+
     }
 
     public void HealthSpawner()
@@ -38,5 +39,9 @@ public class HealthPickup : MonoBehaviour
             Destroy(gameObject);
             RuntimeManager.PlayOneShot(healthPickup, transform.position);
         }
+    }
+    void Update()
+    {
+        transform.Rotate(0.8f, 0.8f, 0.8f);
     }
 }

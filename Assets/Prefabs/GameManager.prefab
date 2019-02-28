@@ -59,30 +59,30 @@ MonoBehaviour:
     hitscanIntensity: 0
     projectileIntensity: 0
     meleeIntensity: 0
-    mobAmount: 1
+    mobAmount: 10
     mobMinSpawnTime: 2
     mobMaxSpawnTime: 4
-    eliteAmount: 0
+    eliteAmount: 1
     eliteMinSpawnTime: 5
     eliteMaxSpawnTime: 8
-  - startDelay: 3
+  - startDelay: 7
     hitscanIntensity: 50
     projectileIntensity: 50
     meleeIntensity: 50
-    mobAmount: 1
+    mobAmount: 20
     mobMinSpawnTime: 2
     mobMaxSpawnTime: 4
-    eliteAmount: 0
+    eliteAmount: 2
     eliteMinSpawnTime: 5
     eliteMaxSpawnTime: 8
-  - startDelay: 4
+  - startDelay: 7
     hitscanIntensity: 100
     projectileIntensity: 100
     meleeIntensity: 100
-    mobAmount: 1
+    mobAmount: 40
     mobMinSpawnTime: 1
     mobMaxSpawnTime: 2
-    eliteAmount: 0
+    eliteAmount: 4
     eliteMinSpawnTime: 3
     eliteMaxSpawnTime: 6
   waveCountdownEventRef: event:/WaveCountdown
