@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
+    public Canvas canvas;
     public UnityEngine.UI.Text waveCounter;
+    public GameObject countdown;
 
     [Space(15)]
 
@@ -79,28 +81,33 @@ public class GameManager : MonoBehaviour {
     {
         SetSpawnersPaused(true);
 
-        if (CurrentWave > waves.Length) WinGame();
+        if (CurrentWave == waves.Length - 1)
+        {
+            WinGame();
+        }
+        else
+        {
+            waveKills = 0;
+            CurrentWave++;
+            Wave w = waves[CurrentWave];
 
-        waveKills = 0;
-        CurrentWave++;
-        Wave w = waves[CurrentWave];
- 
-        MobSpawner.spawnsLeft = w.mobAmount;
-        MobSpawner.minSpawnTime = w.mobMinSpawnTime;
-        MobSpawner.maxSpawnTime = w.mobMaxSpawnTime;
-        EliteSpawner.spawnsLeft = w.eliteAmount;
-        EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
-        EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
+            MobSpawner.spawnsLeft = w.mobAmount;
+            MobSpawner.minSpawnTime = w.mobMinSpawnTime;
+            MobSpawner.maxSpawnTime = w.mobMaxSpawnTime;
+            EliteSpawner.spawnsLeft = w.eliteAmount;
+            EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
+            EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
 
-        foreach (Spawner s in spawners) s.ResetTimer();
+            foreach (Spawner s in spawners) s.ResetTimer();
 
-        PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
+            PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
 
-        if (waveCounter.color.a < 1) waveCounter.CrossFadeAlpha(0, 2, false);
+            if (waveCounter.color.a < 1) waveCounter.CrossFadeAlpha(0, 2, false);
 
-        print("Wave " + (CurrentWave + 1));
+            print("Wave " + (CurrentWave + 1));
 
-        StartCoroutine(StartWave(w.startDelay));
+            StartCoroutine(StartWave(w.startDelay));
+        }
     }
 
     IEnumerator StartWave(float delay)
@@ -108,6 +115,8 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(delay - 3);
 
         FMODUnity.RuntimeManager.PlayOneShot(waveCountdownEventRef);
+        GameObject cd = Instantiate(countdown, canvas.transform);
+        Destroy(cd, cd.GetComponent<Animator>().runtimeAnimatorController.animationClips[0].length + 0.1f);
 
         yield return new WaitForSeconds(3);
 
