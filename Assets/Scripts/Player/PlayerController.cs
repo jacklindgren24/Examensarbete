@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour {
     PlayerHealthBar playerHealthBar;
     Coroutine invCo;
 
+    public static Vector3 position;
+
     void Start()
     {
         cam = Camera.main;
@@ -68,6 +70,8 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        position = transform.position;
+
         gunTimer += Time.deltaTime;
         meleeTimer += Time.deltaTime;
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour {
     public Canvas canvas;
     public UnityEngine.UI.Text waveCounter;
     public GameObject countdown;
+    public Transform goalSpawnerParent;
+    public GameObject waveGoalPrefab;
 
     [Space(15)]
 
@@ -27,10 +30,10 @@ public class GameManager : MonoBehaviour {
         {
             waveKills = value;
 
-            if (waveKills >= waves[CurrentWave].mobAmount + waves[CurrentWave].eliteAmount)
-            {
-                NextWave();
-            }
+            //if (waveKills >= waves[CurrentWave].mobAmount + waves[CurrentWave].eliteAmount)
+            //{
+            //    NextWave();
+            //}
         }
     }
 
@@ -43,7 +46,8 @@ public class GameManager : MonoBehaviour {
     public static int totalMeleeAttacks;
     public static int totalMeleeHits;
 
-    List<Spawner> spawners = new List<Spawner>();
+    List<Spawner> enemySpawners = new List<Spawner>();
+    List<Transform> goalSpawners = new List<Transform>();
 
     [FMODUnity.EventRef]
     public string waveCountdownEventRef;
@@ -52,16 +56,21 @@ public class GameManager : MonoBehaviour {
     {
         if (instance == null) instance = this; else Destroy(gameObject);
 
+        foreach (GameObject spawner in GameObject.FindGameObjectsWithTag("Spawner"))
+        {
+            enemySpawners.Add(spawner.GetComponent<Spawner>());
+        }
+
+        for (int i = 0; i < goalSpawnerParent.childCount; i++)
+        {
+            goalSpawners.Add(goalSpawnerParent.GetChild(i));
+        }
+
         waveCounter.CrossFadeAlpha(0, 0, true); // Make wave counter transparent on awake.
 	}
 
     void Start()
     {
-        foreach (GameObject spawner in GameObject.FindGameObjectsWithTag("Spawner"))
-        {
-            spawners.Add(spawner.GetComponent<Spawner>());
-        }
-
         CurrentWave = -1;
         NextWave();
 
@@ -69,6 +78,7 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+#if UNITY_EDITOR
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.L)) ToggleCursorState();
@@ -76,17 +86,41 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
         if (Input.GetKeyDown(KeyCode.Escape)) Quit();
     }
+#endif
 
-    void NextWave()
+    /// <summary> End the current wave. </summary>
+    /// <param name="immediate"> End wave immediately? Otherwise, wait until all enemies are killed. </param>
+    public void EndWave(bool immediate)
     {
         SetSpawnersPaused(true);
 
+        if (immediate || EnemyController.enemies.Count == 0) NextWave();
+        else StartCoroutine(WaitForEnemies());
+    }
+
+    IEnumerator WaitForEnemies()
+    {
+        while (EnemyController.enemies.Count > 0)
+        { // Yield while there are still enemies present in scene.
+            yield return null;
+        }
+
+        NextWave();
+    }
+
+    void NextWave()
+    {
         if (CurrentWave == waves.Length - 1)
         {
             WinGame();
         }
         else
         {
+            foreach (GameObject enemy in EnemyController.enemies)
+            { // Kill any remaining enemies.
+                enemy.GetComponent<EnemyController>().Die();
+            }
+
             waveKills = 0;
             CurrentWave++;
             Wave w = waves[CurrentWave];
@@ -98,7 +132,15 @@ public class GameManager : MonoBehaviour {
             EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
             EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
 
-            foreach (Spawner s in spawners) s.ResetTimer();
+            foreach (Spawner s in enemySpawners) s.ResetTimer();
+
+            Dictionary<float, Transform> distances = new Dictionary<float, Transform>();
+            foreach (Transform t in goalSpawners)
+            { // Get farthest spawner.
+                distances.Add(Vector3.Distance(PlayerController.position, t.position), t);
+            }
+            Transform goalSpawn = distances[distances.Keys.Max()];
+            Instantiate(waveGoalPrefab, goalSpawn.position, goalSpawn.rotation);
 
             PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
 
@@ -123,7 +165,7 @@ public class GameManager : MonoBehaviour {
         if (waveCounter.color.a > 0) waveCounter.CrossFadeAlpha(1, 2, false);
         waveCounter.text = "Wave " + (currentWave + 1);
 
-        foreach (Spawner spawner in spawners) spawner.isPaused = false;
+        foreach (Spawner spawner in enemySpawners) spawner.isPaused = false;
     }
 
     void WinGame()
@@ -152,7 +194,7 @@ public class GameManager : MonoBehaviour {
 
     void ToggleSpawners()
     {
-        foreach (Spawner spawner in spawners)
+        foreach (Spawner spawner in enemySpawners)
         { // Invert paused status on every spawner.
             spawner.isPaused = !spawner.isPaused;
         }
@@ -160,7 +202,7 @@ public class GameManager : MonoBehaviour {
 
     void SetSpawnersPaused(bool isPaused)
     {
-        foreach (Spawner spawner in spawners)
+        foreach (Spawner spawner in enemySpawners)
         { // Invert paused status on every spawner.
             spawner.isPaused = isPaused;
         }

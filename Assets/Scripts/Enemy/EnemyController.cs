@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
 using FMODUnity;
 
 public class EnemyController : MonoBehaviour {
+
+    public static List<GameObject> enemies = new List<GameObject>();
 
     [EventRef]
     public string enemySpawn;
@@ -63,6 +66,8 @@ public class EnemyController : MonoBehaviour {
         enemyFootstepsEv = RuntimeManager.CreateInstance(enemyFootsteps);
         RuntimeManager.AttachInstanceToGameObject(enemyFootstepsEv, GetComponent<Transform>(), GetComponent<Rigidbody>());
         EnemyFootstep();
+
+        enemies.Add(gameObject);
     }
 
     public void EnemyFootstep()
@@ -125,17 +130,23 @@ public class EnemyController : MonoBehaviour {
         Instantiate(healthPickupPrefab, transform.position, transform.rotation);
     }
 
-    void Die()
+    public void Die()
     {
         GameManager.instance.WaveKills++;
         if (gameObject.name.Contains("Mob")) GameManager.totalMobKills++;
         else GameManager.totalEliteKills++;
 
-        Destroy(gameObject);
         RuntimeManager.PlayOneShot(enemyDeath, transform.position);
         enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         float roll = Random.Range(0, 101);
         if (roll <= itemDropChance) SpawnHealth();
+
+        Destroy(gameObject);
+    }
+
+    void OnDisable()
+    {
+        enemies.Remove(gameObject);
     }
 }

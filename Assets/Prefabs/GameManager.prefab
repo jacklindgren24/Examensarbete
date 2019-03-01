@@ -54,6 +54,9 @@ MonoBehaviour:
   canvas: {fileID: 0}
   waveCounter: {fileID: 0}
   countdown: {fileID: 1198933147372970, guid: 93ee8f608b0e5be438cfe7a62c9ce06a, type: 2}
+  goalSpawnerParent: {fileID: 0}
+  waveGoalPrefab: {fileID: 1863249050442574, guid: 48fc3da754077cc42a611b17226a460c,
+    type: 2}
   waves:
   - startDelay: 5
     hitscanIntensity: 0
