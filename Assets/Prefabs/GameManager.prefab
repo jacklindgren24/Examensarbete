@@ -58,7 +58,7 @@ MonoBehaviour:
   waveGoalPrefab: {fileID: 1863249050442574, guid: 48fc3da754077cc42a611b17226a460c,
     type: 2}
   waves:
-  - startDelay: 5
+  - startDelay: 7
     hitscanIntensity: 0
     projectileIntensity: 0
     meleeIntensity: 0
