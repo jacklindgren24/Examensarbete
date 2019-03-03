@@ -89,3 +89,4 @@ MonoBehaviour:
     eliteMinSpawnTime: 3
     eliteMaxSpawnTime: 6
   waveCountdownEventRef: event:/WaveCountdown
+  waveClearEventRef: event:/WaveClear

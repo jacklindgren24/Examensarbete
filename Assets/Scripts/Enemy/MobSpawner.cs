@@ -2,9 +2,10 @@
 
 public class MobSpawner : Spawner
 {
-    public static int spawnsLeft;
     public static float minSpawnTime;
     public static float maxSpawnTime;
+    public static int maxActive;
+    public static int activeMobs;
 
     protected override void Start()
     {
@@ -14,7 +15,7 @@ public class MobSpawner : Spawner
 
     void Update()
     {
-        if (!isPaused && spawnsLeft > 0 && player != null)
+        if (!isPaused && activeMobs < maxActive && player != null)
         {
             if (Vector3.Distance(player.position, transform.position) <= activationRange)
             { // Only update timer if player is within range.
@@ -33,7 +34,7 @@ public class MobSpawner : Spawner
     void Spawn()
     {
         Instantiate(enemyPrefab, transform.position, transform.rotation);
-        spawnsLeft--;
+        activeMobs++;
     }
 
     void NewSpawnTime()

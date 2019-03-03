@@ -10690,6 +10690,36 @@ Prefab:
       propertyPath: goalSpawnerParent
       value: 
       objectReference: {fileID: 1565377508}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[0].maxMobAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[0].maxEliteAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[1].maxMobAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[1].maxEliteAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[2].maxMobAmount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[2].maxEliteAmount
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
   m_IsPrefabAsset: 0

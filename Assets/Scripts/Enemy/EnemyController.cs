@@ -133,8 +133,16 @@ public class EnemyController : MonoBehaviour {
     public void Die()
     {
         GameManager.instance.WaveKills++;
-        if (gameObject.name.Contains("Mob")) GameManager.totalMobKills++;
-        else GameManager.totalEliteKills++;
+        if (gameObject.name.Contains("Mob"))
+        {
+            GameManager.totalMobKills++;
+            MobSpawner.activeMobs--;
+        }
+        else
+        {
+            GameManager.totalEliteKills++;
+            EliteSpawner.activeElites--;
+        }
 
         RuntimeManager.PlayOneShot(enemyDeath, transform.position);
         enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

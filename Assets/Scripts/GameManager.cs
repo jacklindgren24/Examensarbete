@@ -16,6 +16,14 @@ public class GameManager : MonoBehaviour {
     [Space(15)]
 
     public Wave[] waves;
+
+    [Space(15)]
+
+    [FMODUnity.EventRef]
+    public string waveCountdownEventRef;
+    [FMODUnity.EventRef]
+    public string waveClearEventRef;
+
     int currentWave = -1;
     public int CurrentWave
     {
@@ -49,9 +57,6 @@ public class GameManager : MonoBehaviour {
     List<Spawner> enemySpawners = new List<Spawner>();
     List<Transform> goalSpawners = new List<Transform>();
 
-    [FMODUnity.EventRef]
-    public string waveCountdownEventRef;
-
     void Awake ()
     {
         if (instance == null) instance = this; else Destroy(gameObject);
@@ -60,6 +65,7 @@ public class GameManager : MonoBehaviour {
         {
             enemySpawners.Add(spawner.GetComponent<Spawner>());
         }
+        SetSpawnersPaused(true);
 
         for (int i = 0; i < goalSpawnerParent.childCount; i++)
         {
@@ -125,10 +131,10 @@ public class GameManager : MonoBehaviour {
             CurrentWave++;
             Wave w = waves[CurrentWave];
 
-            MobSpawner.spawnsLeft = w.mobAmount;
+            MobSpawner.maxActive = w.maxMobAmount;
             MobSpawner.minSpawnTime = w.mobMinSpawnTime;
             MobSpawner.maxSpawnTime = w.mobMaxSpawnTime;
-            EliteSpawner.spawnsLeft = w.eliteAmount;
+            EliteSpawner.maxActive = w.maxEliteAmount;
             EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
             EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
 
@@ -145,6 +151,8 @@ public class GameManager : MonoBehaviour {
             PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
 
             if (waveCounter.color.a < 1) waveCounter.CrossFadeAlpha(0, 2, false);
+
+            if (CurrentWave > 0) FMODUnity.RuntimeManager.PlayOneShot(waveClearEventRef);
 
             print("Wave " + (CurrentWave + 1));
 
@@ -226,12 +234,12 @@ public struct Wave
     public int meleeIntensity;
 
     [Header("Mob")]
-    public int mobAmount;
+    public int maxMobAmount;
     public float mobMinSpawnTime;
     public float mobMaxSpawnTime;
 
     [Header("Elite")]
-    public int eliteAmount;
+    public int maxEliteAmount;
     public float eliteMinSpawnTime;
     public float eliteMaxSpawnTime;
 }
