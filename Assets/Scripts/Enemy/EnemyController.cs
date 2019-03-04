@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour {
 
     int health;
     public int Health
+    
     {
         get { return health; }
         set
@@ -137,11 +138,13 @@ public class EnemyController : MonoBehaviour {
         {
             GameManager.totalMobKills++;
             MobSpawner.activeMobs--;
+            ScoreScript.scoreValue += 25;
         }
         else
         {
             GameManager.totalEliteKills++;
             EliteSpawner.activeElites--;
+            ScoreScript.scoreValue += 50;
         }
 
         RuntimeManager.PlayOneShot(enemyDeath, transform.position);
