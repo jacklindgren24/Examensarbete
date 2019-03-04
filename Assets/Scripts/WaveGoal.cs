@@ -24,6 +24,8 @@ public class WaveGoal : MonoBehaviour
         {
             GameManager.instance.EndWave(false);
             Destroy(gameObject);
+            ScoreScript.scoreValue += 100;
+
         }
     }
 
