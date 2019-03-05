@@ -1,19 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreScript : MonoBehaviour {
+public class ScoreScript : MonoBehaviour
+{
+    static int score = 0;
+    public static int Score
+    {
+        get { return score; }
+        set
+        {
+            score = value;
+            scoreText.text = Score.ToString();
+        }
+    }
 
-    public static int scoreValue = 0;
-    Text score;
-	void Start ()
+    static Text scoreText;
+
+    void Awake()
     {
-        score = GetComponent<Text> ();	
-	}
-	
-	void Update ()
-    {
-        score.text = "POINTS: " + scoreValue;
+        scoreText = GetComponent<Text>();	
 	}
 }

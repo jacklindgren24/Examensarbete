@@ -138,13 +138,13 @@ public class EnemyController : MonoBehaviour {
         {
             GameManager.totalMobKills++;
             MobSpawner.activeMobs--;
-            ScoreScript.scoreValue += 25;
+            ScoreScript.Score += 25;
         }
         else
         {
             GameManager.totalEliteKills++;
             EliteSpawner.activeElites--;
-            ScoreScript.scoreValue += 50;
+            ScoreScript.Score += 50;
         }
 
         RuntimeManager.PlayOneShot(enemyDeath, transform.position);

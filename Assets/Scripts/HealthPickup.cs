@@ -36,7 +36,7 @@ public class HealthPickup : MonoBehaviour
         {
             other.GetComponent<PlayerController>().Health += heal;
             healthEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            ScoreScript.scoreValue += 10;
+            ScoreScript.Score += 10;
             Destroy(gameObject);
             RuntimeManager.PlayOneShot(healthPickup, transform.position);
         }
