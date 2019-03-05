@@ -275,7 +275,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &114203128643982190
 MonoBehaviour:
@@ -303,16 +303,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b1833294e8741408bfa3baae50fe10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAcceleration: 30
   airAcceleration: 6
-  baseMaxSpeed: 5
-  sprintMaxSpeed: 8
+  baseSpeed: 5
+  sprintSpeed: 8
+  backstepModifier: 0.66
   jumpHeight: 5
   stoppingFriction: 12
+  isSprinting: 0
   playerFootsteps: event:/Characters/Player/PlayerFootsteps
   playerJump: event:/Characters/Player/PlayerJump
   playerLand: event:/Characters/Player/PlayerLand
-  isSprinting: 0
 --- !u!114 &114685428696394502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,12 +328,12 @@ MonoBehaviour:
   baseHealth: 100
   maxHealth: 200
   invincibleDuration: 1
-  playerHurt: event:/Characters/Player/PlayerHit
-  playerDie: event:/Characters/Player/PlayerDeath
   weapon: 0
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}
   bulletSpawn: {fileID: 4965042735544536}
+  playerHurt: event:/Characters/Player/PlayerHit
+  playerDie: event:/Characters/Player/PlayerDeath
 --- !u!114 &114773980170327664
 MonoBehaviour:
   m_ObjectHideFlags: 1

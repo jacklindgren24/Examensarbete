@@ -5,10 +5,10 @@ public class PlayerMovement : MonoBehaviour {
 
     public static PlayerMovement instance;
 
-    public float baseAcceleration = 30;
     public float airAcceleration = 6;
-    public float baseMaxSpeed = 5;
-    public float sprintMaxSpeed = 8;
+    public float baseSpeed = 5;
+    public float sprintSpeed = 8;
+    public float backstepModifier = 0.66f;
     public float jumpHeight = 5;
     public float stoppingFriction = 12;
 
@@ -81,16 +81,21 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate ()
     {
         rb.drag = 0;
-        IsGrounded = Physics.Raycast(transform.position, -transform.up, height + shell); // Check if player is standing on something.
+
+        // Check if player is standing on something (exclude triggers).
+        IsGrounded = Physics.Raycast(transform.position, -transform.up, height + shell, ~0, QueryTriggerInteraction.Ignore);
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 dir = transform.forward * z + transform.right * x;
+        if (dir.magnitude > 1) dir /= dir.magnitude; // Limit diagonal movement.
+        if (z < 0) dir.z *= backstepModifier; // Modify backwards movement.
 
         if (IsGrounded)
-        {
-            if (Input.GetButton("Sprint")) isSprinting = true; else isSprinting = false;
+        { // Grounded movement.
+            if (Input.GetButton("Sprint") && z > 0) isSprinting = true;
+            else isSprinting = false;
 
             if (x == 0 && z == 0)
             { // No input.
@@ -99,16 +104,13 @@ public class PlayerMovement : MonoBehaviour {
             }
             else
             { // Input.
-                rb.AddForce(dir * baseAcceleration * Time.fixedDeltaTime, ForceMode.VelocityChange);
+                if (isSprinting) rb.velocity = new Vector3(dir.x * sprintSpeed, rb.velocity.y, dir.z * sprintSpeed);
+                else rb.velocity = new Vector3(dir.x * baseSpeed, rb.velocity.y, dir.z * baseSpeed);
                 PlayFootstep();
             }
-
-            // Limit speed to max speed.
-            float ms = isSprinting ? sprintMaxSpeed : baseMaxSpeed;
-            if (rb.velocity.magnitude > ms) rb.velocity = rb.velocity.normalized * ms;
         }
         else
-        {
+        { // Air movement.
             rb.AddForce(dir * airAcceleration * Time.fixedDeltaTime, ForceMode.VelocityChange);
             rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -lastGroundedVelocity.x, lastGroundedVelocity.x), 
               rb.velocity.y, Mathf.Clamp(rb.velocity.z, -lastGroundedVelocity.z, lastGroundedVelocity.z));
@@ -121,8 +123,8 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (IsGrounded && Input.GetButtonDown("Jump"))
         { // Jump.
-            rb.AddForce(transform.up * jumpHeight, ForceMode.VelocityChange);
-            RuntimeManager.PlayOneShot(playerJump, transform.position);
+            rb.velocity += transform.up * jumpHeight;
+            RuntimeManager.PlayOneShot(playerJump);
         }
     }
 }

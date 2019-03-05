@@ -185,6 +185,8 @@ public class GameManager : MonoBehaviour {
     {
         Cursor.visible = !Cursor.visible;
         Cursor.lockState = Cursor.lockState == CursorLockMode.None ? CursorLockMode.Locked : CursorLockMode.None;
+
+        print("Cursor state toggled.");
     }
 
     void ToggleMute()
@@ -198,6 +200,8 @@ public class GameManager : MonoBehaviour {
         master.getMute(out isMuted);
 
         master.setMute(!isMuted); // Invert mute status.
+
+        print("Mute toggled.");
     }
 
     void ToggleSpawners()
@@ -206,6 +210,8 @@ public class GameManager : MonoBehaviour {
         { // Invert paused status on every spawner.
             spawner.isPaused = !spawner.isPaused;
         }
+
+        print("Toggled spawners.");
     }
 
     void SetSpawnersPaused(bool isPaused)
