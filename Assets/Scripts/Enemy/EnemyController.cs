@@ -41,9 +41,9 @@ public class EnemyController : MonoBehaviour {
 
     public int baseHealth = 100;
     public int damage = 34;
-    public float itemDropChance = 20;
+    public float itemDropChance = 10;
     public float cooldown = 1;
-    public float windUp = 0.5f;
+    public float windUp = 0.25f;
     public float pushback = 5;
     public float range = 3;
 

@@ -121,7 +121,7 @@ MonoBehaviour:
   damage: 50
   itemDropChance: 50
   cooldown: 2
-  windUp: 0.75
+  windUp: 0.33
   pushback: 7
   range: 3.5
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,

@@ -119,9 +119,9 @@ MonoBehaviour:
   enemyFootsteps: event:/Characters/Enemy/EnemyFootsteps
   baseHealth: 100
   damage: 34
-  itemDropChance: 20
+  itemDropChance: 10
   cooldown: 1
-  windUp: 0.5
+  windUp: 0.25
   pushback: 5
   range: 3
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,

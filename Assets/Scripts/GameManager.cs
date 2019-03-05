@@ -140,14 +140,6 @@ public class GameManager : MonoBehaviour {
 
             foreach (Spawner s in enemySpawners) s.ResetTimer();
 
-            Dictionary<float, Transform> distances = new Dictionary<float, Transform>();
-            foreach (Transform t in goalSpawners)
-            { // Get farthest spawner.
-                distances.Add(Vector3.Distance(PlayerController.position, t.position), t);
-            }
-            Transform goalSpawn = distances[distances.Keys.Max()];
-            Instantiate(waveGoalPrefab, goalSpawn.position, goalSpawn.rotation);
-
             PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
 
             if (waveCounter.color.a < 1) waveCounter.CrossFadeAlpha(0, 2, false);
@@ -173,7 +165,16 @@ public class GameManager : MonoBehaviour {
         if (waveCounter.color.a > 0) waveCounter.CrossFadeAlpha(1, 2, false);
         waveCounter.text = "Wave " + (currentWave + 1);
 
-        foreach (Spawner spawner in enemySpawners) spawner.isPaused = false;
+        // Spawn wave goal cube.
+        Dictionary<float, Transform> distances = new Dictionary<float, Transform>();
+        foreach (Transform t in goalSpawners)
+        { // Get distance to each spawner.
+            distances.Add(Vector3.Distance(PlayerController.position, t.position), t);
+        }
+        Transform goalSpawn = distances[distances.Keys.Max()]; // Get farthest spawner.
+        Instantiate(waveGoalPrefab, goalSpawn.position, goalSpawn.rotation);
+
+        SetSpawnersPaused(false); // Unpause spawners.
     }
 
     void WinGame()
