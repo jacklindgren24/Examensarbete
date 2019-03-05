@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1423550802078450}
+  m_RootGameObject: {fileID: 1435173001141382}
   m_IsPrefabAsset: 1
---- !u!1 &1423550802078450
+--- !u!1 &1435173001141382
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4594207313549214}
-  - component: {fileID: 114383904873072302}
-  - component: {fileID: 195282930386931444}
-  - component: {fileID: 33256094157166192}
-  - component: {fileID: 23937007324713632}
-  - component: {fileID: 54548166830343816}
-  - component: {fileID: 136183711135358354}
+  - component: {fileID: 4073280108130614}
+  - component: {fileID: 114830989486817764}
+  - component: {fileID: 195471458616347548}
+  - component: {fileID: 33346701252318918}
+  - component: {fileID: 23447164083434824}
+  - component: {fileID: 54751254847903508}
+  - component: {fileID: 136374338200138862}
   m_Layer: 9
-  m_Name: Elite Enemy
+  m_Name: Ranged Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4594207313549214
+--- !u!4 &4073280108130614
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423550802078450}
+  m_GameObject: {fileID: 1435173001141382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.996, z: -52.45}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -2.097, y: 1.1, z: -52.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23937007324713632
+--- !u!23 &23447164083434824
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423550802078450}
+  m_GameObject: {fileID: 1435173001141382}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -80,21 +80,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33256094157166192
+--- !u!33 &33346701252318918
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423550802078450}
+  m_GameObject: {fileID: 1435173001141382}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54548166830343816
+--- !u!54 &54751254847903508
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423550802078450}
+  m_GameObject: {fileID: 1435173001141382}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 1
   m_Drag: 6
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -102,36 +102,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114383904873072302
+--- !u!114 &114830989486817764
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423550802078450}
+  m_GameObject: {fileID: 1435173001141382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15da72f3ae2dc7c48b3156cb1cb4d17b, type: 3}
+  m_Script: {fileID: 11500000, guid: e0de0d6dac93fad41aa05d817d96d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnEventRef: event:/Characters/Enemy/EliteSpawn
-  enemyDeathEventRef: event:/Characters/Enemy/EliteDeath
-  enemyHitEventRef: event:/Characters/Enemy/EliteHit
+  enemySpawnEventRef: 
+  enemyDeathEventRef: 
+  enemyHitEventRef: 
   enemyAttackEventRef: 
-  enemyFootstepsEventRef: event:/Characters/Enemy/EliteFootsteps
-  baseHealth: 200
-  damage: 60
-  itemDropChance: 35
-  cooldown: 2
-  range: 3.5
+  enemyFootstepsEventRef: 
+  baseHealth: 60
+  damage: 25
+  itemDropChance: 15
+  cooldown: 3
+  range: 40
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
-  windUp: 0.33
---- !u!136 &136183711135358354
+  projectileSpawn: {fileID: 0}
+  projectilePrefab: {fileID: 1381732703473768, guid: 9d5906a30c7b1b8409996ed16176ca5f,
+    type: 2}
+  projectileSpeed: 60
+  inaccuracy: 5
+  stopDelay: 0.5
+--- !u!136 &136374338200138862
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423550802078450}
+  m_GameObject: {fileID: 1435173001141382}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -139,16 +144,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &195282930386931444
+--- !u!195 &195471458616347548
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423550802078450}
+  m_GameObject: {fileID: 1435173001141382}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120

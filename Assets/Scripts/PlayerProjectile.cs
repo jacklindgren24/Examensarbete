@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour {
-
+public class PlayerProjectile : MonoBehaviour
+{
     const int layerMask = ~0;
     const float radius = 0.1f;
 

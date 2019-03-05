@@ -30,23 +30,10 @@ public class GameManager : MonoBehaviour {
         get { return currentWave; }
         set { currentWave = value; }
     }
-    int waveKills = 0;
-    public int WaveKills
-    {
-        get { return waveKills; }
-        set
-        {
-            waveKills = value;
-
-            //if (waveKills >= waves[CurrentWave].mobAmount + waves[CurrentWave].eliteAmount)
-            //{
-            //    NextWave();
-            //}
-        }
-    }
 
     public static int totalMobKills;
     public static int totalEliteKills;
+    public static int totalRangedKills;
     public static int totalHitscanShots;
     public static int totalHitscanHits;
     public static int totalProjectilesShot;
@@ -127,7 +114,6 @@ public class GameManager : MonoBehaviour {
                 enemy.GetComponent<EnemyController>().Die();
             }
 
-            waveKills = 0;
             CurrentWave++;
             Wave w = waves[CurrentWave];
 

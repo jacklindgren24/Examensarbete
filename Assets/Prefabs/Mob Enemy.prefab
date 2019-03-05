@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4125689978997110}
-  - component: {fileID: 114566991500217144}
+  - component: {fileID: 114720033040928812}
   - component: {fileID: 195281691469396534}
   - component: {fileID: 33689962052567210}
   - component: {fileID: 23530142111776602}
@@ -102,7 +102,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114566991500217144
+--- !u!114 &114720033040928812
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,22 +110,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1313571767161068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ab700c6e03a3847a0eba99211697e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 53568e306aa5fb04e980a2e56911c1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawn: event:/Characters/Enemy/EnemySpawn
-  enemyDeath: event:/Characters/Enemy/EnemyDeath
-  enemyHit: event:/Characters/Enemy/EnemyHit
-  enemyFootsteps: event:/Characters/Enemy/EnemyFootsteps
+  enemySpawnEventRef: event:/Characters/Enemy/EnemySpawn
+  enemyDeathEventRef: event:/Characters/Enemy/EnemyDeath
+  enemyHitEventRef: event:/Characters/Enemy/EnemyHit
+  enemyAttackEventRef: 
+  enemyFootstepsEventRef: event:/Characters/Enemy/EnemyFootsteps
   baseHealth: 100
   damage: 34
   itemDropChance: 10
   cooldown: 1
-  windUp: 0.25
-  pushback: 5
   range: 3
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
+  windUp: 0.25
 --- !u!136 &136161750184866292
 CapsuleCollider:
   m_ObjectHideFlags: 1

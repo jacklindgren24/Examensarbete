@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreScript : MonoBehaviour
+public class ScoreCounter : MonoBehaviour
 {
     static int score = 0;
     public static int Score
