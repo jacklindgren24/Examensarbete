@@ -34,7 +34,6 @@ public class MobSpawner : Spawner
     void Spawn()
     {
         Instantiate(enemyPrefab, transform.position, transform.rotation);
-        activeMobs++;
     }
 
     void NewSpawnTime()

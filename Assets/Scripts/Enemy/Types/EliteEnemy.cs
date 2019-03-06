@@ -8,7 +8,7 @@ public class EliteEnemy : EnemyController
     {
         attackTimer += Time.deltaTime;
 
-        if (agent != null && target != null)
+        if (target != null)
         {
             if (Vector3.Distance(transform.position, target.position) > range)
             { // Enemy is not within attacking range of target, move towards target.
@@ -30,6 +30,10 @@ public class EliteEnemy : EnemyController
                 }
             }
         }
+        else
+        {
+            agent.isStopped = true;
+        }
     }
 
     protected override void Attack()
@@ -39,13 +43,12 @@ public class EliteEnemy : EnemyController
 
         player.Health -= damage;
 
-        FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
     }
 
     public override void Die()
     {
         GameManager.totalEliteKills++;
-        EliteSpawner.activeElites--;
         ScoreCounter.Score += 50;
 
         base.Die();

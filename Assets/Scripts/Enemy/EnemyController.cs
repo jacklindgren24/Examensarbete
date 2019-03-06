@@ -39,7 +39,7 @@ public abstract class EnemyController : MonoBehaviour {
     [EventRef]
     public string enemyFootstepsEventRef;
 
-    FMOD.Studio.EventInstance enemyFootstepsEv;
+    [Space(15)]
 
     public int baseHealth = 100;
     public int damage = 34;
@@ -54,8 +54,30 @@ public abstract class EnemyController : MonoBehaviour {
     protected NavMeshAgent agent;
     protected PlayerController player;
     protected Transform target;
+    protected Rigidbody rb;
+
+    public FMOD.Studio.EventInstance enemyFootstepsEv;
 
     protected abstract void Attack();
+
+    void OnEnable()
+    {
+        if (GetType() == typeof(EliteEnemy))
+        {
+            EliteSpawner.activeElites++;
+            //print(EliteSpawner.activeElites);
+        }
+        else if (GetType() == typeof(RangedEnemy))
+        {
+            RangedSpawner.activeRangedEnemies++;
+            //print(RangedSpawner.activeRangedEnemies);
+        }
+        else
+        {
+            MobSpawner.activeMobs++;
+            //print(MobSpawner.activeMobs);
+        }
+    }
 
     protected virtual void Start()
     {
@@ -64,17 +86,24 @@ public abstract class EnemyController : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         target = player.gameObject.transform;
+        rb = GetComponent<Rigidbody>();
 
         RuntimeManager.PlayOneShot(enemySpawnEventRef, transform.position);
 
         enemyFootstepsEv = RuntimeManager.CreateInstance(enemyFootstepsEventRef);
-        RuntimeManager.AttachInstanceToGameObject(enemyFootstepsEv, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        EnemyFootstep();
+        RuntimeManager.AttachInstanceToGameObject(enemyFootstepsEv, transform, rb);
+        PlayFootstep();
 
         enemies.Add(gameObject);
     }
 
-    void EnemyFootstep()
+    void LateUpdate()
+    {
+        if (rb.velocity.x != 0 || rb.velocity.z != 0 && target != null) PlayFootstep();
+        else enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    void PlayFootstep()
     {
         FMOD.Studio.PLAYBACK_STATE state;
         enemyFootstepsEv.getPlaybackState(out state);
@@ -97,19 +126,6 @@ public abstract class EnemyController : MonoBehaviour {
 
     public virtual void Die()
     {
-        if (gameObject.name.Contains("Mob"))
-        {
-            GameManager.totalMobKills++;
-            MobSpawner.activeMobs--;
-            ScoreCounter.Score += 25;
-        }
-        else
-        {
-            GameManager.totalEliteKills++;
-            EliteSpawner.activeElites--;
-            ScoreCounter.Score += 50;
-        }
-
         RuntimeManager.PlayOneShot(enemyDeathEventRef, transform.position);
         enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
@@ -121,6 +137,22 @@ public abstract class EnemyController : MonoBehaviour {
 
     void OnDisable()
     {
+        if (GetType() == typeof(EliteEnemy))
+        {
+            EliteSpawner.activeElites--;
+            //print(EliteSpawner.activeElites);
+        }
+        else if (GetType() == typeof(RangedEnemy))
+        {
+            RangedSpawner.activeRangedEnemies--;
+            //print(RangedSpawner.activeRangedEnemies);
+        }
+        else
+        {
+            MobSpawner.activeMobs--;
+            //print(MobSpawner.activeMobs);
+        }
+
         enemies.Remove(gameObject);
     }
 }

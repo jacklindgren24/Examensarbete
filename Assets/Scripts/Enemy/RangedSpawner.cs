@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class EliteSpawner : Spawner
+public class RangedSpawner : Spawner
 {
     public static float minSpawnTime;
     public static float maxSpawnTime;
     public static int maxActive;
-    public static int activeElites;
+    public static int activeRangedEnemies;
 
     protected override void Start()
     {
@@ -15,7 +15,7 @@ public class EliteSpawner : Spawner
 
     void Update()
     {
-        if (!isPaused && activeElites < maxActive && player != null)
+        if (!isPaused && activeRangedEnemies < maxActive && player != null)
         {
             if (Vector3.Distance(player.position, transform.position) <= activationRange)
             { // Only update timer if player is within range.

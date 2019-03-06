@@ -123,6 +123,10 @@ public class GameManager : MonoBehaviour {
             EliteSpawner.maxActive = w.maxEliteAmount;
             EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
             EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
+            RangedSpawner.maxActive = w.maxRangedAmount;
+            RangedSpawner.minSpawnTime = w.rangedMinSpawnTime;
+            RangedSpawner.maxSpawnTime = w.rangedMaxSpawnTime;
+            RangedSpawner.activeRangedEnemies = w.maxRangedAmount;
 
             foreach (Spawner s in enemySpawners) s.ResetTimer();
 
@@ -141,13 +145,13 @@ public class GameManager : MonoBehaviour {
     IEnumerator StartWave(float delay)
     {
         yield return new WaitForSeconds(delay - 3);
-
+        
         FMODUnity.RuntimeManager.PlayOneShot(waveCountdownEventRef);
         GameObject cd = Instantiate(countdown, canvas.transform);
         Destroy(cd, cd.GetComponent<Animator>().runtimeAnimatorController.animationClips[0].length + 0.1f);
 
         yield return new WaitForSeconds(3);
-
+        
         if (waveCounter.color.a > 0) waveCounter.CrossFadeAlpha(1, 2, false);
         waveCounter.text = "Wave " + (currentWave + 1);
 
@@ -201,7 +205,7 @@ public class GameManager : MonoBehaviour {
         print("Toggled spawners.");
     }
 
-    void SetSpawnersPaused(bool isPaused)
+    public void SetSpawnersPaused(bool isPaused)
     {
         foreach (Spawner spawner in enemySpawners)
         { // Invert paused status on every spawner.
@@ -235,4 +239,9 @@ public struct Wave
     public int maxEliteAmount;
     public float eliteMinSpawnTime;
     public float eliteMaxSpawnTime;
+
+    [Header("Ranged")]
+    public int maxRangedAmount;
+    public float rangedMinSpawnTime;
+    public float rangedMaxSpawnTime;
 }

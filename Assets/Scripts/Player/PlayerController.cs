@@ -184,6 +184,7 @@ public class PlayerController : MonoBehaviour {
     IEnumerator Death(Vector3 camPos, Quaternion camRot)
     {
         Destroy(GameObject.FindWithTag("GameCanvas"));
+        GameManager.instance.SetSpawnersPaused(true);
 
         AsyncOperation loading = SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
         yield return new WaitUntil(() => loading.isDone);

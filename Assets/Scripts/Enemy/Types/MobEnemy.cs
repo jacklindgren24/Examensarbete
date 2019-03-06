@@ -8,7 +8,7 @@ public class MobEnemy : EnemyController
     {
         attackTimer += Time.deltaTime;
 
-        if (agent != null && target != null)
+        if (target != null)
         {
             if (Vector3.Distance(transform.position, target.position) > range)
             { // Enemy is not within attacking range of target, move towards target.
@@ -30,6 +30,10 @@ public class MobEnemy : EnemyController
                 }
             }
         }
+        else
+        {
+            agent.isStopped = true;
+        }
     }
 
     protected override void Attack()
@@ -39,13 +43,12 @@ public class MobEnemy : EnemyController
 
         player.Health -= damage;
 
-        FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
     }
 
     public override void Die()
     {
         GameManager.totalMobKills++;
-        MobSpawner.activeMobs--;
         ScoreCounter.Score += 25;
 
         base.Die();

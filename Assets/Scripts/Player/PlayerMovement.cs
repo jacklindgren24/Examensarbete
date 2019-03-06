@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     public float backstepModifier = 0.66f;
     public float jumpHeight = 5;
     public float stoppingFriction = 12;
+    public float maxSlope = 35;
 
     Rigidbody rb;
     float height;
@@ -52,7 +53,11 @@ public class PlayerMovement : MonoBehaviour {
 
     FMOD.Studio.EventInstance playerFootstepEv;
 
+    float castRadius;
+    float castDistance;
+
     const float shell = 0.02f;
+    const float sphereCastRadiusShrink = 0.1f;
 
     void Awake()
     {
@@ -62,7 +67,9 @@ public class PlayerMovement : MonoBehaviour {
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        height = transform.localScale.y;
+
+        castRadius = GetComponent<CapsuleCollider>().radius * transform.localScale.x - sphereCastRadiusShrink;
+        castDistance = transform.localScale.y + shell - castRadius + sphereCastRadiusShrink;
 
         playerFootstepEv = RuntimeManager.CreateInstance(playerFootsteps);
     }
@@ -82,15 +89,31 @@ public class PlayerMovement : MonoBehaviour {
     {
         rb.drag = 0;
 
-        // Check if player is standing on something (exclude triggers).
-        IsGrounded = Physics.Raycast(transform.position, -transform.up, height + shell, ~0, QueryTriggerInteraction.Ignore);
-
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 dir = transform.forward * z + transform.right * x;
         if (dir.magnitude > 1) dir /= dir.magnitude; // Limit diagonal movement.
         if (z < 0) dir.z *= backstepModifier; // Modify backwards movement.
+
+        // Check if player is standing on something (exclude triggers).
+        RaycastHit hit = new RaycastHit();
+        if (Physics.SphereCast(transform.position, castRadius, -transform.up, out hit, castDistance, ~0, QueryTriggerInteraction.Ignore))
+        { // Standing on surface.
+            if (Vector3.Angle(transform.up, hit.normal) <= maxSlope)
+            { // Standing on non-steep surface; account for surface normal.
+                IsGrounded = true;
+                dir = Vector3.ProjectOnPlane(dir, hit.normal);
+            }
+            else
+            {  // Standing on steep surface; treat as not grounded.
+                IsGrounded = false;
+            }
+        }
+        else
+        { // Not standing on surface.
+            IsGrounded = false;
+        }
 
         if (IsGrounded)
         { // Grounded movement.

@@ -5,6 +5,8 @@ public class EnemyProjectile : MonoBehaviour
     const int layerMask = ~0;
     const float radius = 0.1f;
 
+    public int damage;
+
     void FixedUpdate()
     {
         Collider[] results = Physics.OverlapSphere(transform.position, radius, layerMask, QueryTriggerInteraction.Ignore);
@@ -15,7 +17,7 @@ public class EnemyProjectile : MonoBehaviour
             {
                 if (result.gameObject.tag == "Player")
                 { // Hit player, hurt and destroy self.
-                    result.GetComponent<PlayerController>().Health -= ProjectileWeapon.damage;
+                    result.GetComponent<PlayerController>().Health -= damage;
                     Destroy(gameObject);
                     return;
                 }

@@ -9,9 +9,19 @@ public class GameOver : MonoBehaviour {
 
     public void Retry()
     {
+        ScoreCounter.Score = 0;
+
         RuntimeManager.GetBus("bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         deathSnapEv.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         deathSnapEv.release();
+
+        foreach (GameObject enemy in EnemyController.enemies)
+        {
+            enemy.GetComponent<EnemyController>().enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            enemy.GetComponent<EnemyController>().enemyFootstepsEv.release();
+        }
+
+        EnemyController.enemies.Clear();
 
         SceneManager.LoadScene("Arena", LoadSceneMode.Single);
 

@@ -32,6 +32,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1971722767180932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4189740952631312}
+  m_Layer: 9
+  m_Name: Projectile Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4073280108130614
 Transform:
   m_ObjectHideFlags: 1
@@ -39,10 +54,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1435173001141382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.097, y: 1.1, z: -52.45}
+  m_LocalPosition: {x: 1.49, y: 1.1, z: -69.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4189740952631312}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4189740952631312
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971722767180932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4073280108130614}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23447164083434824
@@ -100,7 +129,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &114830989486817764
 MonoBehaviour:
@@ -113,23 +142,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0de0d6dac93fad41aa05d817d96d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnEventRef: 
-  enemyDeathEventRef: 
-  enemyHitEventRef: 
+  enemySpawnEventRef: event:/Characters/Enemy/EnemySpawn
+  enemyDeathEventRef: event:/Characters/Enemy/EnemyDeath
+  enemyHitEventRef: event:/Characters/Enemy/EnemyHit
   enemyAttackEventRef: 
-  enemyFootstepsEventRef: 
-  baseHealth: 60
+  enemyFootstepsEventRef: event:/Characters/Enemy/EnemyFootsteps
+  baseHealth: 40
   damage: 25
   itemDropChance: 15
   cooldown: 3
-  range: 40
+  range: 15
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
-  projectileSpawn: {fileID: 0}
+  projectileSpawn: {fileID: 4189740952631312}
   projectilePrefab: {fileID: 1381732703473768, guid: 9d5906a30c7b1b8409996ed16176ca5f,
     type: 2}
-  projectileSpeed: 60
-  inaccuracy: 5
+  projectileSpeed: 50
+  inaccuracy: 3
   stopDelay: 0.5
 --- !u!136 &136374338200138862
 CapsuleCollider:
@@ -154,10 +183,10 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 6
-  m_Acceleration: 30
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
