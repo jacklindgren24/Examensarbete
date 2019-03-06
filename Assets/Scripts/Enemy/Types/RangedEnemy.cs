@@ -16,6 +16,7 @@ public class RangedEnemy : EnemyController
             if (Physics.Linecast(transform.position, target.position, ~LayerMask.GetMask("Enemy", "Player"), QueryTriggerInteraction.Ignore)
                 || Vector3.Distance(transform.position, target.position) > range)
             { // View of target is blocked or enemy is out of attack range.
+                CancelInvoke();
                 agent.isStopped = false;
                 agent.SetDestination(target.position);
 

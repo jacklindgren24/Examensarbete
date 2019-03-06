@@ -292,6 +292,8 @@ MonoBehaviour:
   sensitivityY: 1
   maxAngle: 90
   minAngle: -90
+  shakeIntensity: 6
+  shakeDuration: 0.4
 --- !u!114 &114468048078551338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -309,6 +311,7 @@ MonoBehaviour:
   backstepModifier: 0.66
   jumpHeight: 5
   stoppingFriction: 12
+  maxSlope: 35
   isSprinting: 0
   playerFootsteps: event:/Characters/Player/PlayerFootsteps
   playerJump: event:/Characters/Player/PlayerJump

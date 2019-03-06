@@ -99,7 +99,7 @@ public abstract class EnemyController : MonoBehaviour {
 
     void LateUpdate()
     {
-        if (rb.velocity.x != 0 || rb.velocity.z != 0 && target != null) PlayFootstep();
+        if (!agent.isStopped && target != null) PlayFootstep();
         else enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
