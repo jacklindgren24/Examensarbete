@@ -15,7 +15,7 @@ public class PlayerProjectile : MonoBehaviour
             {
                 if (result.gameObject.tag == "Enemy")
                 { // Hit enemy, hurt and destroy self.
-                    result.GetComponent<EnemyController>().Health -= ProjectileWeapon.damage;
+                    result.GetComponentInParent<EnemyController>().Health -= ProjectileWeapon.damage;
                     GameManager.totalProjectilesHit++;
                     Destroy(gameObject);
                     return;
