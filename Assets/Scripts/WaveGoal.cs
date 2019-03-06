@@ -31,7 +31,7 @@ public class WaveGoal : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0.0f, rotationSpeed * Time.deltaTime, 0.0f);
+
     }
 
     void OnDisable()

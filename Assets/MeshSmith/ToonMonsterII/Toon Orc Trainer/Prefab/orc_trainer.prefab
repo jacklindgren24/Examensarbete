@@ -66,6 +66,9 @@ GameObject:
   - component: {fileID: 4847912929343442}
   - component: {fileID: 95116863935814476}
   - component: {fileID: 64654107978486250}
+  - component: {fileID: 114447734534286816}
+  - component: {fileID: 54909438294734786}
+  - component: {fileID: 195745970087893594}
   m_Layer: 8
   m_Name: orc_trainer
   m_TagString: Untagged
@@ -2054,6 +2057,21 @@ Transform:
   m_Father: {fileID: 4611825323255924}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54909438294734786
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143084928741866}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 6
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &64654107978486250
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -2067,7 +2085,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300002, guid: 515d1deda7d3fce46bb05f34adf49670, type: 3}
 --- !u!95 &95116863935814476
 Animator:
   serializedVersion: 3
@@ -2076,16 +2094,39 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143084928741866}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 515d1deda7d3fce46bb05f34adf49670, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 38c7b7fc46cc30a41947828c37b4688a, type: 3}
   m_Controller: {fileID: 9100000, guid: 449359b9c1f58124cab1383af873be84, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114447734534286816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143084928741866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53568e306aa5fb04e980a2e56911c1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnEventRef: 
+  enemyDeathEventRef: 
+  enemyHitEventRef: 
+  enemyAttackEventRef: 
+  enemyFootstepsEventRef: 
+  baseHealth: 100
+  damage: 34
+  itemDropChance: 10
+  cooldown: 1
+  range: 3
+  healthPickupPrefab: {fileID: 0}
+  windUp: 0.25
 --- !u!137 &137228723815847200
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2224,3 +2265,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.03479415, y: 0.0015681982, z: 0.82322586}
     m_Extent: {x: 0.6240673, y: 0.69396746, z: 1.2754453}
   m_DirtyAABB: 0
+--- !u!195 &195745970087893594
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143084928741866}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 6
+  m_Acceleration: 30
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

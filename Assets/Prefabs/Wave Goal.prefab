@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4747506536484336}
   - component: {fileID: 33709988367065160}
   - component: {fileID: 23329809383245756}
+  - component: {fileID: 114600642686825254}
   - component: {fileID: 65238798047600296}
   - component: {fileID: 114145730227762194}
   - component: {fileID: 108502951983050656}
@@ -150,6 +151,18 @@ MonoBehaviour:
   rotationSpeed: 12
   waveCubeSpawn: event:/Pickup/Wave/WaveEndLoop
   waveCubePickup: event:/Pickup/Wave/WaveEndStop
+--- !u!114 &114600642686825254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863249050442574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7f3fc34933b5940965d97e7f7915ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 8
 --- !u!120 &120360224702028964
 LineRenderer:
   m_ObjectHideFlags: 1
