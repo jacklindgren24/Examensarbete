@@ -38,6 +38,9 @@ public class MobEnemy : EnemyController
 
     protected override void Attack()
     {
+        anim.SetInteger("Random Attack", Random.Range(1, 4));
+        anim.SetTrigger("Attack");
+
         windUpTimer = 0;
         attackTimer = 0;
 
@@ -49,7 +52,7 @@ public class MobEnemy : EnemyController
     public override void Die()
     {
         GameManager.totalMobKills++;
-        ScoreCounter.Score += 25;
+        ScoreCounter.Score += scoreValue;
 
         base.Die();
     }

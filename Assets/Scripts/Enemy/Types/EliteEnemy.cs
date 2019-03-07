@@ -38,6 +38,9 @@ public class EliteEnemy : EnemyController
 
     protected override void Attack()
     {
+        anim.SetInteger("Random Attack", Random.Range(1, 4));
+        anim.SetTrigger("Attack");
+
         windUpTimer = 0;
         attackTimer = 0;
 
@@ -49,7 +52,7 @@ public class EliteEnemy : EnemyController
     public override void Die()
     {
         GameManager.totalEliteKills++;
-        ScoreCounter.Score += 50;
+        ScoreCounter.Score += scoreValue;
 
         base.Die();
     }

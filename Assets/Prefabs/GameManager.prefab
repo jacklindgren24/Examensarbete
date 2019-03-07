@@ -62,10 +62,10 @@ MonoBehaviour:
     hitscanIntensity: 0
     projectileIntensity: 0
     meleeIntensity: 0
-    maxMobAmount: 20
-    mobMinSpawnTime: 1
-    mobMaxSpawnTime: 2
-    maxEliteAmount: 5
+    maxMobAmount: 10
+    mobMinSpawnTime: 3
+    mobMaxSpawnTime: 6
+    maxEliteAmount: 1
     eliteMinSpawnTime: 2
     eliteMaxSpawnTime: 3
     maxRangedAmount: 0
@@ -75,10 +75,10 @@ MonoBehaviour:
     hitscanIntensity: 50
     projectileIntensity: 50
     meleeIntensity: 50
-    maxMobAmount: 30
+    maxMobAmount: 15
     mobMinSpawnTime: 2
     mobMaxSpawnTime: 4
-    maxEliteAmount: 0
+    maxEliteAmount: 2
     eliteMinSpawnTime: 5
     eliteMaxSpawnTime: 8
     maxRangedAmount: 0
@@ -88,10 +88,10 @@ MonoBehaviour:
     hitscanIntensity: 100
     projectileIntensity: 100
     meleeIntensity: 100
-    maxMobAmount: 40
+    maxMobAmount: 20
     mobMinSpawnTime: 1
-    mobMaxSpawnTime: 2
-    maxEliteAmount: 0
+    mobMaxSpawnTime: 3
+    maxEliteAmount: 3
     eliteMinSpawnTime: 3
     eliteMaxSpawnTime: 6
     maxRangedAmount: 0

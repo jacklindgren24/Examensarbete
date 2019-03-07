@@ -10166,9 +10166,10 @@ MonoBehaviour:
   enemyFootstepsEventRef: event:/Characters/Enemy/EnemyFootsteps
   baseHealth: 40
   damage: 25
-  itemDropChance: 15
   cooldown: 3
   range: 15
+  scoreValue: 25
+  itemDropChance: 15
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
   projectileSpawn: {fileID: 4189740952631312}

@@ -52,6 +52,8 @@ public class RangedEnemy : EnemyController
 
     protected override void Attack()
     {
+        anim.SetTrigger("Attack");
+
         attackTimer = 0;
 
         float x = Random.Range(-inaccuracy, inaccuracy) * 0.5f;
@@ -69,7 +71,7 @@ public class RangedEnemy : EnemyController
     public override void Die()
     {
         GameManager.totalRangedKills++;
-        ScoreCounter.Score += 25;
+        ScoreCounter.Score += scoreValue;
 
         base.Die();
     }

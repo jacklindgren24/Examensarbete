@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 114383904873072302}
   - component: {fileID: 195282930386931444}
   - component: {fileID: 54548166830343816}
+  - component: {fileID: 95678083837565732}
   m_Layer: 9
   m_Name: Elite Enemy
   m_TagString: Enemy
@@ -2041,6 +2042,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &95678083837565732
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423550802078450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 38c7b7fc46cc30a41947828c37b4688a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 449359b9c1f58124cab1383af873be84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114383904873072302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2059,9 +2078,10 @@ MonoBehaviour:
   enemyFootstepsEventRef: event:/Characters/Enemy/EliteFootsteps
   baseHealth: 200
   damage: 60
-  itemDropChance: 35
   cooldown: 2
   range: 3.5
+  scoreValue: 50
+  itemDropChance: 35
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
   windUp: 0.33

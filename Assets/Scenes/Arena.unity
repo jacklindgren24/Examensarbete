@@ -12280,8 +12280,8 @@ Transform:
   m_LocalPosition: {x: -16.3, y: 3.8999999, z: 25.12}
   m_LocalScale: {x: 28, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1956902132}
+  m_RootOrder: 154
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452614658
 GameObject:
@@ -15491,8 +15491,8 @@ Transform:
   m_LocalPosition: {x: 16.7, y: 3.8999999, z: 25.039997}
   m_LocalScale: {x: 28, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1956902132}
+  m_RootOrder: 155
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815368372
 GameObject:
@@ -17318,6 +17318,8 @@ Transform:
   - {fileID: 518780849}
   - {fileID: 1367113281}
   - {fileID: 1955538511}
+  - {fileID: 1436550844}
+  - {fileID: 1812233096}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18332,36 +18334,6 @@ Prefab:
       propertyPath: goalSpawnerParent
       value: 
       objectReference: {fileID: 1565377508}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].maxMobAmount
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].maxEliteAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].maxMobAmount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].maxEliteAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].maxMobAmount
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].maxEliteAmount
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
   m_IsPrefabAsset: 0

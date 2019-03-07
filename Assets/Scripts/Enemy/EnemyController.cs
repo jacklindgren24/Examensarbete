@@ -23,6 +23,7 @@ public abstract class EnemyController : MonoBehaviour {
             else if (health < old)
             {
                 windUpTimer = 0;
+                anim.SetTrigger(3);
                 RuntimeManager.PlayOneShot(enemyHitEventRef, transform.position);
             }
         }
@@ -43,9 +44,10 @@ public abstract class EnemyController : MonoBehaviour {
 
     public int baseHealth = 100;
     public int damage = 34;
-    public float itemDropChance = 10;
     public float cooldown = 1;
     public float range = 3;
+    public int scoreValue;
+    public float itemDropChance = 10;
     public GameObject healthPickupPrefab;
 
     protected float attackTimer = 0;
@@ -55,6 +57,7 @@ public abstract class EnemyController : MonoBehaviour {
     protected PlayerController player;
     protected Transform target;
     protected Rigidbody rb;
+    protected Animator anim;
 
     public FMOD.Studio.EventInstance enemyFootstepsEv;
 
@@ -87,6 +90,7 @@ public abstract class EnemyController : MonoBehaviour {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         target = player.gameObject.transform;
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
 
         RuntimeManager.PlayOneShot(enemySpawnEventRef, transform.position);
 
@@ -99,8 +103,16 @@ public abstract class EnemyController : MonoBehaviour {
 
     void LateUpdate()
     {
-        if (!agent.isStopped && target != null) PlayFootstep();
-        else enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        if (!agent.isStopped && target != null)
+        { // Moving.
+            anim.SetBool("Moving", true);
+            PlayFootstep();
+        }
+        else
+        { // Stationary.
+            anim.SetBool("Moving", false);
+            enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
     }
 
     void PlayFootstep()
@@ -126,6 +138,8 @@ public abstract class EnemyController : MonoBehaviour {
 
     public virtual void Die()
     {
+        anim.SetTrigger("Death");
+
         RuntimeManager.PlayOneShot(enemyDeathEventRef, transform.position);
         enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
