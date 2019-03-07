@@ -23,7 +23,7 @@ public abstract class EnemyController : MonoBehaviour {
             else if (health < old)
             {
                 windUpTimer = 0;
-                anim.SetTrigger(3);
+                anim.SetTrigger("Hurt");
                 RuntimeManager.PlayOneShot(enemyHitEventRef, transform.position);
             }
         }

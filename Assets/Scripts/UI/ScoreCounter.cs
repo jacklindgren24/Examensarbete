@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    static int score = 0;
+    static int score;
     public static int Score
     {
         get { return score; }
         set
         {
             score = value;
-            scoreText.text = Score.ToString();
+            if (scoreText != null) scoreText.text = Score.ToString();
         }
     }
 
@@ -18,6 +18,7 @@ public class ScoreCounter : MonoBehaviour
 
     void Awake()
     {
+        Score = 0;
         scoreText = GetComponent<Text>();	
 	}
 }
