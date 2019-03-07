@@ -306,8 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bobbingSpeedBase: 0.145
   bobbingSpeedSprint: 0.24
-  bobbingAmountBase: 0.08
-  bobbingAmountSprint: 0.11
+  bobbingAmountBase: 0.06
+  bobbingAmountSprint: 0.09
   midpoint: 1
 --- !u!114 &114870156087736766
 MonoBehaviour:
