@@ -46,6 +46,7 @@ public abstract class EnemyController : MonoBehaviour {
     public int damage = 34;
     public float cooldown = 1;
     public float range = 3;
+    public float speedRandomness = 1;
     public int scoreValue;
     public float itemDropChance = 10;
     public GameObject healthPickupPrefab;
@@ -91,6 +92,8 @@ public abstract class EnemyController : MonoBehaviour {
         target = player.gameObject.transform;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+
+        agent.speed += Random.Range(-speedRandomness, speedRandomness);
 
         RuntimeManager.PlayOneShot(enemySpawnEventRef, transform.position);
 

@@ -1086,6 +1086,7 @@ MonoBehaviour:
   damage: 34
   cooldown: 1
   range: 3
+  speedRandomness: 1.5
   scoreValue: 0
   itemDropChance: 10
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
@@ -1179,8 +1180,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1749654231491668}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 6
+  m_Radius: 2
+  m_Speed: 6.5
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
