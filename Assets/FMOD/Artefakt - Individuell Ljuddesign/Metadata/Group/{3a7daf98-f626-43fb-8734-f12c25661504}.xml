@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="MixerGroup" id="{3a7daf98-f626-43fb-8734-f12c25661504}">
+        <property name="volume">
+            <value>-1</value>
+        </property>
+        <property name="name">
+            <value>Wave Clear</value>
+        </property>
+        <relationship name="effectChain">
+            <destination>{6fa9818f-9097-4b87-a3cf-8e9653158abe}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{d1253b41-f9e9-4c00-9897-2e81ea620d25}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{1d0f5c44-4839-41e5-b0f0-7f818c4a2c52}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{6fa9818f-9097-4b87-a3cf-8e9653158abe}">
+        <relationship name="effects">
+            <destination>{eefb8fd5-1ae1-49a2-89cf-874a82dcc39b}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{d1253b41-f9e9-4c00-9897-2e81ea620d25}"/>
+    <object class="MixerBusFader" id="{eefb8fd5-1ae1-49a2-89cf-874a82dcc39b}"/>
+</objects>

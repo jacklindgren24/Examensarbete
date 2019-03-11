@@ -944,7 +944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!4 &75225244
 Transform:
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &110117496
 GameObject:
@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &124169864
 GameObject:
@@ -2623,7 +2623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1092098239151726, guid: d6c9b07f2d2f7fb41a56e231b5eecbf8,
     type: 2}
-  activationRange: 100
+  activationRange: 200
   isPaused: 0
 --- !u!1 &309442259
 GameObject:
@@ -3484,6 +3484,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
+        type: 2}
+      propertyPath: jumpHeight
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
+        type: 2}
+      propertyPath: baseSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
+        type: 2}
+      propertyPath: sprintSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
+        type: 2}
+      propertyPath: airAcceleration
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9595a59540253184a8296c59b0739ce7, type: 2}
   m_IsPrefabAsset: 0
@@ -3864,7 +3884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &477882470
 GameObject:
@@ -5996,7 +6016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 25
+  activationRange: 200
   isPaused: 0
 --- !u!1 &650456025
 GameObject:
@@ -6556,7 +6576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &712298016
 GameObject:
@@ -6687,7 +6707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1092098239151726, guid: d6c9b07f2d2f7fb41a56e231b5eecbf8,
     type: 2}
-  activationRange: 60
+  activationRange: 200
   isPaused: 0
 --- !u!1 &749829148
 GameObject:
@@ -7866,7 +7886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &883898717
 GameObject:
@@ -8204,7 +8224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 25
+  activationRange: 200
   isPaused: 0
 --- !u!1 &929531088
 GameObject:
@@ -8335,7 +8355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &949031589
 GameObject:
@@ -9514,7 +9534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1092098239151726, guid: d6c9b07f2d2f7fb41a56e231b5eecbf8,
     type: 2}
-  activationRange: 100
+  activationRange: 200
   isPaused: 0
 --- !u!4 &1061216836
 Transform:
@@ -10018,7 +10038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1001 &1114056296
 Prefab:
@@ -10125,7 +10145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1144188165
 GameObject:
@@ -10227,8 +10247,8 @@ GameObject:
   m_Name: Roof (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1144247842
 Transform:
@@ -10894,8 +10914,8 @@ GameObject:
   m_Name: Roof (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1243723884
 Transform:
@@ -11508,7 +11528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 25
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1307773936
 GameObject:
@@ -11610,8 +11630,8 @@ GameObject:
   m_Name: Roof (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1321606249
 Transform:
@@ -11795,7 +11815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1367113280
 GameObject:
@@ -13125,7 +13145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1001 &1536843894
 Prefab:
@@ -13232,7 +13252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1559251885
 GameObject:
@@ -13417,7 +13437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1092098239151726, guid: d6c9b07f2d2f7fb41a56e231b5eecbf8,
     type: 2}
-  activationRange: 100
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1597908831
 GameObject:
@@ -13534,7 +13554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1607491250
 GameObject:
@@ -14769,8 +14789,8 @@ GameObject:
   m_Name: Roof (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1684548000
 Transform:
@@ -15254,8 +15274,8 @@ GameObject:
   m_Name: Roof (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1795565613
 Transform:
@@ -15590,7 +15610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1092098239151726, guid: d6c9b07f2d2f7fb41a56e231b5eecbf8,
     type: 2}
-  activationRange: 100
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1828845462
 GameObject:
@@ -15792,7 +15812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1849850199
 GameObject:
@@ -15923,7 +15943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1863442109
 GameObject:
@@ -16027,8 +16047,8 @@ GameObject:
   m_Name: Roof (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1872182367
 Transform:
@@ -16679,7 +16699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &1927667194
 GameObject:
@@ -18350,6 +18370,16 @@ Prefab:
       propertyPath: waves.Array.data[1].maxMobAmount
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waveCountdownEventRef
+      value: event:/Wave/WaveCountdown
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waveClearEventRef
+      value: event:/Wave/WaveClear
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
   m_IsPrefabAsset: 0
@@ -18754,7 +18784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
     type: 2}
-  activationRange: 30
+  activationRange: 200
   isPaused: 0
 --- !u!1 &2137921422
 GameObject:
