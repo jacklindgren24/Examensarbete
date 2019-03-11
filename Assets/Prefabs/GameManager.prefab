@@ -97,5 +97,5 @@ MonoBehaviour:
     maxRangedAmount: 0
     rangedMinSpawnTime: 0
     rangedMaxSpawnTime: 0
-  waveCountdownEventRef: event:/WaveCountdown
-  waveClearEventRef: event:/WaveClear
+  waveCountdownEventRef: event:/Wave/WaveCountdown
+  waveClearEventRef: event:/Wave/WaveClear
