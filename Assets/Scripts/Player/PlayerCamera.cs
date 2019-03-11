@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class MouseLook : MonoBehaviour {
+public class PlayerCamera : MonoBehaviour {
 
     public float sensitivityX = 1.0f;
     public float sensitivityY = 1.0f;
@@ -21,7 +21,7 @@ public class MouseLook : MonoBehaviour {
 
     void Update ()
     {
-        Vector2 dir = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        Vector2 dir = new Vector2(Input.GetAxisRaw("Camera X"), Input.GetAxisRaw("Camera Y"));
 
         x += dir.x * sensitivityX;
         y += dir.y * sensitivityY;

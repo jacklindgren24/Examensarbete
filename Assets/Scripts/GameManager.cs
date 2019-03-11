@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public GameObject countdown;
     public Transform goalSpawnerParent;
     public GameObject waveGoalPrefab;
+    public float minimumGoalDistance = 30;
 
     [Space(15)]
 
@@ -156,12 +157,15 @@ public class GameManager : MonoBehaviour {
         waveCounter.text = "Wave " + (currentWave + 1);
 
         // Spawn wave goal cube.
-        Dictionary<float, Transform> distances = new Dictionary<float, Transform>();
+        List<Transform> potentials = new List<Transform>();
         foreach (Transform t in goalSpawners)
         { // Get distance to each spawner.
-            distances.Add(Vector3.Distance(PlayerController.position, t.position), t);
+            if (Vector3.Distance(PlayerController.position, t.position) > minimumGoalDistance)
+            { // Spawner is beyond minimum distance.
+                potentials.Add(t);
+            }
         }
-        Transform goalSpawn = distances[distances.Keys.Max()]; // Get farthest spawner.
+        Transform goalSpawn = potentials[Random.Range(0, potentials.Count)];
         Instantiate(waveGoalPrefab, goalSpawn.position, goalSpawn.rotation);
 
         SetSpawnersPaused(false); // Unpause spawners.

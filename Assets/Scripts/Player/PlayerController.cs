@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
             {
                 if (invCo != null) StopCoroutine(invCo);
                 invCo = StartCoroutine(Invincible());
-                GetComponentInChildren<MouseLook>().Shake();
+                GetComponentInChildren<PlayerCamera>().Shake();
                 RuntimeManager.PlayOneShot(playerHurt, transform.position);
             }
         }
