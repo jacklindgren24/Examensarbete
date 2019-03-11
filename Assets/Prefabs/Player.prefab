@@ -264,7 +264,7 @@ MonoBehaviour:
   airAcceleration: 6
   baseSpeed: 5
   sprintSpeed: 8
-  backstepModifier: 0.66
+  backstepModifier: 0.75
   jumpHeight: 5
   stoppingFriction: 12
   maxSlope: 35
