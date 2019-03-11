@@ -19,7 +19,8 @@ public class MobEnemy : EnemyController
             else
             { // Enemy is within attacking range of target, stop and begin attacking target.
                 agent.isStopped = true;
-
+                anim.SetInteger("Random Attack", 0);
+                anim.SetTrigger("Attack");
                 if (attackTimer >= cooldown)
                 { // Attack is off cooldown.
                     windUpTimer += Time.deltaTime;
@@ -38,9 +39,6 @@ public class MobEnemy : EnemyController
 
     protected override void Attack()
     {
-        anim.SetInteger("Random Attack", Random.Range(1, 4));
-        anim.SetTrigger("Attack");
-
         windUpTimer = 0;
         attackTimer = 0;
 

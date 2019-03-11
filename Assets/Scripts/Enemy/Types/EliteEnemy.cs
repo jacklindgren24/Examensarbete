@@ -38,7 +38,7 @@ public class EliteEnemy : EnemyController
 
     protected override void Attack()
     {
-        anim.SetInteger("Random Attack", Random.Range(1, 4));
+        anim.SetInteger("Random Attack", 0);
         anim.SetTrigger("Attack");
 
         windUpTimer = 0;
