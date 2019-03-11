@@ -442,10 +442,9 @@ GameObject:
   - component: {fileID: 4587993684630882}
   - component: {fileID: 114981598938518954}
   - component: {fileID: 54198344064414842}
-  - component: {fileID: 65030174062350788}
-  - component: {fileID: 65599933931730320}
   - component: {fileID: 95462765654005332}
   - component: {fileID: 195209474727489770}
+  - component: {fileID: 136463463979567410}
   m_Layer: 9
   m_Name: Mob Enemy
   m_TagString: Enemy
@@ -1049,30 +1048,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &65030174062350788
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1749654231491668}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.82, y: 2.4699998, z: 1.2384872}
-  m_Center: {x: 0, y: 1.3, z: 0.11924362}
---- !u!65 &65599933931730320
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1749654231491668}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.98, y: 0.49, z: 1.68}
-  m_Center: {x: 0, y: 0.27, z: -1.29}
 --- !u!95 &95462765654005332
 Animator:
   serializedVersion: 3
@@ -1116,6 +1091,19 @@ MonoBehaviour:
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
   windUp: 0.25
+--- !u!136 &136463463979567410
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749654231491668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.66
+  m_Height: 2.66
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.35, z: 0}
 --- !u!137 &137885474966716790
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

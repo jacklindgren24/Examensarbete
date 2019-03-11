@@ -52,8 +52,6 @@ public class RangedEnemy : EnemyController
 
     protected override void Attack()
     {
-        anim.SetTrigger("Attack");
-
         attackTimer = 0;
 
         float x = Random.Range(-inaccuracy, inaccuracy) * 0.5f;

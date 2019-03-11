@@ -15,17 +15,20 @@ public class MobEnemy : EnemyController
                 agent.isStopped = false;
                 windUpTimer = 0;
                 agent.SetDestination(target.position);
+                anim.SetBool("Attacking", false);
             }
             else
             { // Enemy is within attacking range of target, stop and begin attacking target.
                 agent.isStopped = true;
-                anim.SetInteger("Random Attack", 0);
-                anim.SetTrigger("Attack");
+
                 if (attackTimer >= cooldown)
                 { // Attack is off cooldown.
                     windUpTimer += Time.deltaTime;
+                    anim.SetBool("Attacking", true);
+
                     if (windUpTimer >= windUp)
                     { // Attack has wound up.
+                        anim.SetBool("Attacking", false);
                         Attack();
                     }
                 }
@@ -34,6 +37,7 @@ public class MobEnemy : EnemyController
         else
         {
             agent.isStopped = true;
+            anim.SetBool("Attacking", false);
         }
     }
 

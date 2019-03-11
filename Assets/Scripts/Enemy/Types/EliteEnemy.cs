@@ -15,6 +15,7 @@ public class EliteEnemy : EnemyController
                 agent.isStopped = false;
                 windUpTimer = 0;
                 agent.SetDestination(target.position);
+                anim.SetBool("Attacking", false);
             }
             else
             { // Enemy is within attacking range of target, stop and begin attacking target.
@@ -23,8 +24,11 @@ public class EliteEnemy : EnemyController
                 if (attackTimer >= cooldown)
                 { // Attack is off cooldown.
                     windUpTimer += Time.deltaTime;
+                    anim.SetBool("Attacking", true);
+
                     if (windUpTimer >= windUp)
                     { // Attack has wound up.
+                        anim.SetBool("Attacking", false);
                         Attack();
                     }
                 }
@@ -33,14 +37,12 @@ public class EliteEnemy : EnemyController
         else
         {
             agent.isStopped = true;
+            anim.SetBool("Attacking", false);
         }
     }
 
     protected override void Attack()
     {
-        anim.SetInteger("Random Attack", 0);
-        anim.SetTrigger("Attack");
-
         windUpTimer = 0;
         attackTimer = 0;
 
