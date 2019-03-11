@@ -136,7 +136,9 @@ public abstract class EnemyController : MonoBehaviour {
 
     void SpawnHealth()
     {
-        Instantiate(healthPickupPrefab, transform.position, transform.rotation);
+        Vector3 pos = transform.position;
+        pos.y = 1.5f;
+        Instantiate(healthPickupPrefab, pos, transform.rotation);
     }
 
     public virtual void Die()

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public GameObject countdown;
     public Transform goalSpawnerParent;
     public GameObject waveGoalPrefab;
-    public float minimumGoalDistance = 30;
+    public float minimumGoalDistance = 40;
 
     [Space(15)]
 
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour {
 
             PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
 
-            if (waveCounter.color.a < 1) waveCounter.CrossFadeAlpha(0, 2, false);
+            waveCounter.CrossFadeAlpha(0, 2, false);
 
             if (CurrentWave > 0) FMODUnity.RuntimeManager.PlayOneShot(waveClearEventRef);
 
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour {
 
         yield return new WaitForSeconds(3);
         
-        if (waveCounter.color.a > 0) waveCounter.CrossFadeAlpha(1, 2, false);
+        waveCounter.CrossFadeAlpha(1, 2, false);
         waveCounter.text = "Wave " + (currentWave + 1);
 
         // Spawn wave goal cube.

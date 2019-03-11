@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220712293117880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.91, z: -58.81}
+  m_LocalPosition: {x: 0.6, y: 1.01, z: -58.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4979085074656618}
@@ -261,11 +261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b1833294e8741408bfa3baae50fe10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airAcceleration: 6
-  baseSpeed: 5
-  sprintSpeed: 8
+  airAcceleration: 12
+  baseSpeed: 7
+  sprintSpeed: 10
   backstepModifier: 0.75
-  jumpHeight: 5
+  jumpHeight: 9
   stoppingFriction: 12
   maxSlope: 35
   isSprinting: 0

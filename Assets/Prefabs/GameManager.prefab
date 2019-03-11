@@ -57,12 +57,13 @@ MonoBehaviour:
   goalSpawnerParent: {fileID: 0}
   waveGoalPrefab: {fileID: 1863249050442574, guid: 48fc3da754077cc42a611b17226a460c,
     type: 2}
+  minimumGoalDistance: 40
   waves:
   - startDelay: 7
     hitscanIntensity: 0
     projectileIntensity: 0
     meleeIntensity: 0
-    maxMobAmount: 10
+    maxMobAmount: 12
     mobMinSpawnTime: 3
     mobMaxSpawnTime: 6
     maxEliteAmount: 1
@@ -75,7 +76,7 @@ MonoBehaviour:
     hitscanIntensity: 50
     projectileIntensity: 50
     meleeIntensity: 50
-    maxMobAmount: 15
+    maxMobAmount: 18
     mobMinSpawnTime: 2
     mobMaxSpawnTime: 4
     maxEliteAmount: 2
@@ -88,7 +89,7 @@ MonoBehaviour:
     hitscanIntensity: 100
     projectileIntensity: 100
     meleeIntensity: 100
-    maxMobAmount: 20
+    maxMobAmount: 24
     mobMinSpawnTime: 1
     mobMaxSpawnTime: 3
     maxEliteAmount: 3

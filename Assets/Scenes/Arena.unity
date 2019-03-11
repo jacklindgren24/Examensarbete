@@ -1973,7 +1973,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.28
+  m_Intensity: 0.25
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2481,8 +2481,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9245283, g: 0.7133416, b: 0.49279103, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 12
   m_CookieSize: 10
   m_Shadows:
@@ -3458,7 +3458,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4363921686416510, guid: 9595a59540253184a8296c59b0739ce7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.91
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 4363921686416510, guid: 9595a59540253184a8296c59b0739ce7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3483,26 +3483,6 @@ Prefab:
     - target: {fileID: 4363921686416510, guid: 9595a59540253184a8296c59b0739ce7, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
-        type: 2}
-      propertyPath: jumpHeight
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
-        type: 2}
-      propertyPath: baseSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
-        type: 2}
-      propertyPath: sprintSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114468048078551338, guid: 9595a59540253184a8296c59b0739ce7,
-        type: 2}
-      propertyPath: airAcceleration
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9595a59540253184a8296c59b0739ce7, type: 2}
@@ -7163,8 +7143,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.7506485, b: 0.4481132, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 22.6
   m_CookieSize: 10
   m_Shadows:
@@ -9718,8 +9698,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9245283, g: 0.7133416, b: 0.49279103, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 12
   m_CookieSize: 10
   m_Shadows:
@@ -13719,8 +13699,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9245283, g: 0.7133416, b: 0.49279103, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 12
   m_CookieSize: 10
   m_Shadows:
@@ -14040,8 +14020,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.7506485, b: 0.4481132, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 22.6
   m_CookieSize: 10
   m_Shadows:
@@ -15523,8 +15503,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.7506485, b: 0.4481132, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 22.6
   m_CookieSize: 10
   m_Shadows:
@@ -16381,8 +16361,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.7506485, b: 0.4481132, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 22.6
   m_CookieSize: 10
   m_Shadows:
@@ -18159,8 +18139,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9245283, g: 0.7133416, b: 0.49279103, a: 1}
-  m_Intensity: 75
-  m_Range: 100
+  m_Intensity: 50
+  m_Range: 75
   m_SpotAngle: 12
   m_CookieSize: 10
   m_Shadows:
@@ -18325,31 +18305,6 @@ Prefab:
       propertyPath: goalSpawnerParent
       value: 
       objectReference: {fileID: 1565377508}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[2].maxMobAmount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[0].maxMobAmount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waves.Array.data[1].maxMobAmount
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waveCountdownEventRef
-      value: event:/Wave/WaveCountdown
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
-        type: 2}
-      propertyPath: waveClearEventRef
-      value: event:/Wave/WaveClear
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
   m_IsPrefabAsset: 0
