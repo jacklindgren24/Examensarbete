@@ -173,6 +173,9 @@
         <property name="length">
             <value>0.5879375</value>
         </property>
+        <property name="volume">
+            <value>4</value>
+        </property>
         <relationship name="triggerConditions">
             <destination>{5ac1d39e-d830-4abe-9dcb-5fac888ffb85}</destination>
         </relationship>

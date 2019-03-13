@@ -7,7 +7,8 @@ TagManager:
   - Enemy
   - GameCanvas
   - MenuCanvas
-  - Spawner
+  - MobSpawner
+  - EliteSpawner
   layers:
   - Default
   - TransparentFX
@@ -19,10 +20,10 @@ TagManager:
   - 
   - Player
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - Ignore Player
+  - Ignore Enemy
+  - Only Player
+  - Only Enemy
   - 
   - 
   - 

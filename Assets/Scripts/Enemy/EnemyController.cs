@@ -18,10 +18,12 @@ public abstract class EnemyController : MonoBehaviour {
 
             if (health <= 0)
             {
+                hitScript.HitMarker();
                 Die();
             }
             else if (health < old)
             {
+                hitScript.HitMarker();
                 windUpTimer = 0;
                 anim.SetTrigger("Hurt");
                 RuntimeManager.PlayOneShot(enemyHitEventRef, transform.position);
@@ -50,6 +52,7 @@ public abstract class EnemyController : MonoBehaviour {
     public int scoreValue;
     public float itemDropChance = 10;
     public GameObject healthPickupPrefab;
+    
 
     protected float attackTimer = 0;
     protected float windUpTimer = 0;
@@ -59,6 +62,7 @@ public abstract class EnemyController : MonoBehaviour {
     protected Transform target;
     protected Rigidbody rb;
     protected Animator anim;
+    protected HitScript hitScript;
 
     public FMOD.Studio.EventInstance enemyFootstepsEv;
 
@@ -70,11 +74,6 @@ public abstract class EnemyController : MonoBehaviour {
         {
             EliteSpawner.activeElites++;
             //print(EliteSpawner.activeElites);
-        }
-        else if (GetType() == typeof(RangedEnemy))
-        {
-            RangedSpawner.activeRangedEnemies++;
-            //print(RangedSpawner.activeRangedEnemies);
         }
         else
         {
@@ -92,6 +91,7 @@ public abstract class EnemyController : MonoBehaviour {
         target = player.gameObject.transform;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        hitScript = FindObjectOfType<HitScript>();
 
         agent.speed += Random.Range(-speedRandomness, speedRandomness);
 
@@ -106,15 +106,18 @@ public abstract class EnemyController : MonoBehaviour {
 
     void LateUpdate()
     {
-        if (!agent.isStopped && target != null)
-        { // Moving.
-            anim.SetBool("Moving", true);
-            PlayFootstep();
-        }
-        else
-        { // Stationary.
-            anim.SetBool("Moving", false);
-            enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        if (!GameManager.instance.isPaused)
+        {
+            if (!agent.isStopped && target != null)
+            { // Moving.
+                anim.SetBool("Moving", true);
+                PlayFootstep();
+            }
+            else
+            { // Stationary.
+                anim.SetBool("Moving", false);
+                enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
         }
     }
 
@@ -160,11 +163,6 @@ public abstract class EnemyController : MonoBehaviour {
         {
             EliteSpawner.activeElites--;
             //print(EliteSpawner.activeElites);
-        }
-        else if (GetType() == typeof(RangedEnemy))
-        {
-            RangedSpawner.activeRangedEnemies--;
-            //print(RangedSpawner.activeRangedEnemies);
         }
         else
         {

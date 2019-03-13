@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4715000787165460}
   - component: {fileID: 114666907069128208}
+  - component: {fileID: 114479872052027322}
+  - component: {fileID: 114301500962391694}
   - component: {fileID: 114763113974641426}
   m_Layer: 0
   m_Name: GameManager
@@ -41,6 +43,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114301500962391694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273756372008584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35f3f8117b370946b3bc7441f439727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 1092098239151726, guid: d6c9b07f2d2f7fb41a56e231b5eecbf8,
+    type: 2}
+--- !u!114 &114479872052027322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273756372008584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20cc4d8e8c15aed478b225b45c3ffbe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 1749654231491668, guid: 5f0ca1d7b6f6ef4479bb9ff617fa78a7,
+    type: 2}
 --- !u!114 &114666907069128208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,7 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2131dfb4efdde85409cdcd0b001f7832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  gameCanvas: {fileID: 0}
+  pauseCanvas: {fileID: 0}
   waveCounter: {fileID: 0}
   countdown: {fileID: 1198933147372970, guid: 93ee8f608b0e5be438cfe7a62c9ce06a, type: 2}
   goalSpawnerParent: {fileID: 0}
@@ -101,6 +130,7 @@ MonoBehaviour:
     rangedMaxSpawnTime: 0
   waveCountdownEventRef: event:/Wave/WaveCountdown
   waveClearEventRef: event:/Wave/WaveClear
+  isPaused: 0
 --- !u!114 &114763113974641426
 MonoBehaviour:
   m_ObjectHideFlags: 1

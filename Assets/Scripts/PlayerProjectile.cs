@@ -2,12 +2,11 @@
 
 public class PlayerProjectile : MonoBehaviour
 {
-    const int layerMask = ~0;
-    const float radius = 0.1f;
+    const float radius = 0.15f;
 
     void FixedUpdate()
     {
-        Collider[] results = Physics.OverlapSphere(transform.position, radius, layerMask, QueryTriggerInteraction.Ignore);
+        Collider[] results = Physics.OverlapSphere(transform.position, radius, ~LayerMask.GetMask("Player"), QueryTriggerInteraction.Ignore);
 
         if (results.Length > 0)
         {
@@ -22,8 +21,7 @@ public class PlayerProjectile : MonoBehaviour
                 }
             }
 
-            // Did not hit enemy, destroy self.
-            Destroy(gameObject);
+            Destroy(gameObject); // Did not hit enemy, destroy self.
         }
     }
 }

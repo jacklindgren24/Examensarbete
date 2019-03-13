@@ -71,52 +71,55 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        position = transform.position;
+        if (!GameManager.instance.isPaused)
+        {
+            position = transform.position;
 
-        gunTimer += Time.deltaTime;
-        meleeTimer += Time.deltaTime;
+            gunTimer += Time.deltaTime;
+            meleeTimer += Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1") || CustomInput.GetAxisDown("Fire1"))
-        { // Fire (or melee if selected).
-            switch (weapon)
-            {
-                case Weapon.Projectile:
-                    if (gunTimer >= ProjectileWeapon.cooldown) FireBullet();
-                    break;
-                case Weapon.Hitscan:
-                    if (gunTimer >= HitscanWeapon.cooldown) FireRay();
-                    break;
-                case Weapon.Melee:
-                    if (meleeTimer >= MeleeWeapon.cooldown) Melee();
-                    break;
+            if (Input.GetButtonDown("Fire1") || CustomInput.GetAxisDown("Fire1"))
+            { // Fire (or melee if selected).
+                switch (weapon)
+                {
+                    case Weapon.Projectile:
+                        if (gunTimer >= ProjectileWeapon.cooldown) FireBullet();
+                        break;
+                    case Weapon.Hitscan:
+                        if (gunTimer >= HitscanWeapon.cooldown) FireRay();
+                        break;
+                    case Weapon.Melee:
+                        if (meleeTimer >= MeleeWeapon.cooldown) Melee();
+                        break;
+                }
             }
-        }
-        else if (Input.GetButtonDown("Switch"))
-        { // Switch weapon.
-            weapon = weapon == Weapon.Projectile ? Weapon.Hitscan : Weapon.Projectile;
-            gunTimer = weapon == Weapon.Projectile ? ProjectileWeapon.cooldown : HitscanWeapon.cooldown;
-        }
-        else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
-        { // Melee.
-            RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
-            Invoke("Melee", MeleeWeapon.delay);
-        }
+            else if (Input.GetButtonDown("Switch"))
+            { // Switch weapon.
+                weapon = weapon == Weapon.Projectile ? Weapon.Hitscan : Weapon.Projectile;
+                gunTimer = weapon == Weapon.Projectile ? ProjectileWeapon.cooldown : HitscanWeapon.cooldown;
+            }
+            else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
+            { // Melee.
+                RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
+                Invoke("Melee", MeleeWeapon.delay);
+            }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        { // Increase intensity by 50 up to a maximum of 100 (guns).
-            intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] + 50, 0, 100);
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        { // Decrease intensity by 50 down to a minimum of 0 (guns).
-            intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] - 50, 0, 100);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        { // Increase intensity by 50 up to a maximum of 100 (melee).
-            intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] + 50, 0, 100);
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        { // Decrease intensity by 50 down to a minimum of 0 (melee).
-            intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] - 50, 0, 100);
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            { // Increase intensity by 50 up to a maximum of 100 (guns).
+                intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] + 50, 0, 100);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            { // Decrease intensity by 50 down to a minimum of 0 (guns).
+                intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] - 50, 0, 100);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            { // Increase intensity by 50 up to a maximum of 100 (melee).
+                intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] + 50, 0, 100);
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            { // Decrease intensity by 50 down to a minimum of 0 (melee).
+                intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] - 50, 0, 100);
+            }
         }
     }
 
@@ -146,13 +149,10 @@ public class PlayerController : MonoBehaviour {
         gunTimer = 0;
 
         RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, HitscanWeapon.range))
-        { // Raycast forward from camera.
-            if (hit.transform.tag == "Enemy")
-            { // Ray hit an enemy, hurt enemy.
-                hit.transform.GetComponent<EnemyController>().Health -= HitscanWeapon.damage;
-                GameManager.totalHitscanHits++;
-            }
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, HitscanWeapon.range, LayerMask.GetMask("Enemy")))
+        { // Raycast forward from camera for enemies.
+            hit.transform.GetComponent<EnemyController>().Health -= HitscanWeapon.damage;
+            GameManager.totalHitscanHits++;
         }
 
         RuntimeManager.PlayOneShot(HitscanWeapon.sound, "Intensity", intensities[(int)Weapon.Hitscan], transform.position);

@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
-    public Canvas canvas;
+    public GameObject gameCanvas;
+    public GameObject pauseCanvas;
     public UnityEngine.UI.Text waveCounter;
     public GameObject countdown;
     public Transform goalSpawnerParent;
@@ -42,18 +42,14 @@ public class GameManager : MonoBehaviour {
     public static int totalMeleeAttacks;
     public static int totalMeleeHits;
 
-    List<Spawner> enemySpawners = new List<Spawner>();
+    [HideInInspector]
+    public bool isPaused = false;
+
     List<Transform> goalSpawners = new List<Transform>();
 
     void Awake ()
     {
         if (instance == null) instance = this; else Destroy(gameObject);
-
-        foreach (GameObject spawner in GameObject.FindGameObjectsWithTag("Spawner"))
-        {
-            enemySpawners.Add(spawner.GetComponent<Spawner>());
-        }
-        SetSpawnersPaused(true);
 
         for (int i = 0; i < goalSpawnerParent.childCount; i++)
         {
@@ -72,15 +68,16 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-#if UNITY_EDITOR
     void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.L)) ToggleCursorState();
         if (Input.GetKeyDown(KeyCode.M)) ToggleMute();
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
-        if (Input.GetKeyDown(KeyCode.Escape)) Quit();
-    }
 #endif
+        if (Input.GetKeyDown(KeyCode.Escape)) SetPaused(!isPaused);
+    }
+
 
     /// <summary> End the current wave. </summary>
     /// <param name="immediate"> End wave immediately? Otherwise, wait until all enemies are killed. </param>
@@ -118,18 +115,17 @@ public class GameManager : MonoBehaviour {
             CurrentWave++;
             Wave w = waves[CurrentWave];
 
+            // Prepare spawners.
+            MobSpawner.timer = 0;
             MobSpawner.maxActive = w.maxMobAmount;
             MobSpawner.minSpawnTime = w.mobMinSpawnTime;
             MobSpawner.maxSpawnTime = w.mobMaxSpawnTime;
+            EliteSpawner.timer = 0;
             EliteSpawner.maxActive = w.maxEliteAmount;
             EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
             EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
-            RangedSpawner.maxActive = w.maxRangedAmount;
-            RangedSpawner.minSpawnTime = w.rangedMinSpawnTime;
-            RangedSpawner.maxSpawnTime = w.rangedMaxSpawnTime;
-            RangedSpawner.activeRangedEnemies = w.maxRangedAmount;
 
-            foreach (Spawner s in enemySpawners) s.ResetTimer();
+            SetSpawnersPaused(true); // Pause spawners.
 
             PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
 
@@ -148,7 +144,7 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(delay - 3);
         
         FMODUnity.RuntimeManager.PlayOneShot(waveCountdownEventRef);
-        GameObject cd = Instantiate(countdown, canvas.transform);
+        GameObject cd = Instantiate(countdown, gameCanvas.transform);
         Destroy(cd, cd.GetComponent<Animator>().runtimeAnimatorController.animationClips[0].length + 0.1f);
 
         yield return new WaitForSeconds(3);
@@ -201,23 +197,30 @@ public class GameManager : MonoBehaviour {
 
     void ToggleSpawners()
     {
-        foreach (Spawner spawner in enemySpawners)
-        { // Invert paused status on every spawner.
-            spawner.isPaused = !spawner.isPaused;
-        }
+        MobSpawner.isPaused = !MobSpawner.isPaused;
+        EliteSpawner.isPaused = !EliteSpawner.isPaused;
 
         print("Toggled spawners.");
     }
 
     public void SetSpawnersPaused(bool isPaused)
     {
-        foreach (Spawner spawner in enemySpawners)
-        { // Invert paused status on every spawner.
-            spawner.isPaused = isPaused;
-        }
+        MobSpawner.isPaused = isPaused;
+        EliteSpawner.isPaused = isPaused;
     }
 
-    void Quit()
+    public void SetPaused(bool _isPaused)
+    {
+        isPaused = _isPaused;
+
+        Cursor.visible = isPaused ? true : false;
+        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
+        Time.timeScale = isPaused ? 0 : 1;
+        pauseCanvas.SetActive(isPaused);
+        gameCanvas.SetActive(!isPaused);
+    }
+
+    public void Quit()
     {
         Application.Quit();
     }
@@ -243,9 +246,4 @@ public struct Wave
     public int maxEliteAmount;
     public float eliteMinSpawnTime;
     public float eliteMaxSpawnTime;
-
-    [Header("Ranged")]
-    public int maxRangedAmount;
-    public float rangedMinSpawnTime;
-    public float rangedMaxSpawnTime;
 }

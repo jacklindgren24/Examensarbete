@@ -34,6 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4547660706062184}
+  - component: {fileID: 136761280251985780}
   m_Layer: 9
   m_Name: Box004
   m_TagString: Enemy
@@ -444,7 +445,6 @@ GameObject:
   - component: {fileID: 54198344064414842}
   - component: {fileID: 95462765654005332}
   - component: {fileID: 195209474727489770}
-  - component: {fileID: 136463463979567410}
   m_Layer: 9
   m_Name: Mob Enemy
   m_TagString: Enemy
@@ -814,7 +814,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1749654231491668}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.7482502, y: -7.565385e-17, z: -48.109}
+  m_LocalPosition: {x: 23.665508, y: -7.4992327e-17, z: 53.313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4547660706062184}
@@ -1092,12 +1092,12 @@ MonoBehaviour:
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
   windUp: 0.25
---- !u!136 &136463463979567410
+--- !u!136 &136761280251985780
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1749654231491668}
+  m_GameObject: {fileID: 1096633353663746}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

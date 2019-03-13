@@ -22,14 +22,17 @@ public class PlayerCamera : MonoBehaviour {
 
     void Update ()
     {
-        Vector2 dir = new Vector2(Input.GetAxis("Camera X"), Input.GetAxis("Camera Y"));
+        if (!GameManager.instance.isPaused)
+        {
+            Vector2 dir = new Vector2(Input.GetAxis("Camera X"), Input.GetAxis("Camera Y"));
 
-        x += invertedX ? -(dir.x * sensitivity) : dir.x * sensitivity;
-        y += invertedY ? -(dir.y * sensitivity) : dir.y * sensitivity;
-        y = Mathf.Clamp(y, minAngle, maxAngle);
+            x += invertedX ? -(dir.x * sensitivity) : dir.x * sensitivity;
+            y += invertedY ? -(dir.y * sensitivity) : dir.y * sensitivity;
+            y = Mathf.Clamp(y, minAngle, maxAngle);
 
-        player.localEulerAngles = new Vector2(0, x); // Rotate player horizontally.
-        transform.localEulerAngles = new Vector2(-y, 0); // Rotate camera vertically.
+            player.localEulerAngles = new Vector2(0, x); // Rotate player horizontally.
+            transform.localEulerAngles = new Vector2(-y, 0); // Rotate camera vertically.
+        }
     }
 
     public void Shake()
@@ -62,5 +65,20 @@ public class PlayerCamera : MonoBehaviour {
         }
 
         transform.localPosition = originalPosition;
+    }
+
+    public void SetSensitivity(float newSensitivity)
+    {
+        sensitivity = newSensitivity;
+    }
+
+    public void SetInvertX(bool invert)
+    {
+        invertedX = invert;
+    }
+
+    public void SetInvertY(bool invert)
+    {
+        invertedY = invert;
     }
 }

@@ -109,6 +109,9 @@
         <property name="length">
             <value>7.1250113378684805</value>
         </property>
+        <relationship name="fadeInCurve">
+            <destination>{8fa4f578-efa0-4824-a8bb-70117cba265b}</destination>
+        </relationship>
         <relationship name="audioFile">
             <destination>{375f5f45-4b5e-4238-8c1f-3bd6383843c3}</destination>
         </relationship>
@@ -171,6 +174,14 @@
     </object>
     <object class="MixerBusPanner" id="{57577e83-6b6d-4123-a24f-f3cb38540d16}"/>
     <object class="MixerBusFader" id="{320d3f08-4903-4062-b1a3-0791d5c1ebf2}"/>
+    <object class="FadeCurve" id="{8fa4f578-efa0-4824-a8bb-70117cba265b}">
+        <relationship name="startPoint">
+            <destination>{5e754174-9541-4a33-9dcd-aaad79e12b56}</destination>
+        </relationship>
+        <relationship name="endPoint">
+            <destination>{4b98f71a-2112-4467-9c47-089fabf96caa}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusEffectChain" id="{f7cf5c22-9423-42d1-9854-7d3b2d01d221}">
         <relationship name="effects">
             <destination>{d88c8c13-07c0-439f-876d-df442e281e0f}</destination>
@@ -194,6 +205,25 @@
     </object>
     <object class="MixerBusPanner" id="{d0142417-cbf4-43cf-b0c1-c14c28e6c00a}"/>
     <object class="MixerBusFader" id="{ed1409a1-8742-40e5-aa62-0378dafa6fb1}"/>
+    <object class="AutomationPoint" id="{5e754174-9541-4a33-9dcd-aaad79e12b56}">
+        <property name="position">
+            <value>0</value>
+        </property>
+        <property name="value">
+            <value>0</value>
+        </property>
+        <property name="curveShape">
+            <value>-0.220539406</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{4b98f71a-2112-4467-9c47-089fabf96caa}">
+        <property name="position">
+            <value>0.3125</value>
+        </property>
+        <property name="value">
+            <value>1</value>
+        </property>
+    </object>
     <object class="ThreeEQEffect" id="{d88c8c13-07c0-439f-876d-df442e281e0f}">
         <property name="midGain">
             <value>2.5</value>
