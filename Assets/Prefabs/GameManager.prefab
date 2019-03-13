@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4715000787165460}
   - component: {fileID: 114666907069128208}
+  - component: {fileID: 114763113974641426}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -100,3 +101,14 @@ MonoBehaviour:
     rangedMaxSpawnTime: 0
   waveCountdownEventRef: event:/Wave/WaveCountdown
   waveClearEventRef: event:/Wave/WaveClear
+--- !u!114 &114763113974641426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273756372008584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6cbea4593382b84b80c4619b3e5bc87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

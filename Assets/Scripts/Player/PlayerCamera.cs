@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour {
 
-    public float sensitivityX = 1.0f;
-    public float sensitivityY = 1.0f;
+    public bool invertedX = false;
+    public bool invertedY = false;
+    public float sensitivity = 1.0f;
     public float maxAngle = 90;
     public float minAngle = -90;
     public float shakeIntensity = 6;
@@ -21,10 +22,10 @@ public class PlayerCamera : MonoBehaviour {
 
     void Update ()
     {
-        Vector2 dir = new Vector2(Input.GetAxisRaw("Camera X"), Input.GetAxisRaw("Camera Y"));
+        Vector2 dir = new Vector2(Input.GetAxis("Camera X"), Input.GetAxis("Camera Y"));
 
-        x += dir.x * sensitivityX;
-        y += dir.y * sensitivityY;
+        x += invertedX ? -(dir.x * sensitivity) : dir.x * sensitivity;
+        y += invertedY ? -(dir.y * sensitivity) : dir.y * sensitivity;
         y = Mathf.Clamp(y, minAngle, maxAngle);
 
         player.localEulerAngles = new Vector2(0, x); // Rotate player horizontally.

@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour {
         gunTimer += Time.deltaTime;
         meleeTimer += Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || CustomInput.GetAxisDown("Fire1"))
         { // Fire (or melee if selected).
             switch (weapon)
             {
