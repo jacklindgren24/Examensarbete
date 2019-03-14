@@ -1080,7 +1080,7 @@ MonoBehaviour:
   enemySpawnEventRef: event:/Characters/Enemy/EnemySpawn
   enemyDeathEventRef: event:/Characters/Enemy/EnemyDeath
   enemyHitEventRef: event:/Characters/Enemy/EnemyHit
-  enemyAttackEventRef: 
+  enemyAttackEventRef: event:/Characters/Enemy/EnemyAttack
   enemyFootstepsEventRef: event:/Characters/Enemy/MobMovement
   baseHealth: 100
   damage: 34

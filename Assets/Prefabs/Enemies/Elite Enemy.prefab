@@ -1354,7 +1354,7 @@ MonoBehaviour:
   enemySpawnEventRef: event:/Characters/Enemy/EliteSpawn
   enemyDeathEventRef: event:/Characters/Enemy/EliteDeath
   enemyHitEventRef: event:/Characters/Enemy/EliteHit
-  enemyAttackEventRef: 
+  enemyAttackEventRef: event:/Characters/Enemy/EliteAttack
   enemyFootstepsEventRef: event:/Characters/Enemy/EliteFootsteps
   baseHealth: 200
   damage: 60
