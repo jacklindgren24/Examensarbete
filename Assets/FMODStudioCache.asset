@@ -45,7 +45,7 @@ MonoBehaviour:
   - {fileID: 114067933463494484}
   MasterBankRef: {fileID: 114022037576781224}
   StringsBankRef: {fileID: 114866381203265096}
-  stringsBankWriteTime: 636879180175231765
+  stringsBankWriteTime: 636880911867438825
   cacheVersion: 2
 --- !u!114 &114000715902521910
 MonoBehaviour:
@@ -390,11 +390,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: F:\GitHub\Exjobb\Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master
     Bank.bank
-  lastModified: 636879180175167286
+  lastModified: 636880911867374345
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3341440
+    Value: 3341664
   Exists: 1
 --- !u!114 &114022097172797804
 MonoBehaviour:
@@ -3002,6 +3002,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114262379104031096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114262817738209348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5107,7 +5122,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114946259091581034}
+  - {fileID: 114646983085556570}
   MinDistance: 0
   MaxDistance: 0
   Length: 587
@@ -7726,8 +7741,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114759566645382158}
-  - {fileID: 114468631145896502}
+  - {fileID: 114876155206369926}
+  - {fileID: 114986427791708264}
   MinDistance: 0
   MaxDistance: 0
   Length: 892
@@ -8416,6 +8431,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114646983085556570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114653162559378644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8792,7 +8822,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114294841748596860}
+  - {fileID: 114262379104031096}
   MinDistance: 0
   MaxDistance: 0
   Length: 50
@@ -11026,6 +11056,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 7125
+--- !u!114 &114840072009971370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114840182964749640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11341,7 +11386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636879180175231765
+  lastModified: 636880911867438825
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -11534,6 +11579,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114876155206369926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114876176580688530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11553,7 +11613,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114984495084012952}
+  - {fileID: 114840072009971370}
   MinDistance: 0
   MaxDistance: 0
   Length: 587
@@ -12968,6 +13028,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114986427791708264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114988829751246570
 MonoBehaviour:
   m_ObjectHideFlags: 0

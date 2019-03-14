@@ -13,14 +13,14 @@ public class PlayerCamera : MonoBehaviour {
 
     float x = 0;
     float y = 0;
-    Transform player;
+    Rigidbody playerRB;
 
 	void Start ()
     {
-        player = transform.parent;
+        playerRB = transform.parent.GetComponent<Rigidbody>();
 	}
 
-    void Update ()
+    void LateUpdate ()
     {
         if (!GameManager.instance.isPaused)
         {
@@ -30,7 +30,7 @@ public class PlayerCamera : MonoBehaviour {
             y += invertedY ? -(dir.y * sensitivity) : dir.y * sensitivity;
             y = Mathf.Clamp(y, minAngle, maxAngle);
 
-            player.localEulerAngles = new Vector2(0, x); // Rotate player horizontally.
+            playerRB.rotation = Quaternion.Euler(new Vector2(0, x)); // Rotate player horizontally.
             transform.localEulerAngles = new Vector2(-y, 0); // Rotate camera vertically.
         }
     }
