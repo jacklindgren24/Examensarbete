@@ -4441,7 +4441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7367,8 +7367,8 @@ Transform:
   - {fileID: 1586355483}
   - {fileID: 1957088290}
   - {fileID: 141773092}
-  - {fileID: 2051564041}
   - {fileID: 1456579470}
+  - {fileID: 2051564041}
   - {fileID: 1967446911}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -8805,17 +8805,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c312293b4454785498a81f4e0857002a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -13078,7 +13078,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 783320610}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456728316
 GameObject:
@@ -14182,7 +14182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -19404,6 +19404,16 @@ Prefab:
       propertyPath: waves.Array.data[2].eliteMaxSpawnTime
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: pauseGame
+      value: event:/Menu/Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: unpauseGame
+      value: event:/Menu/Start
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
   m_IsPrefabAsset: 0
@@ -19486,7 +19496,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 783320610}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2062049482
 Prefab:

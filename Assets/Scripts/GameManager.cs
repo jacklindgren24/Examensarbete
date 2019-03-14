@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,6 +14,11 @@ public class GameManager : MonoBehaviour {
     public Transform goalSpawnerParent;
     public GameObject waveGoalPrefab;
     public float minimumGoalDistance = 40;
+
+    [FMODUnity.EventRef]
+    public string pauseGame;
+    [FMODUnity.EventRef]
+    public string unpauseGame;
 
     [Space(15)]
 
@@ -76,6 +82,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
 #endif
         if (Input.GetKeyDown(KeyCode.Escape)) SetPaused(!isPaused);
+        RuntimeManager.PlayOneShot(pauseGame, transform.position);
     }
 
 
