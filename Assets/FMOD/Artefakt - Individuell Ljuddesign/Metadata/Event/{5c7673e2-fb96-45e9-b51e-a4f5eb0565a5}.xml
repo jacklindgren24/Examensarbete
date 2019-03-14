@@ -237,7 +237,7 @@
     </object>
     <object class="EventMixerGroup" id="{86d1fad2-62fc-428c-af3c-ef9e239d8a67}">
         <property name="volume">
-            <value>-2</value>
+            <value>-10.5</value>
         </property>
         <property name="name">
             <value>Audio 1 (2)</value>
@@ -499,7 +499,7 @@
             <value>0.49999997</value>
         </property>
         <property name="maximumDistance">
-            <value>50</value>
+            <value>30</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{c61820a2-81fb-4cb9-b567-ee71be9ce744}">

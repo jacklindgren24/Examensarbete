@@ -23,15 +23,10 @@ public class WaveGoal : MonoBehaviour
         if (other.tag == "Player")
         {
             GameManager.instance.EndWave(false);
-            Destroy(gameObject);
             ScoreCounter.Score += 100;
-
+            RuntimeManager.PlayOneShot(waveCubePickup, transform.position);
+            Destroy(gameObject);
         }
-    }
-
-    void Update()
-    {
-
     }
 
     void OnDisable()
@@ -39,7 +34,7 @@ public class WaveGoal : MonoBehaviour
         if (!RuntimeManager.IsQuitting())
         {
             waveCubeEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            RuntimeManager.PlayOneShot(waveCubePickup, transform.position);
+            waveCubeEv.release();
         }
     }
 }

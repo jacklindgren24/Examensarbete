@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour {
     public GameObject waveGoalPrefab;
     public float minimumGoalDistance = 40;
 
-    [FMODUnity.EventRef]
+    [EventRef]
     public string pauseGame;
-    [FMODUnity.EventRef]
+    [EventRef]
     public string unpauseGame;
 
     [Space(15)]
@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour {
 
     [Space(15)]
 
-    [FMODUnity.EventRef]
+    [EventRef]
     public string waveCountdownEventRef;
-    [FMODUnity.EventRef]
+    [EventRef]
     public string waveClearEventRef;
 
     int currentWave = -1;
@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour {
     {
         // Get master channel group.
         FMOD.ChannelGroup master;
-        FMODUnity.RuntimeManager.LowlevelSystem.getMasterChannelGroup(out master);
+        RuntimeManager.LowlevelSystem.getMasterChannelGroup(out master);
 
         // Get mute status.
         bool isMuted = false;

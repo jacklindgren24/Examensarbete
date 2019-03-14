@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="EncodableAsset" id="{c39ad062-2fe1-4cc0-a70f-75fdafe22dc5}">
+        <property name="assetPath">
+            <value>Weapon/Melee/</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{52000304-82a4-4b98-8e8d-055b148fcc6b}</destination>
+        </relationship>
+    </object>
+</objects>

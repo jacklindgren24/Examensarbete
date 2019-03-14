@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using FMODUnity;
 
 public class HealthPickup : MonoBehaviour
@@ -13,36 +11,32 @@ public class HealthPickup : MonoBehaviour
     [EventRef]
     public string healthPickup;
 
-    void Start()
+    void OnEnable()
     {
         healthEv = RuntimeManager.CreateInstance(healthSpawn);
         RuntimeManager.AttachInstanceToGameObject(healthEv, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        HealthSpawner();
-
+        healthEv.start();
     }
-
-    public void HealthSpawner()
-    {
-        FMOD.Studio.PLAYBACK_STATE state;
-        healthEv.getPlaybackState(out state);
-
-        if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) healthEv.start();
-    }
-
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            
+            RuntimeManager.PlayOneShot(healthPickup, transform.position);
+
             other.GetComponent<PlayerController>().Health += heal;
-            healthEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             ScoreCounter.Score += 10;
             Destroy(gameObject);
-            RuntimeManager.PlayOneShot(healthPickup, transform.position);
         }
     }
-    void Update()
-    {
 
+    void OnDisable()
+    {
+        if (!RuntimeManager.IsQuitting())
+        {
+            healthEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            healthEv.release();
+        }
     }
 }

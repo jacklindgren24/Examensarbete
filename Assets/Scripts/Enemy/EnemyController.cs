@@ -149,7 +149,7 @@ public abstract class EnemyController : MonoBehaviour {
         anim.SetTrigger("Death");
 
         RuntimeManager.PlayOneShot(enemyDeathEventRef, transform.position);
-        enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         float roll = Random.Range(0, 101);
         if (roll <= itemDropChance) SpawnHealth();
@@ -168,6 +168,11 @@ public abstract class EnemyController : MonoBehaviour {
         {
             MobSpawner.activeMobs--;
             //print(MobSpawner.activeMobs);
+        }
+
+        if (!RuntimeManager.IsQuitting())
+        {
+            enemyFootstepsEv.release();
         }
 
         enemies.Remove(gameObject);
