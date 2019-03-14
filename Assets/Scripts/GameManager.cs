@@ -82,7 +82,6 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
 #endif
         if (Input.GetKeyDown(KeyCode.Escape)) SetPaused(!isPaused);
-        RuntimeManager.PlayOneShot(pauseGame, transform.position);
     }
 
 
@@ -225,6 +224,7 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = isPaused ? 0 : 1;
         pauseCanvas.SetActive(isPaused);
         gameCanvas.SetActive(!isPaused);
+
     }
 
     public void Quit()
