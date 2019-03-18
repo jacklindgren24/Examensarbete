@@ -7,13 +7,89 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000000005C559288 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000000416AE578 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000040D85258
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000040D85258
+[LOG] SoundI::release                          :  (00000000416AAB78)
+[LOG] SoundI::release                          :     FootstepMain01 (00000000416CC238)
+[LOG] SoundI::release                          :  (00000000416ABF98)
+[LOG] SoundI::release                          :     FootstepMain02 (00000000416CBEF8)
+[LOG] SoundI::release                          :  (00000000416ACF68)
+[LOG] SoundI::release                          :     FootstepMain03 (00000000416CB1F8)
+[LOG] SoundI::release                          :  (000000004106BD98)
+[LOG] SoundI::release                          :     FootstepMain04 (00000000416C8FD8)
+[LOG] SoundI::release                          :  (000000004106C1E8)
+[LOG] SoundI::release                          :     FootstepMain05 (00000000416CB878)
+[LOG] SoundI::release                          :  (00000000416AC9A8)
+[LOG] SoundI::release                          :     FootstepMain06 (00000000416CC098)
+[LOG] SoundI::release                          :  (000000004106BAB8)
+[LOG] SoundI::release                          :     FootstepMain07 (00000000416CA9D8)
+[LOG] SoundI::release                          :  (00000000416AB868)
+[LOG] SoundI::release                          :     FootstepMain08 (00000000416CBBB8)
+[LOG] SoundI::release                          :  (000000004106CBF8)
+[LOG] SoundI::release                          :     FootstepMain09 (00000000416C9E78)
+[LOG] SoundI::release                          :  (00000000416AA5B8)
+[LOG] SoundI::release                          :     FootstepMain10 (00000000416CA838)
+[LOG] SoundI::release                          : Crowd2 (0000000040D864E8)
+[LOG] SoundI::release                          :     Crowd2 (00000000416C9B38)
+[LOG] SoundI::release                          :     Crowd2 (0000000040D86848)
+[LOG] SoundI::release                          : Crowd4 (0000000019B23F18)
+[LOG] SoundI::release                          :     Crowd4 (00000000416CB398)
+[LOG] SoundI::release                          :     Crowd4 (0000000040D85258)
+[LOG] SoundI::release                          : Crowd (0000000019B240C8)
+[LOG] SoundI::release                          :     Crowd (00000000416C8618)
+[LOG] SoundI::release                          :     Crowd (0000000019B24938)
+[LOG] SoundI::release                          : Crowd3 (0000000019B236A8)
+[LOG] SoundI::release                          :     Crowd3 (00000000416CB058)
+[LOG] SoundI::release                          :     Crowd3 (0000000040D86698)
+[LOG] SoundI::release                          : Crowd4 (0000000019B23D68)
+[LOG] SoundI::release                          :     Crowd4 (00000000416C8958)
+[LOG] SoundI::release                          :     Crowd4 (0000000040D85C78)
+[LOG] SoundI::release                          :  (00000000416ABE28)
+[LOG] SoundI::release                          :     FootstepMain11 (00000000416CA358)
+[LOG] SoundI::release                          :  (000000004106D328)
+[LOG] SoundI::release                          :     FootstepMain12 (00000000416C8E38)
+[LOG] SoundI::release                          :  (00000000416AC6C8)
+[LOG] SoundI::release                          :     Foley1 (00000000416CBD58)
+[LOG] SoundI::release                          :  (000000004106C4C8)
+[LOG] SoundI::release                          :     Foley2 (00000000416C9CD8)
+[LOG] SoundI::release                          :  (000000004106CD68)
+[LOG] SoundI::release                          :     Foley3 (00000000416CA1B8)
+[LOG] SoundI::release                          :  (00000000416ABCB8)
+[LOG] SoundI::release                          :     Foley4 (00000000416CAB78)
+[LOG] SoundI::release                          :  (00000000416AAA08)
+[LOG] SoundI::release                          :     Movement1 (00000000416C9318)
+[LOG] SoundI::release                          :  (00000000416AB418)
+[LOG] SoundI::release                          :     Movement2 (00000000416C87B8)
+[LOG] SoundI::release                          :  (00000000416AD808)
+[LOG] SoundI::release                          :     Movement3 (00000000416CB6D8)
+[LOG] SoundI::release                          :  (000000004106CA88)
+[LOG] SoundI::release                          :     Movement4 (00000000416CBA18)
+[LOG] SoundI::release                          :  (00000000416AB2A8)
+[LOG] SoundI::release                          :     Material1 (00000000416C8AF8)
+[LOG] SoundI::release                          :  (000000004106D608)
+[LOG] SoundI::release                          :     Material2 (00000000416CA018)
+[LOG] SoundI::release                          :  (00000000416AD0D8)
+[LOG] SoundI::release                          :     Material3 (00000000416C9178)
+[LOG] SoundI::release                          :  (000000004106C918)
+[LOG] SoundI::release                          :     Material4 (00000000416C8C98)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
@@ -27,4 +103,6 @@
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

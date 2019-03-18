@@ -48,7 +48,7 @@ public class EliteEnemy : EnemyController
 
         player.Health -= damage;
 
-        //FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
     }
 
     public override void Die()
