@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114866381203265096}
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   EditorEvents:
   - {fileID: 114591616897590948}
   - {fileID: 114156548072034234}
@@ -46,11 +46,11 @@ MonoBehaviour:
   - {fileID: 114255930276678612}
   - {fileID: 114364432691256720}
   - {fileID: 114431426572878558}
-  - {fileID: 114447992371436990}
-  - {fileID: 114004337200271672}
-  MasterBankRef: {fileID: 114255401148066740}
+  - {fileID: 114445292572168362}
+  - {fileID: 114839157281412668}
+  MasterBankRef: {fileID: 114290312784440012}
   StringsBankRef: {fileID: 114866381203265096}
-  stringsBankWriteTime: 636881956921464277
+  stringsBankWriteTime: 636885922159564452
   cacheVersion: 2
 --- !u!114 &114000715902521910
 MonoBehaviour:
@@ -242,7 +242,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemyHit
   guid: 7d38eb7de44279488b165280146cce96
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -483,6 +483,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114026082050124630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114026887040290708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +528,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114028508356366804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114028912154963698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,6 +757,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114054078741330110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114054985243410464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,7 +943,7 @@ MonoBehaviour:
   Path: event:/Wave/WaveClear
   guid: 91a38245cfcc674380a807bff2d4908e
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1581,7 +1626,7 @@ MonoBehaviour:
   Path: event:/Pickup/Wave/WaveEndLoop
   guid: 9170cf7a0c5ec8418701ba6db7aeb687
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2064,7 +2109,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/CrowdEmitter
   guid: 6d40d0752eb5a24da5aa723d77d998f7
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2132,6 +2177,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114161750333090018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114162530183247150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,6 +2511,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114190856493290880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114193056341192686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,6 +2548,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114193860095913234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114194098253464326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2564,6 +2654,21 @@ MonoBehaviour:
   Max: 6
   Default: 0
 --- !u!114 &114202469471724930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114204236226484310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2918,7 +3023,7 @@ MonoBehaviour:
   Path: event:/Pickup/Health/HealthSpawn
   guid: 785fdab708852c418ad74e2aa579fa07
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -3259,14 +3364,14 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EliteFootsteps
   guid: e273765c96fbe945b51ea4f5eb0565a5
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0.49999997
-  MaxDistance: 50
-  Length: 1160
+  MinDistance: 1
+  MaxDistance: 45
+  Length: 1210
 --- !u!114 &114251356702524682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3367,6 +3472,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 10219648
   Exists: 1
+--- !u!114 &114255718817861524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114255930276678612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3381,7 +3501,7 @@ MonoBehaviour:
   Path: event:/Menu/Start
   guid: 1117e2fa46ee9e4bb3dc021ee31a7ac8
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3730,6 +3850,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 382496
   Exists: 1
+--- !u!114 &114280537150609672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114281864659346390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3868,6 +4003,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114290312784440012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: F:\GitHub\Exjobb\Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636885922159490056
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 10601856
+  Exists: 1
 --- !u!114 &114291206864529218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3897,6 +4051,21 @@ MonoBehaviour:
   Name: Sprinting
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &114293448098624974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
   Default: 0
 --- !u!114 &114293857201347406
 MonoBehaviour:
@@ -4299,6 +4468,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114318643949618110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114319661442562780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4329,6 +4513,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114320425016263770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114321656228495916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4343,7 +4542,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerHit
   guid: 930b5c449daa9b4b8a43b266caad9b30
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4365,6 +4564,21 @@ MonoBehaviour:
   Name: Bullet
   Min: 0
   Max: 4
+  Default: 0
+--- !u!114 &114323432665047328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
   Default: 0
 --- !u!114 &114325685371870266
 MonoBehaviour:
@@ -4455,6 +4669,21 @@ MonoBehaviour:
   Name: Material
   Min: 0
   Max: 6
+  Default: 0
+--- !u!114 &114332038099712766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114332841636637826
 MonoBehaviour:
@@ -4695,6 +4924,21 @@ MonoBehaviour:
   Name: Material
   Min: 0
   Max: 6
+  Default: 0
+--- !u!114 &114347857037060052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114348085762922788
 MonoBehaviour:
@@ -4969,7 +5213,7 @@ MonoBehaviour:
   Path: event:/Menu/Pause
   guid: 46b98daa1038a0459ef1aee4c0ce6595
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5096,7 +5340,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EliteSpawn
   guid: e2079b070a1a52419bda408612ed621d
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5195,6 +5439,21 @@ MonoBehaviour:
   Max: 4
   Default: 0
 --- !u!114 &114383002999999998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114384145263919438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5626,6 +5885,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114404018801172556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114404500414806566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5655,7 +5929,7 @@ MonoBehaviour:
   Path: snapshot:/Outdoor
   guid: a0a9fe608c32f34d96206bd27b02e2b8
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -5798,6 +6072,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114415192598682346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114415711485062014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5848,12 +6137,12 @@ MonoBehaviour:
   Path: event:/Weapons/HitscanShoot (2D)
   guid: 94273b7cb74563429c8c401ac9e5d826
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114942922536389696}
+  - {fileID: 114404018801172556}
   MinDistance: 0
   MaxDistance: 0
   Length: 587
@@ -6025,13 +6314,13 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/MobMovement
   guid: e5570658d2369a4bb2c51d00af171ecc
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 45
   Length: 13913
 --- !u!114 &114433220139017024
 MonoBehaviour:
@@ -6211,7 +6500,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EliteDeath
   guid: 7cc2080c30b5c342bfbc9f1b227fab43
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6234,6 +6523,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114445292572168362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/EliteAttack
+  guid: 28405593c12d7641adec9a45e2ef539d
+  Banks:
+  - {fileID: 114290312784440012}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 7
+  Length: 1038
 --- !u!114 &114445928679166406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6446,7 +6757,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemyFootsteps
   guid: ad4b54250443a04894bb6e7943eafddb
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -6865,6 +7176,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114472396560856452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114472575401322740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7267,6 +7593,21 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 1840
 --- !u!114 &114495113941656980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
+--- !u!114 &114495587864926734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7696,7 +8037,7 @@ MonoBehaviour:
   Path: event:/Wave/WaveCountdown
   guid: 4d0eecac9c69ec47939c39e2ad0e5edb
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -7705,6 +8046,21 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 7125
 --- !u!114 &114516114502069196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
+--- !u!114 &114517568047691304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8187,7 +8543,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EliteHit
   guid: 0c7800480ffac645aba1f3382a174d08
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -8195,6 +8551,21 @@ MonoBehaviour:
   MinDistance: 0.59999996
   MaxDistance: 50
   Length: 880
+--- !u!114 &114548923997342588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114553665424502392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8382,6 +8753,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114564258626111058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114566365533999186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8396,6 +8782,21 @@ MonoBehaviour:
   Name: Bullet
   Min: 0
   Max: 4
+  Default: 0
+--- !u!114 &114566964693294090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114567136164565582
 MonoBehaviour:
@@ -8662,6 +9063,36 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114588635349001910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
+--- !u!114 &114588637484631504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114589149947828884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8751,13 +9182,13 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerFootsteps
   guid: 6d7dcd829d3f3c40936cf4075a27cd42
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114286996387762916}
-  - {fileID: 114672965596301574}
+  - {fileID: 114835374727541420}
+  - {fileID: 114347857037060052}
   MinDistance: 0
   MaxDistance: 0
   Length: 892
@@ -8893,6 +9324,21 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114597949822225610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114599336870359982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9004,7 +9450,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerDeath
   guid: be4516dcbe8213429f13719a89c0b52a
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -9303,7 +9749,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/Crowd
   guid: eb0b22e2e4e70b4eb13e7538b9d8919f
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -9492,6 +9938,21 @@ MonoBehaviour:
   Max: 4
   Default: 0
 --- !u!114 &114645219593920522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
+--- !u!114 &114650430499430528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9728,6 +10189,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3282432
   Exists: 1
+--- !u!114 &114664976376802044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114668055111067778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9742,7 +10218,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerJump
   guid: e8865590a6c89b43a7d37b3442bcbdcf
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -9922,12 +10398,12 @@ MonoBehaviour:
   Path: event:/Weapons/ProjectileShoot (2D)
   guid: 4ccf2062585b5e4989c38e5b639db512
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114390871784080604}
+  - {fileID: 114664976376802044}
   MinDistance: 0
   MaxDistance: 0
   Length: 50
@@ -11412,7 +11888,7 @@ MonoBehaviour:
   Path: event:/Characters/Player/PlayerLand
   guid: b8cd4403d119aa4db4ae4c1ff40a1328
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -12023,7 +12499,7 @@ MonoBehaviour:
   Path: event:/Ambience/Outdoor/CrowdAmbience
   guid: a91aa8a3e187b34a8a968d88423bac54
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -12353,6 +12829,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2366560
   Exists: 1
+--- !u!114 &114835374727541420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114835856543650386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12420,6 +12911,28 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114839157281412668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Enemy/EnemyAttack
+  guid: 5f511cdf9fe21543a7966cce9525d685
+  Banks:
+  - {fileID: 114290312784440012}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 540
 --- !u!114 &114840182964749640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12450,6 +12963,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114844449208992426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114844747928806152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12584,7 +13112,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemySpawn
   guid: 4e87c01b34b03f498dcc53ce1dcc7099
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -12607,6 +13135,21 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+--- !u!114 &114857947697163710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114858362552499718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12685,7 +13228,7 @@ MonoBehaviour:
   Path: event:/Pickup/Health/HealthPickup
   guid: 88fb987d08023840a3ae20317d3c1a54
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -12735,7 +13278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Artefakt - Individuell Ljuddesign\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636881956921464277
+  lastModified: 636885922159564452
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -12942,15 +13485,30 @@ MonoBehaviour:
   Path: event:/Weapons/Melee (2D)
   guid: e67007d874a6cc48bf751728feac6ef3
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114414368943636414}
+  - {fileID: 114915507437761660}
   MinDistance: 0
   MaxDistance: 0
   Length: 587
+--- !u!114 &114876298578212080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114877470750984452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13190,7 +13748,7 @@ MonoBehaviour:
   Path: snapshot:/Indoor
   guid: 11d78c9da85a7f43aefdbb689ef92635
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -13276,7 +13834,7 @@ MonoBehaviour:
   Path: event:/Characters/Enemy/EnemyDeath
   guid: b014342bf18b264aad0d5375401caa4d
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -13499,6 +14057,21 @@ MonoBehaviour:
   Max: 6
   Default: 0
 --- !u!114 &114914735360434688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
+--- !u!114 &114915507437761660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13897,7 +14470,7 @@ MonoBehaviour:
   Path: snapshot:/Death
   guid: f2ce9fa9ec8b144792399a02ab5c4385
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -13905,6 +14478,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114942575168131932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 100
 --- !u!114 &114942922536389696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14024,7 +14612,7 @@ MonoBehaviour:
   Path: event:/Pickup/Wave/WaveEndStop
   guid: b0f903a430a81747af7e20fbbd102e7e
   Banks:
-  - {fileID: 114255401148066740}
+  - {fileID: 114290312784440012}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1

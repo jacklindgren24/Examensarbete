@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using FMODUnity;
+using FMOD.Studio;
 
 public abstract class EnemyController : MonoBehaviour {
 
@@ -52,7 +53,6 @@ public abstract class EnemyController : MonoBehaviour {
     public int scoreValue;
     public float itemDropChance = 10;
     public GameObject healthPickupPrefab;
-    
 
     protected float attackTimer = 0;
     protected float windUpTimer = 0;
@@ -64,7 +64,7 @@ public abstract class EnemyController : MonoBehaviour {
     protected Animator anim;
     protected HitScript hitScript;
 
-    public FMOD.Studio.EventInstance enemyFootstepsEv;
+    public EventInstance enemyFootstepsEv;
 
     protected abstract void Attack();
 
@@ -95,11 +95,14 @@ public abstract class EnemyController : MonoBehaviour {
 
         agent.speed += Random.Range(-speedRandomness, speedRandomness);
 
-        RuntimeManager.PlayOneShot(enemySpawnEventRef, transform.position);
+        EventInstance spawnEv = RuntimeManager.CreateInstance(enemySpawnEventRef);
+        RuntimeManager.AttachInstanceToGameObject(spawnEv, transform, rb);
+        spawnEv.start();
+        spawnEv.release();
 
         enemyFootstepsEv = RuntimeManager.CreateInstance(enemyFootstepsEventRef);
-        RuntimeManager.AttachInstanceToGameObject(enemyFootstepsEv, transform, rb);
-        PlayFootstep();
+        FMOD.ATTRIBUTES_3D attr = RuntimeUtils.To3DAttributes(transform.position);
+        enemyFootstepsEv.set3DAttributes(attr);
 
         enemies.Add(gameObject);
     }
@@ -123,10 +126,17 @@ public abstract class EnemyController : MonoBehaviour {
 
     void PlayFootstep()
     {
-        FMOD.Studio.PLAYBACK_STATE state;
+        FMOD.ATTRIBUTES_3D attr = RuntimeUtils.To3DAttributes(transform.position);
+        enemyFootstepsEv.set3DAttributes(attr);
+
+        PLAYBACK_STATE state;
         enemyFootstepsEv.getPlaybackState(out state);
 
-        if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) enemyFootstepsEv.start();
+        if (state != PLAYBACK_STATE.PLAYING && state != PLAYBACK_STATE.STARTING)
+        {
+
+            enemyFootstepsEv.start();
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -140,7 +150,7 @@ public abstract class EnemyController : MonoBehaviour {
     void SpawnHealth()
     {
         Vector3 pos = transform.position;
-        pos.y = 1.5f;
+        pos.y += 1.5f;
         Instantiate(healthPickupPrefab, pos, transform.rotation);
     }
 
