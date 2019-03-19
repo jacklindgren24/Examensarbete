@@ -1036,13 +1036,13 @@ retry:
             }
         }
 
-#if UNITY_EDITOR
-        /* Only relavant to protect the Play-In-Editor to Editor transition. */
+//#if UNITY_EDITOR
+        /* Only relevant to protect the Play-In-Editor to Editor transition. */
         public static bool IsQuitting()
         {
             return isQuitting;
         }
-#endif
+//#endif
 
         public static bool HasBanksLoaded
         {
