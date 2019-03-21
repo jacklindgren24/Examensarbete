@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody rb;
     float height;
     Vector3 lastGroundedVelocity;
+    float x, z;
+    bool sprintToggle = false;
     [HideInInspector]
     public bool isSprinting = false;
     bool isGrounded = false;
@@ -74,7 +76,7 @@ public class PlayerMovement : MonoBehaviour {
         playerFootstepEv = RuntimeManager.CreateInstance(playerFootsteps);
     }
 
-    public void PlayFootstep()
+    void PlayFootstep()
     {
         FMOD.Studio.PLAYBACK_STATE state;
         playerFootstepEv.getPlaybackState(out state);
@@ -89,8 +91,8 @@ public class PlayerMovement : MonoBehaviour {
     {
         rb.drag = 0;
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
 
         Vector3 dir = transform.forward * z + transform.right * x;
         if (dir.magnitude > 1) dir /= dir.magnitude; // Limit diagonal movement.
@@ -117,11 +119,9 @@ public class PlayerMovement : MonoBehaviour {
 
         if (IsGrounded)
         { // Grounded movement.
-            if (Input.GetButton("Sprint") && z > 0) isSprinting = true;
-            else isSprinting = false;
-
             if (x == 0 && z == 0)
             { // No input.
+                isSprinting = false;
                 rb.drag = stoppingFriction;
                 playerFootstepEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
@@ -142,12 +142,30 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    public void SetSprintToggle(bool state)
+    {
+        sprintToggle = state;
+    }
+
     void Update()
     {
-        if (IsGrounded && Input.GetButtonDown("Jump"))
-        { // Jump.
-            rb.velocity += transform.up * jumpHeight;
-            RuntimeManager.PlayOneShot(playerJump);
+        if (IsGrounded)
+        { // Grounded movement.
+            if (sprintToggle)
+            {
+                if (Input.GetButtonDown("Sprint") && z > 0) isSprinting = !isSprinting;
+            }
+            else
+            {
+                if (Input.GetButton("Sprint") && z > 0) isSprinting = true;
+                else isSprinting = false;
+            }
+
+            if (Input.GetButtonDown("Jump"))
+            { // Jump.
+                rb.velocity += transform.up * jumpHeight;
+                RuntimeManager.PlayOneShot(playerJump);
+            }
         }
     }
 }

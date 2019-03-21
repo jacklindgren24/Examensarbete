@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.M)) ToggleMute();
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
 #endif
-        if (Input.GetKeyDown(KeyCode.Escape)) SetPaused(!isPaused);
+        if (Input.GetButtonDown("Pause")) SetPaused(!isPaused);
     }
 
 

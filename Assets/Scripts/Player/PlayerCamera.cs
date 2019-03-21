@@ -72,6 +72,11 @@ public class PlayerCamera : MonoBehaviour {
         sensitivity = newSensitivity;
     }
 
+    public void SetFieldOfView(float newFoV)
+    {
+        GetComponent<Camera>().fieldOfView = newFoV;
+    }
+
     public void SetInvertX(bool invert)
     {
         invertedX = invert;
