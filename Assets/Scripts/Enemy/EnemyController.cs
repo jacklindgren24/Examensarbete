@@ -134,7 +134,6 @@ public abstract class EnemyController : MonoBehaviour {
 
         if (state != PLAYBACK_STATE.PLAYING && state != PLAYBACK_STATE.STARTING)
         {
-
             enemyFootstepsEv.start();
         }
     }

@@ -82,52 +82,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCanvas: {fileID: 0}
   pauseCanvas: {fileID: 0}
+  winCanvas: {fileID: 0}
   waveCounter: {fileID: 0}
   countdown: {fileID: 1198933147372970, guid: 93ee8f608b0e5be438cfe7a62c9ce06a, type: 2}
   goalSpawnerParent: {fileID: 0}
   waveGoalPrefab: {fileID: 1863249050442574, guid: 48fc3da754077cc42a611b17226a460c,
     type: 2}
   minimumGoalDistance: 40
+  pauseGame: event:/Menu/Pause
+  unpauseGame: event:/Menu/Start
   waves:
   - startDelay: 7
     hitscanIntensity: 0
     projectileIntensity: 0
     meleeIntensity: 0
     maxMobAmount: 12
-    mobMinSpawnTime: 3
-    mobMaxSpawnTime: 6
+    mobMinSpawnTime: 1
+    mobMaxSpawnTime: 3
     maxEliteAmount: 1
-    eliteMinSpawnTime: 2
-    eliteMaxSpawnTime: 3
-    maxRangedAmount: 0
-    rangedMinSpawnTime: 0
-    rangedMaxSpawnTime: 0
+    eliteMinSpawnTime: 4
+    eliteMaxSpawnTime: 7
   - startDelay: 7
     hitscanIntensity: 50
     projectileIntensity: 50
     meleeIntensity: 50
     maxMobAmount: 18
-    mobMinSpawnTime: 2
-    mobMaxSpawnTime: 4
+    mobMinSpawnTime: 1
+    mobMaxSpawnTime: 3
     maxEliteAmount: 2
-    eliteMinSpawnTime: 5
-    eliteMaxSpawnTime: 8
-    maxRangedAmount: 0
-    rangedMinSpawnTime: 0
-    rangedMaxSpawnTime: 0
+    eliteMinSpawnTime: 3
+    eliteMaxSpawnTime: 6
   - startDelay: 7
     hitscanIntensity: 100
     projectileIntensity: 100
     meleeIntensity: 100
     maxMobAmount: 24
-    mobMinSpawnTime: 1
-    mobMaxSpawnTime: 3
+    mobMinSpawnTime: 0.5
+    mobMaxSpawnTime: 2
     maxEliteAmount: 3
     eliteMinSpawnTime: 3
     eliteMaxSpawnTime: 6
-    maxRangedAmount: 0
-    rangedMinSpawnTime: 0
-    rangedMaxSpawnTime: 0
   waveCountdownEventRef: event:/Wave/WaveCountdown
   waveClearEventRef: event:/Wave/WaveClear
   isPaused: 0

@@ -19,7 +19,7 @@ public class Headbob : MonoBehaviour {
 
     void Update()
     {
-        if (pm.IsGrounded)
+        if (pm.IsGrounded && !GameManager.instance.isPaused)
         {
             float waveslice = 0;
             float horizontal = Input.GetAxis("Horizontal");

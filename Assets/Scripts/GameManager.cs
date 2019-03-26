@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using FMODUnity;
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject gameCanvas;
     public GameObject pauseCanvas;
+    public GameObject winCanvas;
     public UnityEngine.UI.Text waveCounter;
     public GameObject countdown;
     public Transform goalSpawnerParent;
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector]
     public bool isPaused = false;
-
+    bool hasWon = false;
     List<Transform> goalSpawners = new List<Transform>();
 
     void Awake ()
@@ -61,6 +63,9 @@ public class GameManager : MonoBehaviour {
         {
             goalSpawners.Add(goalSpawnerParent.GetChild(i));
         }
+
+        isPaused = false;
+        hasWon = false;
 
         waveCounter.CrossFadeAlpha(0, 0, true); // Make wave counter transparent on awake.
 	}
@@ -81,7 +86,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.M)) ToggleMute();
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
 #endif
-        if (Input.GetButtonDown("Pause")) SetPaused(!isPaused);
+        if (Input.GetButtonDown("Pause") && !hasWon) SetPaused(!isPaused);
     }
 
 
@@ -137,7 +142,7 @@ public class GameManager : MonoBehaviour {
 
             waveCounter.CrossFadeAlpha(0, 2, false);
 
-            if (CurrentWave > 0) FMODUnity.RuntimeManager.PlayOneShot(waveClearEventRef);
+            if (CurrentWave > 0) RuntimeManager.PlayOneShot(waveClearEventRef);
 
             print("Wave " + (CurrentWave + 1));
 
@@ -149,7 +154,7 @@ public class GameManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay - 3);
         
-        FMODUnity.RuntimeManager.PlayOneShot(waveCountdownEventRef);
+        RuntimeManager.PlayOneShot(waveCountdownEventRef);
         GameObject cd = Instantiate(countdown, gameCanvas.transform);
         Destroy(cd, cd.GetComponent<Animator>().runtimeAnimatorController.animationClips[0].length + 0.1f);
 
@@ -175,7 +180,35 @@ public class GameManager : MonoBehaviour {
 
     void WinGame()
     {
+        RuntimeManager.PlayOneShot(waveClearEventRef);
 
+        gameCanvas.SetActive(false);
+        winCanvas.SetActive(true);
+
+        hasWon = true;
+        isPaused = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Restart()
+    {
+        ScoreCounter.Score = 0;
+
+        RuntimeManager.GetBus("bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        GameOver.deathSnapEv.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        GameOver.deathSnapEv.release();
+
+        foreach (GameObject enemy in EnemyController.enemies)
+        {
+            enemy.GetComponent<EnemyController>().enemyFootstepsEv.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            enemy.GetComponent<EnemyController>().enemyFootstepsEv.release();
+        }
+
+        EnemyController.enemies.Clear();
+
+        SceneManager.LoadScene("Arena", LoadSceneMode.Single);
     }
 
     void ToggleCursorState()
@@ -219,12 +252,12 @@ public class GameManager : MonoBehaviour {
     {
         isPaused = _isPaused;
 
+        RuntimeManager.GetBus("bus:/").setPaused(isPaused);
         Cursor.visible = isPaused ? true : false;
         Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
         Time.timeScale = isPaused ? 0 : 1;
         pauseCanvas.SetActive(isPaused);
         gameCanvas.SetActive(!isPaused);
-
     }
 
     public void Quit()
