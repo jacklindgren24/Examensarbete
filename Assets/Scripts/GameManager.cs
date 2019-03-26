@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
+using System;
+using System.IO;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using FMODUnity;
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
 #endif
         if (Input.GetButtonDown("Pause") && !hasWon) SetPaused(!isPaused);
+        if (Input.GetKeyDown(KeyCode.Backspace)) WriteData();
     }
 
 
@@ -172,7 +175,7 @@ public class GameManager : MonoBehaviour {
                 potentials.Add(t);
             }
         }
-        Transform goalSpawn = potentials[Random.Range(0, potentials.Count)];
+        Transform goalSpawn = potentials[UnityEngine.Random.Range(0, potentials.Count)];
         Instantiate(waveGoalPrefab, goalSpawn.position, goalSpawn.rotation);
 
         SetSpawnersPaused(false); // Unpause spawners.
@@ -260,13 +263,38 @@ public class GameManager : MonoBehaviour {
         gameCanvas.SetActive(!isPaused);
     }
 
+    void WriteData()
+    {
+        string[] data =
+{
+            "WEAPONS (SHOTS / HITS)\n",
+            "Hitscan: " + totalHitscanShots + " / " + totalHitscanHits + '\n',
+            "Projectile: " + totalProjectilesShot + " / " + totalProjectilesHit + '\n',
+            "Melee: " + totalMeleeAttacks + " / " + totalMeleeHits + '\n',
+
+            "KILLS\n",
+            "Mob: " + totalMobKills + '\n',
+            "Elite: " + totalEliteKills + '\n',
+        };
+
+        // Write to text file on desktop.
+        int i = 1;
+        while (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Test Data " + i + ".txt"))
+        {
+            i++;
+        }
+        File.WriteAllLines(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Test Data " + i + ".txt", data);
+
+        print("Wrote data to " + Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+    }
+
     public void Quit()
     {
         Application.Quit();
     }
 }
 
-[System.Serializable]
+[Serializable]
 public struct Wave
 {
     [Range(3, 10)]
