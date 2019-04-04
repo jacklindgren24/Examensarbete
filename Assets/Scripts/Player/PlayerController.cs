@@ -88,9 +88,9 @@ public class PlayerController : MonoBehaviour {
                     case Weapon.Hitscan:
                         if (gunTimer >= HitscanWeapon.cooldown) FireRay();
                         break;
-                    case Weapon.Melee:
-                        if (meleeTimer >= MeleeWeapon.cooldown) Melee();
-                        break;
+                    //case Weapon.Melee:
+                    //    if (meleeTimer >= MeleeWeapon.cooldown) Melee();
+                    //    break;
                 }
             }
             else if (Input.GetButtonDown("Switch"))
@@ -98,11 +98,11 @@ public class PlayerController : MonoBehaviour {
                 weapon = weapon == Weapon.Projectile ? Weapon.Hitscan : Weapon.Projectile;
                 gunTimer = weapon == Weapon.Projectile ? ProjectileWeapon.cooldown : HitscanWeapon.cooldown;
             }
-            else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
-            { // Melee.
-                RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
-                Invoke("Melee", MeleeWeapon.delay);
-            }
+            //else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
+            //{ // Melee.
+            //    RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
+            //    Invoke("Melee", MeleeWeapon.delay);
+            //}
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
             { // Increase intensity by 50 up to a maximum of 100 (guns).
@@ -112,14 +112,14 @@ public class PlayerController : MonoBehaviour {
             { // Decrease intensity by 50 down to a minimum of 0 (guns).
                 intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] - 50, 0, 100);
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            { // Increase intensity by 50 up to a maximum of 100 (melee).
-                intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] + 50, 0, 100);
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            { // Decrease intensity by 50 down to a minimum of 0 (melee).
-                intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] - 50, 0, 100);
-            }
+            //else if (Input.GetKeyDown(KeyCode.RightArrow))
+            //{ // Increase intensity by 50 up to a maximum of 100 (melee).
+            //    intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] + 50, 0, 100);
+            //}
+            //else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            //{ // Decrease intensity by 50 down to a minimum of 0 (melee).
+            //    intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] - 50, 0, 100);
+            //}
         }
     }
 

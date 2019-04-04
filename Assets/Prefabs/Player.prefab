@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114468048078551338}
   - component: {fileID: 54151283679550296}
   - component: {fileID: 136234861159882624}
+  - component: {fileID: 114634628758519564}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -273,6 +274,20 @@ MonoBehaviour:
   playerFootsteps: event:/Characters/Player/PlayerFootsteps
   playerJump: event:/Characters/Player/PlayerJump
   playerLand: event:/Characters/Player/PlayerLand
+--- !u!114 &114634628758519564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220712293117880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50acccd438ed3549aca217be4dbda28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 180
+  range: 20
+  eventPath: 
 --- !u!114 &114685428696394502
 MonoBehaviour:
   m_ObjectHideFlags: 1
