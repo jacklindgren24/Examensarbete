@@ -34,7 +34,7 @@ public class Headbob : MonoBehaviour {
             else
             {
                 waveslice = Mathf.Sin(timer);
-                timer = pm.isSprinting ? timer + bobbingSpeedSprint : timer + bobbingSpeedBase;
+                timer = pm.isSprinting ? timer + bobbingSpeedSprint * Time.deltaTime : timer + bobbingSpeedBase * Time.deltaTime;
 
                 if (timer > Mathf.PI * 2)
                 {
