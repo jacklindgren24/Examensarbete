@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ProximityTracker : MonoBehaviour
 {
-    public float angle = 180;
-    public float range = 20;
+    public float angle = 90;
+    public float range = 15;
 
     [EventRef]
     public string eventPath;
@@ -31,6 +31,7 @@ public class ProximityTracker : MonoBehaviour
                 if (events.Count < results.Length)
                 { // Add event instance if there are not enough instances for every enemy.
                     EventInstance evInstance = RuntimeManager.CreateInstance(eventPath);
+                    RuntimeManager.AttachInstanceToGameObject(evInstance, result.transform, result.GetComponent<Rigidbody>());
                     evInstance.start();
                     events.Add(result.GetInstanceID(), evInstance);
                 }

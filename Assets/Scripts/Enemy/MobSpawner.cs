@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class MobSpawner : MonoBehaviour
 {
@@ -39,8 +40,27 @@ public class MobSpawner : MonoBehaviour
 
     void Spawn()
     {
-        Transform spawner = spawners[Random.Range(0, spawners.Length)].transform;
-        Instantiate(enemyPrefab, spawner.position, spawner.rotation);
+        Vector3 extents = Vector3.one * 2;
+        int layerMask = LayerMask.GetMask("Player", "Enemy");
+
+        Transform spawner;
+        List<int> rolledSpawners = new List<int>();
+        while (true)
+        { // Reroll spawn position while spawner is blocked.
+            if (rolledSpawners.Count == spawners.Length) break;
+
+            int roll = Random.Range(0, spawners.Length);
+            while (rolledSpawners.Contains(roll))
+                roll = Random.Range(0, spawners.Length);
+            rolledSpawners.Add(roll);
+
+            spawner = spawners[roll].transform;
+            if (!Physics.CheckBox(spawner.position, extents, spawner.rotation, layerMask))
+            { // Not blocked; break from loop.
+                Instantiate(enemyPrefab, spawner.position, spawner.rotation);
+                break;
+            }
+        }
     }
 
     void NewSpawnTime()
