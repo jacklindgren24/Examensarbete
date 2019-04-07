@@ -101,9 +101,6 @@
         </relationship>
     </object>
     <object class="GroupTrack" id="{c9b7c273-e278-44b3-8160-467a89112724}">
-        <relationship name="automationTracks">
-            <destination>{33b003cb-2e0f-4164-8dda-4dde451a897a}</destination>
-        </relationship>
         <relationship name="modules">
             <destination>{41e537a9-af8b-4342-a91b-90a9898d5e28}</destination>
         </relationship>
@@ -321,11 +318,6 @@
         </relationship>
         <relationship name="output">
             <destination>{7c70760a-394a-444d-84f9-00ecad49946d}</destination>
-        </relationship>
-    </object>
-    <object class="AutomationTrack" id="{33b003cb-2e0f-4164-8dda-4dde451a897a}">
-        <relationship name="automator">
-            <destination>{82ae2388-bbf0-4804-ab5e-0ed15c973cf8}</destination>
         </relationship>
     </object>
     <object class="SingleSound" id="{41e537a9-af8b-4342-a91b-90a9898d5e28}">

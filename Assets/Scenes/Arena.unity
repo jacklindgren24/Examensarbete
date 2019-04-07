@@ -19707,6 +19707,36 @@ Prefab:
       propertyPath: goalSpawnerParent
       value: 
       objectReference: {fileID: 1565377508}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[0].hitscanIntensity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[0].projectileIntensity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[0].meleeIntensity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[2].hitscanIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[2].projectileIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666907069128208, guid: 8290b503cc5abce4eab01a35d5ee14a1,
+        type: 2}
+      propertyPath: waves.Array.data[2].meleeIntensity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290b503cc5abce4eab01a35d5ee14a1, type: 2}
   m_IsPrefabAsset: 0
