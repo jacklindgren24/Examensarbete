@@ -385,6 +385,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{6efd338c-8a8b-498c-a300-31e24a1c5b24}">
+        <property name="volume">
+            <value>-4.5</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -576,8 +579,9 @@
     </object>
     <object class="MixerBusEffectChain" id="{46222f0a-f534-4ad7-bbb6-68da365d447f}">
         <relationship name="effects">
-            <destination>{208f62e7-e7c8-424b-acc2-90123154fb85}</destination>
             <destination>{fa16463d-4fbd-4961-8168-f680b2deeebc}</destination>
+            <destination>{208f62e7-e7c8-424b-acc2-90123154fb85}</destination>
+            <destination>{a8f7cdd7-ffcf-4ca8-9f71-3e37f6c38f44}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{2d0a105d-2e35-450e-b86f-e65ad254e041}"/>
@@ -844,6 +848,7 @@
             <destination>{6070aecb-4ab8-45b0-913d-6eeff5ad4c22}</destination>
         </relationship>
     </object>
+    <object class="MixerBusFader" id="{fa16463d-4fbd-4961-8168-f680b2deeebc}"/>
     <object class="ThreeEQEffect" id="{208f62e7-e7c8-424b-acc2-90123154fb85}">
         <property name="lowGain">
             <value>-2.5</value>
@@ -855,7 +860,20 @@
             <value>1150</value>
         </property>
     </object>
-    <object class="MixerBusFader" id="{fa16463d-4fbd-4961-8168-f680b2deeebc}"/>
+    <object class="MultibandEqEffect" id="{a8f7cdd7-ffcf-4ca8-9f71-3e37f6c38f44}">
+        <property name="filterTypeA">
+            <value>9</value>
+        </property>
+        <property name="frequencyA">
+            <value>13400</value>
+        </property>
+        <property name="qualityA">
+            <value>5.4000001</value>
+        </property>
+        <property name="gainA">
+            <value>-5.5</value>
+        </property>
+    </object>
     <object class="AutomationPoint" id="{d799f34c-b500-472a-a9ab-eee366a12c00}">
         <property name="position">
             <value>0.41000000000000003</value>

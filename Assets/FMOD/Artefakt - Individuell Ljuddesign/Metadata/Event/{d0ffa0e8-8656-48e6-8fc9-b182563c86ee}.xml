@@ -245,7 +245,7 @@
     </object>
     <object class="SingleSound" id="{e0f41bb0-8fd7-4015-b6c5-728fbf83e3de}">
         <property name="length">
-            <value>0.75</value>
+            <value>0.69000000000000006</value>
         </property>
         <property name="pitch">
             <value>-9.5</value>
@@ -414,8 +414,9 @@
     </object>
     <object class="MixerBusEffectChain" id="{98b456a9-d47b-4e78-afe6-ef1917a9cbe9}">
         <relationship name="effects">
-            <destination>{5b6629ff-d0fe-4835-8794-a4f2ac3e07c1}</destination>
             <destination>{a2ed1036-2c34-49a7-a3b0-0fe97e8ef833}</destination>
+            <destination>{5b6629ff-d0fe-4835-8794-a4f2ac3e07c1}</destination>
+            <destination>{270dfd79-2a91-4d2c-a28d-403e202dfdd2}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{a077c347-83e9-4be2-8a15-ee06ba0cbfb8}"/>
@@ -577,23 +578,24 @@
     <object class="MixerBusFader" id="{94aa6b66-d440-41e9-89a9-f9d4943037a6}"/>
     <object class="AutomationPoint" id="{b7d9d1e4-37b2-427f-aed8-0a432381df13}">
         <property name="position">
-            <value>0.14999999999999999</value>
+            <value>0.14499999999999999</value>
         </property>
         <property name="value">
             <value>1</value>
         </property>
         <property name="curveShape">
-            <value>-0.630975068</value>
+            <value>-0.29513979</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{b6f77574-5135-4e97-8e20-673e2295c9c2}">
         <property name="position">
-            <value>0.75</value>
+            <value>0.69000000000000006</value>
         </property>
         <property name="value">
             <value>0</value>
         </property>
     </object>
+    <object class="MixerBusFader" id="{a2ed1036-2c34-49a7-a3b0-0fe97e8ef833}"/>
     <object class="ThreeEQEffect" id="{5b6629ff-d0fe-4835-8794-a4f2ac3e07c1}">
         <property name="lowGain">
             <value>-22</value>
@@ -608,7 +610,29 @@
             <value>1150</value>
         </property>
     </object>
-    <object class="MixerBusFader" id="{a2ed1036-2c34-49a7-a3b0-0fe97e8ef833}"/>
+    <object class="MultibandEqEffect" id="{270dfd79-2a91-4d2c-a28d-403e202dfdd2}">
+        <property name="filterTypeA">
+            <value>0</value>
+        </property>
+        <property name="filterTypeB">
+            <value>3</value>
+        </property>
+        <property name="frequencyA">
+            <value>13600</value>
+        </property>
+        <property name="frequencyB">
+            <value>11000</value>
+        </property>
+        <property name="qualityA">
+            <value>1.39999986</value>
+        </property>
+        <property name="qualityB">
+            <value>0.280000001</value>
+        </property>
+        <property name="gainA">
+            <value>-14</value>
+        </property>
+    </object>
     <object class="AutomationPoint" id="{2d698050-3ba5-4270-9e71-eb22a227ff9e}">
         <property name="position">
             <value>0.10282778776978417</value>
