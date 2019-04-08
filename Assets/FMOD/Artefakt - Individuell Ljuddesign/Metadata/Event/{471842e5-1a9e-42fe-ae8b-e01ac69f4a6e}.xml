@@ -789,7 +789,7 @@
     </object>
     <object class="ThreeEQEffect" id="{208f62e7-e7c8-424b-acc2-90123154fb85}">
         <property name="lowGain">
-            <value>-11.5</value>
+            <value>-2.5</value>
         </property>
         <property name="lowCrossover">
             <value>1150</value>

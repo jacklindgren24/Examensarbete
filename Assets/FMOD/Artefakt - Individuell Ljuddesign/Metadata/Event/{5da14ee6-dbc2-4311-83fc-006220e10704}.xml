@@ -173,6 +173,7 @@
     <object class="MixerBusEffectChain" id="{d03cbf46-1c2f-42de-888c-f077e90c8080}">
         <relationship name="effects">
             <destination>{95588c1c-25f0-419c-ac8b-43022b27b28f}</destination>
+            <destination>{15891dda-de53-4e19-aad4-cd74c71d652c}</destination>
             <destination>{9492410c-17fa-476b-a355-c93c8b516187}</destination>
         </relationship>
     </object>
@@ -212,6 +213,11 @@
     <object class="DistortionEffect" id="{95588c1c-25f0-419c-ac8b-43022b27b28f}">
         <property name="level">
             <value>0.790000081</value>
+        </property>
+    </object>
+    <object class="ThreeEQEffect" id="{15891dda-de53-4e19-aad4-cd74c71d652c}">
+        <property name="lowGain">
+            <value>-8.5</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{9492410c-17fa-476b-a355-c93c8b516187}"/>
