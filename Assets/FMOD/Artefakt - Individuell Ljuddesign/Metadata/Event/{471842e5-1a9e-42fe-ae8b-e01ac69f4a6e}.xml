@@ -457,7 +457,6 @@
         <relationship name="effects">
             <destination>{f3c96126-203a-44a8-ad80-ca2debff7a86}</destination>
             <destination>{b9fc728b-93f1-4c85-b981-14e6dda67ad9}</destination>
-            <destination>{ec80f213-9891-469d-aa3a-25333af2298a}</destination>
             <destination>{7f9afd5f-773f-4917-b4d8-be139c307ef9}</destination>
             <destination>{417fd6b6-a00f-4c27-860e-bf7fdf3bf535}</destination>
         </relationship>
@@ -507,7 +506,6 @@
             <destination>{0c19a626-b30d-4dce-88a4-990931b9966d}</destination>
             <destination>{ad531d4e-3ce2-4861-896a-f87c64fba217}</destination>
             <destination>{2834f821-c1e8-462a-8d97-60109d339958}</destination>
-            <destination>{9876855f-18e4-4ba0-847d-902a195b6fd2}</destination>
             <destination>{c393f5af-acb6-491e-aa31-775d1c28988e}</destination>
         </relationship>
     </object>
@@ -624,7 +622,7 @@
     </object>
     <object class="AutomationPoint" id="{81c84984-578c-474e-9eba-22665e1099f0}">
         <property name="position">
-            <value>0.35999999999999999</value>
+            <value>0.26000000000000001</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -665,14 +663,6 @@
             <value>0.710000038</value>
         </property>
     </object>
-    <object class="SFXReverbEffect" id="{ec80f213-9891-469d-aa3a-25333af2298a}">
-        <property name="bypass">
-            <value>true</value>
-        </property>
-        <property name="wetLevel">
-            <value>-18.5</value>
-        </property>
-    </object>
     <object class="MixerBusFader" id="{7f9afd5f-773f-4917-b4d8-be139c307ef9}"/>
     <object class="PitchShifterEffect" id="{417fd6b6-a00f-4c27-860e-bf7fdf3bf535}">
         <property name="pitch">
@@ -695,7 +685,7 @@
     </object>
     <object class="AutomationPoint" id="{c4e1a373-f60c-498a-b6ea-9c5473c07632}">
         <property name="position">
-            <value>0.3600000000000001</value>
+            <value>0.21875</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -737,14 +727,6 @@
         </property>
     </object>
     <object class="MixerBusFader" id="{2834f821-c1e8-462a-8d97-60109d339958}"/>
-    <object class="SFXReverbEffect" id="{9876855f-18e4-4ba0-847d-902a195b6fd2}">
-        <property name="bypass">
-            <value>true</value>
-        </property>
-        <property name="wetLevel">
-            <value>-18.5</value>
-        </property>
-    </object>
     <object class="PitchShifterEffect" id="{c393f5af-acb6-491e-aa31-775d1c28988e}">
         <property name="pitch">
             <value>0.770000041</value>
