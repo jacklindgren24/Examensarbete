@@ -179,7 +179,7 @@
     </object>
     <object class="EventMixerGroup" id="{da91c657-99d9-4dd5-a3c5-4c561ee9ae23}">
         <property name="volume">
-            <value>-40</value>
+            <value>-14.5</value>
         </property>
         <property name="name">
             <value>Audio 4</value>
@@ -305,7 +305,7 @@
     </object>
     <object class="EventMixerGroup" id="{57306e94-dbc5-4d0e-a68f-f8857f2a4b84}">
         <property name="volume">
-            <value>3.5</value>
+            <value>-2.5</value>
         </property>
         <property name="name">
             <value>Audio 2 (2)</value>
@@ -363,6 +363,7 @@
     <object class="MixerBusFader" id="{df7f6053-83cf-4035-8598-c6081fe5d906}"/>
     <object class="MixerBusEffectChain" id="{d1e6a77f-cb8f-4654-b018-269dbc67c444}">
         <relationship name="effects">
+            <destination>{8d10a854-be35-40fa-a69e-2c76a1bf3966}</destination>
             <destination>{2a5c5ecd-2167-451b-971c-3465b9c02be9}</destination>
         </relationship>
     </object>
@@ -450,6 +451,7 @@
         <relationship name="effects">
             <destination>{f3c96126-203a-44a8-ad80-ca2debff7a86}</destination>
             <destination>{b9fc728b-93f1-4c85-b981-14e6dda67ad9}</destination>
+            <destination>{ec80f213-9891-469d-aa3a-25333af2298a}</destination>
             <destination>{7f9afd5f-773f-4917-b4d8-be139c307ef9}</destination>
             <destination>{417fd6b6-a00f-4c27-860e-bf7fdf3bf535}</destination>
         </relationship>
@@ -499,6 +501,7 @@
             <destination>{0c19a626-b30d-4dce-88a4-990931b9966d}</destination>
             <destination>{ad531d4e-3ce2-4861-896a-f87c64fba217}</destination>
             <destination>{2834f821-c1e8-462a-8d97-60109d339958}</destination>
+            <destination>{9876855f-18e4-4ba0-847d-902a195b6fd2}</destination>
             <destination>{c393f5af-acb6-491e-aa31-775d1c28988e}</destination>
         </relationship>
     </object>
@@ -530,16 +533,28 @@
     </object>
     <object class="MixerBusEffectChain" id="{46222f0a-f534-4ad7-bbb6-68da365d447f}">
         <relationship name="effects">
+            <destination>{208f62e7-e7c8-424b-acc2-90123154fb85}</destination>
             <destination>{fa16463d-4fbd-4961-8168-f680b2deeebc}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{2d0a105d-2e35-450e-b86f-e65ad254e041}"/>
     <object class="MixerBusFader" id="{8a867ae8-a17a-44cd-bf51-db02ae200364}"/>
+    <object class="ThreeEQEffect" id="{8d10a854-be35-40fa-a69e-2c76a1bf3966}">
+        <property name="lowGain">
+            <value>-9</value>
+        </property>
+        <property name="midGain">
+            <value>3.5</value>
+        </property>
+        <property name="highGain">
+            <value>3.5</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{2a5c5ecd-2167-451b-971c-3465b9c02be9}"/>
     <object class="MixerBusFader" id="{734cf396-1366-4f5b-87aa-ae7e23998483}"/>
     <object class="DistortionEffect" id="{1d9c28e7-3f52-44d8-bb62-dc2e1509c7b1}">
         <property name="level">
-            <value>0.990000069</value>
+            <value>0.710000038</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{b045f6d3-c566-486a-ac49-5cd13e98c48d}">
@@ -586,9 +601,6 @@
         </property>
     </object>
     <object class="ChorusEffect" id="{7dabdb64-dba5-4263-95f3-46bcc2a85561}">
-        <property name="bypass">
-            <value>true</value>
-        </property>
         <property name="rate">
             <value>16.5</value>
         </property>
@@ -636,7 +648,7 @@
     </object>
     <object class="ThreeEQEffect" id="{f3c96126-203a-44a8-ad80-ca2debff7a86}">
         <property name="lowGain">
-            <value>-80</value>
+            <value>-16</value>
         </property>
         <property name="midGain">
             <value>5</value>
@@ -648,6 +660,11 @@
     <object class="DistortionEffect" id="{b9fc728b-93f1-4c85-b981-14e6dda67ad9}">
         <property name="level">
             <value>0.710000038</value>
+        </property>
+    </object>
+    <object class="SFXReverbEffect" id="{ec80f213-9891-469d-aa3a-25333af2298a}">
+        <property name="wetLevel">
+            <value>-18.5</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{7f9afd5f-773f-4917-b4d8-be139c307ef9}"/>
@@ -702,10 +719,10 @@
             <value>-16.5</value>
         </property>
         <property name="midGain">
-            <value>-14</value>
+            <value>-5.5</value>
         </property>
         <property name="highGain">
-            <value>3</value>
+            <value>4</value>
         </property>
     </object>
     <object class="DistortionEffect" id="{ad531d4e-3ce2-4861-896a-f87c64fba217}">
@@ -714,6 +731,11 @@
         </property>
     </object>
     <object class="MixerBusFader" id="{2834f821-c1e8-462a-8d97-60109d339958}"/>
+    <object class="SFXReverbEffect" id="{9876855f-18e4-4ba0-847d-902a195b6fd2}">
+        <property name="wetLevel">
+            <value>-18.5</value>
+        </property>
+    </object>
     <object class="PitchShifterEffect" id="{c393f5af-acb6-491e-aa31-775d1c28988e}">
         <property name="overlap">
             <value>21.3999996</value>
@@ -752,6 +774,20 @@
             <destination>{5259a2cd-760c-46d0-8ab8-b15fe3d2990d}</destination>
             <destination>{6070aecb-4ab8-45b0-913d-6eeff5ad4c22}</destination>
         </relationship>
+    </object>
+    <object class="ThreeEQEffect" id="{208f62e7-e7c8-424b-acc2-90123154fb85}">
+        <property name="lowGain">
+            <value>-4</value>
+        </property>
+        <property name="midGain">
+            <value>-80</value>
+        </property>
+        <property name="highGain">
+            <value>3</value>
+        </property>
+        <property name="lowCrossover">
+            <value>1150</value>
+        </property>
     </object>
     <object class="MixerBusFader" id="{fa16463d-4fbd-4961-8168-f680b2deeebc}"/>
     <object class="AutomationPoint" id="{9f84ef9a-384f-453b-a2e4-8ec9cbd0cd81}">
