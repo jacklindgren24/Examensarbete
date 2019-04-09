@@ -264,13 +264,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   airAcceleration: 12
-  baseSpeed: 7
-  sprintSpeed: 10
-  backstepModifier: 0.75
+  baseSpeed: 11
+  backstepModifier: 0.66
   jumpHeight: 9
   stoppingFriction: 12
   maxSlope: 35
-  isSprinting: 0
   playerFootsteps: event:/Characters/Player/PlayerFootsteps
   playerJump: event:/Characters/Player/PlayerJump
   playerLand: event:/Characters/Player/PlayerLand
@@ -280,7 +278,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220712293117880}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b50acccd438ed3549aca217be4dbda28, type: 3}
   m_Name: 
@@ -321,9 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bobbingSpeedBase: 15
-  bobbingSpeedSprint: 23
   bobbingAmountBase: 0.06
-  bobbingAmountSprint: 0.08
   midpoint: 1
 --- !u!114 &114870156087736766
 MonoBehaviour:
