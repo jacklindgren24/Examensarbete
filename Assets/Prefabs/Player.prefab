@@ -283,9 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50acccd438ed3549aca217be4dbda28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angle: 180
-  range: 20
-  eventPath: 
+  angle: 110
+  range: 10
+  eventPath: event:/Characters/Enemy/ProximityAlert
 --- !u!114 &114685428696394502
 MonoBehaviour:
   m_ObjectHideFlags: 1

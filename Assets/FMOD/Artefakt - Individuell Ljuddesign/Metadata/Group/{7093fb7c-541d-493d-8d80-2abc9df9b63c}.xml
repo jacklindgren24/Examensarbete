@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="MixerGroup" id="{7093fb7c-541d-493d-8d80-2abc9df9b63c}">
         <property name="volume">
-            <value>-6</value>
+            <value>-5</value>
         </property>
         <property name="name">
             <value>Player Character</value>
@@ -27,7 +27,7 @@
     <object class="MixerBusFader" id="{e52b850a-74be-44c8-94c8-f7cff9195552}"/>
     <object class="CompressorEffect" id="{955cb7b0-251f-4adb-bb33-1e28f1ff1236}">
         <property name="threshold">
-            <value>-28</value>
+            <value>-22</value>
         </property>
         <property name="ratio">
             <value>2.79999971</value>

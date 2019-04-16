@@ -94,10 +94,13 @@
     <object class="MixerBusPanner" id="{a9bceced-b150-4fb2-86fe-367c9ade9743}"/>
     <object class="SingleSound" id="{92a067b6-8ded-46a4-9cc7-9d7773ee72bc}">
         <property name="start">
-            <value>0.10000000000000001</value>
+            <value>0.52000000000000002</value>
         </property>
         <property name="length">
             <value>2.3000000000000003</value>
+        </property>
+        <property name="volume">
+            <value>1.5</value>
         </property>
         <relationship name="fadeInCurve">
             <destination>{eef9c329-dc6c-4ad0-b19f-9a10aaf6ee7a}</destination>
@@ -155,18 +158,18 @@
     <object class="MixerBusFader" id="{61a50da1-92de-4c26-9216-f2c5bc07d68f}"/>
     <object class="AutomationPoint" id="{4c4b0ab5-5349-4d80-8cc1-35b533c54b8f}">
         <property name="position">
-            <value>0.10000000000000001</value>
+            <value>0.52000000000000002</value>
         </property>
         <property name="value">
             <value>0</value>
         </property>
         <property name="curveShape">
-            <value>-0.125441685</value>
+            <value>-0.46382758</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{e8c918d5-8f0b-4407-bf8e-5c7f36d5a4f2}">
         <property name="position">
-            <value>0.37999999999999989</value>
+            <value>0.80000000000000004</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -174,7 +177,7 @@
     </object>
     <object class="AutomationPoint" id="{3221ba72-c47a-40f9-a484-f671e15e79ab}">
         <property name="position">
-            <value>1.96</value>
+            <value>2.3800000000000003</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -185,7 +188,7 @@
     </object>
     <object class="AutomationPoint" id="{c6bc0247-c5d6-4630-bb52-38afd3d942cf}">
         <property name="position">
-            <value>2.3999999999999999</value>
+            <value>2.8199999999999998</value>
         </property>
         <property name="value">
             <value>0</value>
