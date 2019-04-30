@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ProximityTracker : MonoBehaviour
 {
-    public float angle = 180;
-    public float range = 10;
+    public float angle = 90;
+    public float range = 15;
 
     [EventRef]
     public string eventPath;
@@ -40,9 +40,7 @@ public class ProximityTracker : MonoBehaviour
             }
         }
 
-        int[] keys = new int[events.Count];
-        events.Keys.CopyTo(keys, 0);
-        foreach (int key in keys)
+        foreach (int key in events.Keys)
         {
             if (!presentIDs.Contains(key))
             { // This event is connected to an enemy which is not present in proximity check; release event.

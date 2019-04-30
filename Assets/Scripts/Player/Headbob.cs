@@ -3,9 +3,9 @@
 public class Headbob : MonoBehaviour {
 
     public float bobbingSpeedBase = 0.145f;
-    //public float bobbingSpeedSprint = 0.24f;
+    public float bobbingSpeedSprint = 0.24f;
     public float bobbingAmountBase = 0.08f;
-    //public float bobbingAmountSprint = 0.11f;
+    public float bobbingAmountSprint = 0.11f;
     public float midpoint = 1;
 
     float timer = 0;
@@ -34,8 +34,7 @@ public class Headbob : MonoBehaviour {
             else
             {
                 waveslice = Mathf.Sin(timer);
-                //timer = pm.isSprinting ? timer + bobbingSpeedSprint * Time.deltaTime : timer + bobbingSpeedBase * Time.deltaTime;
-                timer = timer + bobbingSpeedBase * Time.deltaTime;
+                timer = pm.isSprinting ? timer + bobbingSpeedSprint * Time.deltaTime : timer + bobbingSpeedBase * Time.deltaTime;
 
                 if (timer > Mathf.PI * 2)
                 {
@@ -45,11 +44,9 @@ public class Headbob : MonoBehaviour {
 
             if (waveslice != 0)
             {
-                //float translateChange = pm.isSprinting
-                //    ? waveslice * bobbingAmountSprint
-                //    : waveslice * bobbingAmountBase;
-
-                float translateChange = waveslice * bobbingAmountBase;
+                float translateChange = pm.isSprinting
+                    ? waveslice * bobbingAmountSprint
+                    : waveslice * bobbingAmountBase;
 
                 float totalAxes = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
                 totalAxes = Mathf.Clamp(totalAxes, 0.0f, 1.0f);

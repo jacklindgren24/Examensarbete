@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float airAcceleration = 6;
     public float baseSpeed = 5;
-    //public float sprintSpeed = 8;
+    public float sprintSpeed = 8;
     public float backstepModifier = 0.66f;
     public float jumpHeight = 5;
     public float stoppingFriction = 12;
@@ -17,9 +17,9 @@ public class PlayerMovement : MonoBehaviour {
     float height;
     Vector3 lastGroundedVelocity;
     float x, z;
-    //bool sprintToggle = false;
+    bool sprintToggle = false;
     [HideInInspector]
-    //public bool isSprinting = false;
+    public bool isSprinting = false;
     bool isGrounded = false;
     public bool IsGrounded
     {
@@ -83,10 +83,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING) playerFootstepEv.start();
 
-        //if (isSprinting) playerFootstepEv.setParameterValue("Sprinting", 1);
-        //else playerFootstepEv.setParameterValue("Sprinting", 0);
-
-        playerFootstepEv.setParameterValue("Sprinting", 0);
+        if (isSprinting) playerFootstepEv.setParameterValue("Sprinting", 1);
+        else playerFootstepEv.setParameterValue("Sprinting", 0);
     }
 
     void FixedUpdate ()
@@ -123,16 +121,14 @@ public class PlayerMovement : MonoBehaviour {
         { // Grounded movement.
             if (x == 0 && z == 0)
             { // No input.
-                //isSprinting = false;
+                isSprinting = false;
                 rb.drag = stoppingFriction;
                 playerFootstepEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
             else
             { // Input.
-                //if (isSprinting) rb.velocity = new Vector3(dir.x * sprintSpeed, rb.velocity.y, dir.z * sprintSpeed);
-                //else rb.velocity = new Vector3(dir.x * baseSpeed, rb.velocity.y, dir.z * baseSpeed);
-
-                rb.velocity = new Vector3(dir.x * baseSpeed, rb.velocity.y, dir.z * baseSpeed);
+                if (isSprinting) rb.velocity = new Vector3(dir.x * sprintSpeed, rb.velocity.y, dir.z * sprintSpeed);
+                else rb.velocity = new Vector3(dir.x * baseSpeed, rb.velocity.y, dir.z * baseSpeed);
                 PlayFootstep();
             }
         }
@@ -146,24 +142,24 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    //public void SetSprintToggle(bool state)
-    //{
-    //    sprintToggle = state;
-    //}
+    public void SetSprintToggle(bool state)
+    {
+        sprintToggle = state;
+    }
 
     void Update()
     {
         if (IsGrounded)
         { // Grounded movement.
-            //if (sprintToggle)
-            //{
-            //    if (Input.GetButtonDown("Sprint") && z > 0) isSprinting = !isSprinting;
-            //}
-            //else
-            //{
-            //    if (Input.GetButton("Sprint") && z > 0) isSprinting = true;
-            //    else isSprinting = false;
-            //}
+            if (sprintToggle)
+            {
+                if (Input.GetButtonDown("Sprint") && z > 0) isSprinting = !isSprinting;
+            }
+            else
+            {
+                if (Input.GetButton("Sprint") && z > 0) isSprinting = true;
+                else isSprinting = false;
+            }
 
             if (Input.GetButtonDown("Jump"))
             { // Jump.
