@@ -38,4 +38,9 @@ public class CustomInput : MonoBehaviour {
     {
         return axesStates[axisName] == AxisState.Pressed;
     }
+
+    public static bool GetAxis(string axisName)
+    {
+        return axesStates[axisName] == AxisState.Pressed || axesStates[axisName] == AxisState.Held;
+    }
 }

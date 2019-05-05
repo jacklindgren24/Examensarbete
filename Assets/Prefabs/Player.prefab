@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 114468048078551338}
   - component: {fileID: 54151283679550296}
   - component: {fileID: 136234861159882624}
-  - component: {fileID: 114634628758519564}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -264,30 +263,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   airAcceleration: 12
-  baseSpeed: 7
-  sprintSpeed: 10
-  backstepModifier: 0.75
-  jumpHeight: 9
+  baseSpeed: 11
+  backstepModifier: 0.7
+  jumpHeight: 10
   stoppingFriction: 12
   maxSlope: 35
-  isSprinting: 0
   playerFootsteps: event:/Characters/Player/PlayerFootsteps
   playerJump: event:/Characters/Player/PlayerJump
   playerLand: event:/Characters/Player/PlayerLand
---- !u!114 &114634628758519564
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1220712293117880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b50acccd438ed3549aca217be4dbda28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angle: 180
-  range: 20
-  eventPath: 
 --- !u!114 &114685428696394502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,6 +290,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1747710809464442, guid: 5ed262e4692ad7344ac0dfb9e5e1e075,
     type: 2}
   bulletSpawn: {fileID: 4965042735544536}
+  projectileText: {fileID: 0}
+  hitscanText: {fileID: 0}
+  weaponMeshFilter: {fileID: 33662339942847766}
+  projectileMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  hitscanMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   playerHurt: event:/Characters/Player/PlayerHit
   playerDie: event:/Characters/Player/PlayerDeath
 --- !u!114 &114773980170327664
@@ -321,9 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bobbingSpeedBase: 15
-  bobbingSpeedSprint: 23
   bobbingAmountBase: 0.06
-  bobbingAmountSprint: 0.08
   midpoint: 1
 --- !u!114 &114870156087736766
 MonoBehaviour:

@@ -93,11 +93,11 @@ MonoBehaviour:
   unpauseGame: event:/Menu/Start
   waves:
   - startDelay: 7
-    hitscanIntensity: 0
-    projectileIntensity: 0
-    meleeIntensity: 0
-    maxMobAmount: 10
-    mobMinSpawnTime: 1
+    hitscanIntensity: 100
+    projectileIntensity: 100
+    meleeIntensity: 100
+    maxMobAmount: 8
+    mobMinSpawnTime: 2
     mobMaxSpawnTime: 3
     maxEliteAmount: 1
     eliteMinSpawnTime: 4
@@ -106,19 +106,19 @@ MonoBehaviour:
     hitscanIntensity: 50
     projectileIntensity: 50
     meleeIntensity: 50
-    maxMobAmount: 15
-    mobMinSpawnTime: 0.75
-    mobMaxSpawnTime: 2.25
+    maxMobAmount: 10
+    mobMinSpawnTime: 1
+    mobMaxSpawnTime: 2
     maxEliteAmount: 2
-    eliteMinSpawnTime: 3
+    eliteMinSpawnTime: 4
     eliteMaxSpawnTime: 6
   - startDelay: 7
-    hitscanIntensity: 100
-    projectileIntensity: 100
-    meleeIntensity: 100
-    maxMobAmount: 20
+    hitscanIntensity: 0
+    projectileIntensity: 0
+    meleeIntensity: 0
+    maxMobAmount: 12
     mobMinSpawnTime: 0.5
-    mobMaxSpawnTime: 1.75
+    mobMaxSpawnTime: 1.5
     maxEliteAmount: 3
     eliteMinSpawnTime: 3
     eliteMaxSpawnTime: 5

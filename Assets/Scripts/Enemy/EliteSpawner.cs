@@ -40,14 +40,15 @@ public class EliteSpawner : MonoBehaviour
 
     void Spawn()
     {
-        Vector3 extents = Vector3.one * 2;
-        int layerMask = LayerMask.GetMask("Player", "Enemy");
+        Vector3 extentsEnemy = Vector3.one * 3;
+        Vector3 extentsPlayer = Vector3.one * 10;
 
         Transform spawner;
         List<int> rolledSpawners = new List<int>();
         while (true)
         { // Reroll spawn position while spawner is blocked.
-            if (rolledSpawners.Count == spawners.Length) break;
+            if (rolledSpawners.Count == spawners.Length)
+                break;
 
             int roll = Random.Range(0, spawners.Length);
             while (rolledSpawners.Contains(roll))
@@ -55,7 +56,8 @@ public class EliteSpawner : MonoBehaviour
             rolledSpawners.Add(roll);
 
             spawner = spawners[roll].transform;
-            if (!Physics.CheckBox(spawner.position, extents, spawner.rotation, layerMask))
+            if (!Physics.CheckBox(spawner.position, extentsEnemy, spawner.rotation, LayerMask.GetMask("Enemy")) &&
+                !Physics.CheckBox(spawner.position, extentsPlayer, spawner.rotation, LayerMask.GetMask("Player")))
             { // Not blocked; break from loop.
                 Instantiate(enemyPrefab, spawner.position, spawner.rotation);
                 break;

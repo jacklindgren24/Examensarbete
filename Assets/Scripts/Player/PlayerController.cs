@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour {
     public Weapon weapon = Weapon.Projectile;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public UnityEngine.UI.Text projectileText;
+    public UnityEngine.UI.Text hitscanText;
+    public MeshFilter weaponMeshFilter;
+    public Mesh projectileMesh;
+    public Mesh hitscanMesh;
 
     [Space(15)]
 
@@ -65,6 +70,7 @@ public class PlayerController : MonoBehaviour {
         cam = Camera.main;
         meleeMask = LayerMask.GetMask("Enemy");
         playerHealthBar = GameObject.FindWithTag("GameCanvas").GetComponentInChildren<PlayerHealthBar>();
+        hitscanText.color = Color.gray;
 
         Health = baseHealth;
     }
@@ -78,7 +84,7 @@ public class PlayerController : MonoBehaviour {
             gunTimer += Time.deltaTime;
             meleeTimer += Time.deltaTime;
 
-            if (Input.GetButtonDown("Fire1") || CustomInput.GetAxisDown("Fire1"))
+            if (Input.GetButton("Fire1") || CustomInput.GetAxis("Fire1"))
             { // Fire (or melee if selected).
                 switch (weapon)
                 {
@@ -88,21 +94,32 @@ public class PlayerController : MonoBehaviour {
                     case Weapon.Hitscan:
                         if (gunTimer >= HitscanWeapon.cooldown) FireRay();
                         break;
-                    //case Weapon.Melee:
-                    //    if (meleeTimer >= MeleeWeapon.cooldown) Melee();
-                    //    break;
                 }
             }
             else if (Input.GetButtonDown("Switch"))
             { // Switch weapon.
                 weapon = weapon == Weapon.Projectile ? Weapon.Hitscan : Weapon.Projectile;
                 gunTimer = weapon == Weapon.Projectile ? ProjectileWeapon.cooldown : HitscanWeapon.cooldown;
+
+                if (weapon == Weapon.Hitscan)
+                {
+                    weaponMeshFilter.mesh = hitscanMesh;
+                    weaponMeshFilter.transform.localScale = new Vector3
+                        (weaponMeshFilter.transform.localScale.x, 0.4f, weaponMeshFilter.transform.localScale.z);
+
+                    projectileText.color = Color.gray;
+                    hitscanText.color = Color.white;
+                }
+                else
+                {
+                    weaponMeshFilter.mesh = projectileMesh;
+                    weaponMeshFilter.transform.localScale = new Vector3
+                        (weaponMeshFilter.transform.localScale.x, 0.25f, weaponMeshFilter.transform.localScale.z);
+
+                    hitscanText.color = Color.gray;
+                    projectileText.color = Color.white;
+                }
             }
-            //else if (Input.GetButtonDown("Melee") && meleeTimer >= MeleeWeapon.cooldown)
-            //{ // Melee.
-            //    RuntimeManager.PlayOneShot(MeleeWeapon.sound, "Intensity", intensities[(int)Weapon.Melee], transform.position);
-            //    Invoke("Melee", MeleeWeapon.delay);
-            //}
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
             { // Increase intensity by 50 up to a maximum of 100 (guns).
@@ -112,14 +129,6 @@ public class PlayerController : MonoBehaviour {
             { // Decrease intensity by 50 down to a minimum of 0 (guns).
                 intensities[(int)weapon] = Mathf.Clamp(intensities[(int)weapon] - 50, 0, 100);
             }
-            //else if (Input.GetKeyDown(KeyCode.RightArrow))
-            //{ // Increase intensity by 50 up to a maximum of 100 (melee).
-            //    intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] + 50, 0, 100);
-            //}
-            //else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            //{ // Decrease intensity by 50 down to a minimum of 0 (melee).
-            //    intensities[(int)Weapon.Melee] = Mathf.Clamp(intensities[(int)Weapon.Melee] - 50, 0, 100);
-            //}
         }
     }
 
@@ -132,7 +141,6 @@ public class PlayerController : MonoBehaviour {
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
         { // Player is aiming at an object, get direction from bullet spawn to point of raycast hit.
             dir = (hit.point - bulletSpawn.transform.position).normalized;
-            //Debug.DrawLine(cam.transform.position, hit.point, Color.red, 2, false);
         }
 
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);

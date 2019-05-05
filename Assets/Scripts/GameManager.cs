@@ -115,6 +115,10 @@ public class GameManager : MonoBehaviour {
 
     void NextWave()
     {
+        PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        if (player.Health < 100)
+            player.Health = 100;
+
         if (CurrentWave == waves.Length - 1)
         {
             WinGame();

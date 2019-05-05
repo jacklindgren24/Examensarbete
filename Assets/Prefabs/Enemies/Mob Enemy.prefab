@@ -1084,7 +1084,7 @@ MonoBehaviour:
   enemyFootstepsEventRef: event:/Characters/Enemy/MobMovement
   baseHealth: 100
   damage: 34
-  cooldown: 1
+  cooldown: 1.5
   range: 3
   speedRandomness: 1.5
   scoreValue: 25
@@ -1181,7 +1181,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 9.5
+  m_Speed: 8.5
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
