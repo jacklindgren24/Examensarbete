@@ -339,7 +339,7 @@
     </object>
     <object class="ThreeEQEffect" id="{15891dda-de53-4e19-aad4-cd74c71d652c}">
         <property name="lowGain">
-            <value>-8.5</value>
+            <value>-13</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{9492410c-17fa-476b-a355-c93c8b516187}"/>
@@ -365,7 +365,7 @@
     <object class="MixerBusFader" id="{0b1dc35f-b7dd-44d9-84bd-73cedefb377a}"/>
     <object class="ThreeEQEffect" id="{35a3623c-461d-4778-a23f-02cc22064267}">
         <property name="lowGain">
-            <value>-14</value>
+            <value>-26</value>
         </property>
         <property name="midGain">
             <value>-8.5</value>
@@ -374,7 +374,7 @@
             <value>-8.5</value>
         </property>
         <property name="lowCrossover">
-            <value>1150</value>
+            <value>850</value>
         </property>
     </object>
     <object class="MultibandEqEffect" id="{2e9aef97-0aa7-4f6b-a9c1-b8fb291eb7e2}">
