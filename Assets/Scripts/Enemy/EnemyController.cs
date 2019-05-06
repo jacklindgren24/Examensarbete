@@ -84,7 +84,8 @@ public abstract class EnemyController : MonoBehaviour {
 
     protected virtual void Start()
     {
-        Health = baseHealth;
+        int roll = Random.Range(0, 3);
+        Health = roll != 0 ? baseHealth : baseHealth + 8;
 
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
