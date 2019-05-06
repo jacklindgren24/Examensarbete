@@ -88,7 +88,7 @@ MonoBehaviour:
   goalSpawnerParent: {fileID: 0}
   waveGoalPrefab: {fileID: 1863249050442574, guid: 48fc3da754077cc42a611b17226a460c,
     type: 2}
-  minimumGoalDistance: 40
+  minimumGoalDistance: 50
   pauseGame: event:/Menu/Pause
   unpauseGame: event:/Menu/Start
   waves:
