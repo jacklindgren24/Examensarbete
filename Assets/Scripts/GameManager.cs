@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour {
         }
 
         hasWon = false;
+        SetPaused(false);
 
         waveCounter.CrossFadeAlpha(0, 0, true); // Make wave counter transparent on awake.
 	}
