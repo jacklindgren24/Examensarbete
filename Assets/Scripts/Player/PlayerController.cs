@@ -177,10 +177,7 @@ public class PlayerController : MonoBehaviour {
         { // Ray hit an enemy, hurt enemy.
             hit.transform.GetComponent<EnemyController>().Health -= MeleeWeapon.damage;
             hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * MeleeWeapon.knockback, ForceMode.Impulse);
-            GameManager.totalMeleeHits++;
         }
-
-        GameManager.totalMeleeAttacks++;
     }
 
     public static void SetIntensities(float projectile, float hitscan, float melee)

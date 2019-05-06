@@ -42,15 +42,13 @@ public class GameManager : MonoBehaviour {
         set { currentWave = value; }
     }
 
+    float timer;
     public static int totalMobKills;
     public static int totalEliteKills;
-    public static int totalRangedKills;
     public static int totalHitscanShots;
     public static int totalHitscanHits;
     public static int totalProjectilesShot;
     public static int totalProjectilesHit;
-    public static int totalMeleeAttacks;
-    public static int totalMeleeHits;
 
     [HideInInspector]
     public bool isPaused = false;
@@ -66,7 +64,7 @@ public class GameManager : MonoBehaviour {
             goalSpawners.Add(goalSpawnerParent.GetChild(i));
         }
 
-        isPaused = false;
+        SetPaused(false);
         hasWon = false;
 
         waveCounter.CrossFadeAlpha(0, 0, true); // Make wave counter transparent on awake.
@@ -83,10 +81,14 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
+        if (!isPaused && !hasWon)
+            timer += Time.deltaTime;
+
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.L)) ToggleCursorState();
         if (Input.GetKeyDown(KeyCode.M)) ToggleMute();
         if (Input.GetKeyDown(KeyCode.P)) ToggleSpawners();
+        if (Input.GetKeyDown(KeyCode.Tab)) WinGame();
 #endif
         if (Input.GetButtonDown("Pause") && !hasWon) SetPaused(!isPaused);
         if (Input.GetKeyDown(KeyCode.Backspace)) WriteData();
@@ -187,7 +189,11 @@ public class GameManager : MonoBehaviour {
 
     void WinGame()
     {
+#if !UNITY_EDITOR
+        WriteData();
+#endif
         RuntimeManager.PlayOneShot(waveClearEventRef);
+        RuntimeManager.GetBus("bus:/").setPaused(true);
 
         gameCanvas.SetActive(false);
         winCanvas.SetActive(true);
@@ -197,6 +203,7 @@ public class GameManager : MonoBehaviour {
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
     }
 
     public void Restart()
@@ -270,15 +277,16 @@ public class GameManager : MonoBehaviour {
     void WriteData()
     {
         string[] data =
-{
-            "WEAPONS (SHOTS / HITS)\n",
-            "Hitscan: " + totalHitscanShots + " / " + totalHitscanHits + '\n',
-            "Projectile: " + totalProjectilesShot + " / " + totalProjectilesHit + '\n',
-            "Melee: " + totalMeleeAttacks + " / " + totalMeleeHits + '\n',
+        {
+            "Time: " + timer + '\n',
 
-            "KILLS\n",
-            "Mob: " + totalMobKills + '\n',
-            "Elite: " + totalEliteKills + '\n',
+            "WEAPONS (SHOTS / HITS)",
+            "Hitscan: " + totalHitscanShots + " / " + totalHitscanHits,
+            "Projectile: " + totalProjectilesShot + " / " + totalProjectilesHit + '\n',
+
+            "KILLS",
+            "Mob: " + totalMobKills,
+            "Elite: " + totalEliteKills,
         };
 
         // Write to text file on desktop.
