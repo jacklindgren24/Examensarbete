@@ -282,7 +282,7 @@ public class GameManager : MonoBehaviour {
 
             "WEAPONS (SHOTS / HITS)",
             "Hitscan: " + totalHitscanShots + " / " + totalHitscanHits,
-            "Projectile: " + totalProjectilesShot + " / " + totalProjectilesHit,
+            "Projectile: " + totalProjectilesShot + " / " + totalProjectilesHit + '\n',
 
             "KILLS",
             "Mob: " + totalMobKills,
