@@ -334,12 +334,12 @@
     </object>
     <object class="DistortionEffect" id="{95588c1c-25f0-419c-ac8b-43022b27b28f}">
         <property name="level">
-            <value>0.790000081</value>
+            <value>0.710000038</value>
         </property>
     </object>
     <object class="ThreeEQEffect" id="{15891dda-de53-4e19-aad4-cd74c71d652c}">
         <property name="lowGain">
-            <value>-13</value>
+            <value>-3</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{9492410c-17fa-476b-a355-c93c8b516187}"/>
