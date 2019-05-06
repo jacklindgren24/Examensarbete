@@ -64,7 +64,6 @@ public class GameManager : MonoBehaviour {
             goalSpawners.Add(goalSpawnerParent.GetChild(i));
         }
 
-        SetPaused(false);
         hasWon = false;
 
         waveCounter.CrossFadeAlpha(0, 0, true); // Make wave counter transparent on awake.
@@ -266,10 +265,17 @@ public class GameManager : MonoBehaviour {
     {
         isPaused = _isPaused;
 
+        if (isPaused)
+            RuntimeManager.PlayOneShot("event:/Menu/Pause");
+        else
+            RuntimeManager.PlayOneShot("event:/Menu/Start");
+
         RuntimeManager.GetBus("bus:/").setPaused(isPaused);
+
         Cursor.visible = isPaused ? true : false;
         Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
         Time.timeScale = isPaused ? 0 : 1;
+
         pauseCanvas.SetActive(isPaused);
         gameCanvas.SetActive(!isPaused);
     }
