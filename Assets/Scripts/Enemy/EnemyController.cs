@@ -20,6 +20,7 @@ public abstract class EnemyController : MonoBehaviour {
             if (health <= 0)
             {
                 hitScript.HitMarker();
+                RuntimeManager.PlayOneShot(enemyHitEventRef, transform.position);
                 Die();
             }
             else if (health < old)
