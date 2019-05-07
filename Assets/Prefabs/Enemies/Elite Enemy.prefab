@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawnEventRef: event:/Characters/Enemy/EliteSpawn
   enemyDeathEventRef: event:/Characters/Enemy/EliteDeath
-  enemyHitEventRef: event:/Characters/Enemy/EliteHit
+  enemyHitEventRef: event:/Characters/Enemy/EnemyHit(2D)
   enemyAttackEventRef: event:/Characters/Enemy/EliteAttack
   enemyFootstepsEventRef: event:/Characters/Enemy/EliteFootsteps
   baseHealth: 200
