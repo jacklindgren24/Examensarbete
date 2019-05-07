@@ -298,6 +298,9 @@
         <property name="timelockedOffset">
             <value>0.011999999999999816</value>
         </property>
+        <property name="pitch">
+            <value>-3.60000014</value>
+        </property>
         <relationship name="fadeInCurve">
             <destination>{360eae87-cac1-4065-80ac-29a24effc2a1}</destination>
         </relationship>
@@ -310,7 +313,7 @@
     </object>
     <object class="EventMixerGroup" id="{7ef47ed1-b738-4270-ba2d-a6778cb66264}">
         <property name="volume">
-            <value>-9</value>
+            <value>-16.5</value>
         </property>
         <property name="name">
             <value>Audio 1 (2) (2)</value>

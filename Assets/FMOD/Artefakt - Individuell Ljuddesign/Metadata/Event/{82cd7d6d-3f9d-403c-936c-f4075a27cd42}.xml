@@ -203,9 +203,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{2851e2af-d6b9-495c-9110-77ef5fe3afe5}">
-        <property name="volume">
-            <value>-3.5</value>
-        </property>
         <property name="name">
             <value>Metal</value>
         </property>
@@ -316,6 +313,9 @@
         <property name="timelockedOffset">
             <value>0.011999999999999816</value>
         </property>
+        <property name="pitch">
+            <value>2.79999995</value>
+        </property>
         <relationship name="modulators">
             <destination>{1053f976-7f1e-431b-a144-8d39c5891359}</destination>
         </relationship>
@@ -328,7 +328,7 @@
     </object>
     <object class="EventMixerGroup" id="{694ddbfa-257f-4955-92b9-563e7a81f75f}">
         <property name="volume">
-            <value>-8.5</value>
+            <value>-15.5</value>
         </property>
         <property name="name">
             <value>Audio 1 (2) (2)</value>
