@@ -262,11 +262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b1833294e8741408bfa3baae50fe10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airAcceleration: 12
+  airAcceleraion: 1
   baseSpeed: 11
   backstepModifier: 0.7
   jumpHeight: 10
-  doubleJump: 8
+  doubleJump: 9
   stoppingFriction: 12
   maxSlope: 35
   playerFootsteps: event:/Characters/Player/PlayerFootsteps

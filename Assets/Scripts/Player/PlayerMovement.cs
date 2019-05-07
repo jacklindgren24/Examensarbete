@@ -5,8 +5,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public static PlayerMovement instance;
 
-    public float airAcceleration = 6;
-    public float baseSpeed = 5;
+    public float airAcceleraion = 1;
+    public float baseSpeed = 11;
     public float backstepModifier = 0.66f;
     public float jumpHeight = 10;
     public float doubleJump = 9;
@@ -131,9 +131,13 @@ public class PlayerMovement : MonoBehaviour {
         }
         else
         { // Air movement.
-            rb.AddForce(dir * airAcceleration * Time.fixedDeltaTime, ForceMode.VelocityChange);
-            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -lastGroundedVelocity.x, lastGroundedVelocity.x), 
-              rb.velocity.y, Mathf.Clamp(rb.velocity.z, -lastGroundedVelocity.z, lastGroundedVelocity.z));
+            Vector3 newVelocity = Vector3.ClampMagnitude(rb.velocity + dir * airAcceleraion, baseSpeed);
+            newVelocity.y = rb.velocity.y;
+            rb.velocity = newVelocity;
+
+            //rb.AddForce(dir * airAcceleration * Time.fixedDeltaTime, ForceMode.VelocityChange);
+            //rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -lastGroundedVelocity.x, lastGroundedVelocity.x), 
+            //  rb.velocity.y, Mathf.Clamp(rb.velocity.z, -lastGroundedVelocity.z, lastGroundedVelocity.z));
 
             playerFootstepEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
@@ -151,10 +155,12 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
         else
-        {
+        { // Aerial movement.
             if (Input.GetButtonDown("Jump") && canDoublejump)
-            {
-                rb.velocity += transform.up * doubleJump;
+            { // Double jump.
+                Vector3 dir = rb.velocity;
+                dir.y = doubleJump;
+                rb.velocity = dir;
                 RuntimeManager.PlayOneShot(playerDoublejump);
                 canDoublejump = false;
             }
