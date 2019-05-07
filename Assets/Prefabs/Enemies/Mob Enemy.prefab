@@ -1091,7 +1091,7 @@ MonoBehaviour:
   itemDropChance: 10
   healthPickupPrefab: {fileID: 1762983664264424, guid: 65363e73bc42aef4683c666162772a52,
     type: 2}
-  windUp: 0.25
+  windUp: 0.5
 --- !u!136 &136761280251985780
 CapsuleCollider:
   m_ObjectHideFlags: 1

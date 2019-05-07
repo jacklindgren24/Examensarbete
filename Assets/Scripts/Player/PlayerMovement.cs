@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour {
     public float airAcceleration = 6;
     public float baseSpeed = 5;
     public float backstepModifier = 0.66f;
-    public float jumpHeight = 5;
+    public float jumpHeight = 10;
+    public float doubleJump = 9;
     public float stoppingFriction = 12;
     public float maxSlope = 35;
+    bool canDoublejump = true;
 
     Rigidbody rb;
     float height;
@@ -44,6 +46,8 @@ public class PlayerMovement : MonoBehaviour {
 
     [EventRef]
     public string playerFootsteps;
+    [EventRef]
+    public string playerDoublejump;
     [EventRef]
     public string playerJump;
     [EventRef]
@@ -143,6 +147,16 @@ public class PlayerMovement : MonoBehaviour {
             { // Jump.
                 rb.velocity += transform.up * jumpHeight;
                 RuntimeManager.PlayOneShot(playerJump);
+                canDoublejump = true;
+            }
+        }
+        else
+        {
+            if (Input.GetButtonDown("Jump") && canDoublejump)
+            {
+                rb.velocity += transform.up * doubleJump;
+                RuntimeManager.PlayOneShot(playerDoublejump);
+                canDoublejump = false;
             }
         }
     }

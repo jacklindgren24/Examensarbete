@@ -266,9 +266,11 @@ MonoBehaviour:
   baseSpeed: 11
   backstepModifier: 0.7
   jumpHeight: 10
+  doubleJump: 8
   stoppingFriction: 12
   maxSlope: 35
   playerFootsteps: event:/Characters/Player/PlayerFootsteps
+  playerDoublejump: event:/Characters/Player/DoubleJump
   playerJump: event:/Characters/Player/PlayerJump
   playerLand: event:/Characters/Player/PlayerLand
 --- !u!114 &114685428696394502
