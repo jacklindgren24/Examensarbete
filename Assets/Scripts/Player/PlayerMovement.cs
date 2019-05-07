@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public static PlayerMovement instance;
 
-    public float airAcceleraion = 1;
+    public float airAcceleration = 1;
     public float baseSpeed = 11;
     public float backstepModifier = 0.66f;
     public float jumpHeight = 10;
@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour {
     bool canDoublejump = true;
 
     Rigidbody rb;
-    float height;
     Vector3 lastGroundedVelocity;
     float x, z;
     bool isGrounded = false;
@@ -25,17 +24,9 @@ public class PlayerMovement : MonoBehaviour {
         set
         {
             if (value != isGrounded)
-            { 
-                if (value == false)
-                { // Record velocity at the point where player is no longer grounded.
-                    lastGroundedVelocity = rb.velocity;
-                    lastGroundedVelocity.x = Mathf.Abs(lastGroundedVelocity.x);
-                    lastGroundedVelocity.z = Mathf.Abs(lastGroundedVelocity.z);
-                }
-                else
-                { // Play landing sound on landing.
+            {  // Value changed.
+                if (value == true)
                     RuntimeManager.PlayOneShot(playerLand, transform.position);
-                }
             }
 
             isGrounded = value;
@@ -131,13 +122,11 @@ public class PlayerMovement : MonoBehaviour {
         }
         else
         { // Air movement.
-            Vector3 newVelocity = Vector3.ClampMagnitude(rb.velocity + dir * airAcceleraion, baseSpeed);
+            Vector3 planarVelocity = rb.velocity + dir * airAcceleration;
+            planarVelocity.y = 0;
+            Vector3 newVelocity = Vector3.ClampMagnitude(planarVelocity, baseSpeed);
             newVelocity.y = rb.velocity.y;
             rb.velocity = newVelocity;
-
-            //rb.AddForce(dir * airAcceleration * Time.fixedDeltaTime, ForceMode.VelocityChange);
-            //rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -lastGroundedVelocity.x, lastGroundedVelocity.x), 
-            //  rb.velocity.y, Mathf.Clamp(rb.velocity.z, -lastGroundedVelocity.z, lastGroundedVelocity.z));
 
             playerFootstepEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
