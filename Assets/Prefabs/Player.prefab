@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b1833294e8741408bfa3baae50fe10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airAcceleraion: 1
+  airAcceleration: 0.66
   baseSpeed: 11
   backstepModifier: 0.7
   jumpHeight: 10
