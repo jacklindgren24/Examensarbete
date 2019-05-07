@@ -65,7 +65,8 @@ public class GameManager : MonoBehaviour {
         }
 
         hasWon = false;
-        SetPaused(false);
+        Time.timeScale = 1;
+        RuntimeManager.GetBus("bus:/").setPaused(false);
 
         waveCounter.CrossFadeAlpha(0, 0, true); // Make wave counter transparent on awake.
 	}
@@ -264,21 +265,41 @@ public class GameManager : MonoBehaviour {
 
     public void SetPaused(bool _isPaused)
     {
-        isPaused = _isPaused;
-
-        if (isPaused)
-            RuntimeManager.PlayOneShot("event:/Menu/Pause");
+        if (_isPaused)
+            Pause();
         else
-            RuntimeManager.PlayOneShot("event:/Menu/Start");
+            StartCoroutine(Unpause());
+    }
 
-        RuntimeManager.GetBus("bus:/").setPaused(isPaused);
+    void Pause()
+    {
+        isPaused = true;
+        Time.timeScale = 0;
 
-        Cursor.visible = isPaused ? true : false;
-        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
-        Time.timeScale = isPaused ? 0 : 1;
+        RuntimeManager.GetBus("bus:/").setPaused(true);
 
-        pauseCanvas.SetActive(isPaused);
-        gameCanvas.SetActive(!isPaused);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        pauseCanvas.SetActive(true);
+        gameCanvas.SetActive(false);
+    }
+
+    IEnumerator Unpause()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        pauseCanvas.SetActive(false);
+        gameCanvas.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(1);
+
+        isPaused = false;
+        Time.timeScale = 1;
+
+        RuntimeManager.PlayOneShot("event:/Menu/Start");
+        RuntimeManager.GetBus("bus:/").setPaused(false);
     }
 
     void WriteData()

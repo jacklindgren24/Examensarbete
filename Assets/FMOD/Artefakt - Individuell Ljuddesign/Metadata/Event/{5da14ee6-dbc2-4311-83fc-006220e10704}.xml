@@ -116,7 +116,7 @@
             <value>0.029184013256043719</value>
         </property>
         <property name="pitch">
-            <value>14</value>
+            <value>13</value>
         </property>
         <relationship name="fadeOutCurve">
             <destination>{8a6de78d-dad3-4800-9fa1-2c12a95386c7}</destination>
@@ -161,7 +161,7 @@
     </object>
     <object class="EventMixerGroup" id="{f355640f-0cc2-417b-8625-84c591486a78}">
         <property name="volume">
-            <value>-1</value>
+            <value>-2</value>
         </property>
         <property name="name">
             <value>Audio 5 (2)</value>
@@ -202,7 +202,7 @@
     </object>
     <object class="EventMixerGroup" id="{5ecea62f-caf9-4a5e-82ec-7ae0453f49f9}">
         <property name="volume">
-            <value>-20.5</value>
+            <value>-29.5</value>
         </property>
         <property name="name">
             <value>Audio 2</value>
@@ -339,7 +339,7 @@
     </object>
     <object class="ThreeEQEffect" id="{15891dda-de53-4e19-aad4-cd74c71d652c}">
         <property name="lowGain">
-            <value>-3</value>
+            <value>-5</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{9492410c-17fa-476b-a355-c93c8b516187}"/>
