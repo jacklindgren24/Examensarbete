@@ -25,7 +25,6 @@ public abstract class EnemyController : MonoBehaviour {
             else if (health < old)
             {
                 hitScript.HitMarker();
-                windUpTimer = 0;
                 anim.SetTrigger("Hurt");
                 RuntimeManager.PlayOneShot(enemyHitEventRef, transform.position);
             }
@@ -55,7 +54,6 @@ public abstract class EnemyController : MonoBehaviour {
     public GameObject healthPickupPrefab;
 
     protected float attackTimer = 0;
-    protected float windUpTimer = 0;
 
     protected NavMeshAgent agent;
     protected PlayerController player;

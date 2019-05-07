@@ -13,7 +13,6 @@ public class MobEnemy : EnemyController
             if (Vector3.Distance(transform.position, target.position) > range)
             { // Enemy is not within attacking range of target, move towards target.
                 agent.isStopped = false;
-                windUpTimer = 0;
                 agent.SetDestination(target.position);
                 anim.SetBool("Attacking", false);
             }
@@ -23,14 +22,10 @@ public class MobEnemy : EnemyController
 
                 if (attackTimer >= cooldown)
                 { // Attack is off cooldown.
-                    windUpTimer += Time.deltaTime;
                     anim.SetBool("Attacking", true);
-
-                    if (windUpTimer >= windUp)
-                    { // Attack has wound up.
-                        anim.SetBool("Attacking", false);
-                        Attack();
-                    }
+                    attackTimer = 0;
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
+                    Invoke("Attack", windUp);
                 }
             }
         }
@@ -43,12 +38,10 @@ public class MobEnemy : EnemyController
 
     protected override void Attack()
     {
-        windUpTimer = 0;
-        attackTimer = 0;
-
-        player.Health -= damage;
-
-        FMODUnity.RuntimeManager.PlayOneShotAttached(enemyAttackEventRef, gameObject);
+        if (Vector3.Distance(transform.position, target.position) < range)
+            player.Health -= damage;
+        
+        anim.SetBool("Attacking", false);
     }
 
     public override void Die()

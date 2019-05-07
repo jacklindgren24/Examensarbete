@@ -3047,6 +3047,12 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 65528706502593290, guid: ae0036c86d147ad41bc9a9f39ae9ebd8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b3271f9742861b44fa27c84cd333a363,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0036c86d147ad41bc9a9f39ae9ebd8, type: 2}
   m_IsPrefabAsset: 0
@@ -5839,6 +5845,12 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 65528706502593290, guid: ae0036c86d147ad41bc9a9f39ae9ebd8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b3271f9742861b44fa27c84cd333a363,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0036c86d147ad41bc9a9f39ae9ebd8, type: 2}
   m_IsPrefabAsset: 0
@@ -9627,6 +9639,12 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 65528706502593290, guid: ae0036c86d147ad41bc9a9f39ae9ebd8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b3271f9742861b44fa27c84cd333a363,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0036c86d147ad41bc9a9f39ae9ebd8, type: 2}
   m_IsPrefabAsset: 0
@@ -12924,6 +12942,12 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65528706502593290, guid: ae0036c86d147ad41bc9a9f39ae9ebd8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b3271f9742861b44fa27c84cd333a363,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0036c86d147ad41bc9a9f39ae9ebd8, type: 2}
   m_IsPrefabAsset: 0
@@ -13520,6 +13544,12 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65528706502593290, guid: ae0036c86d147ad41bc9a9f39ae9ebd8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b3271f9742861b44fa27c84cd333a363,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0036c86d147ad41bc9a9f39ae9ebd8, type: 2}
   m_IsPrefabAsset: 0
@@ -13701,6 +13731,12 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 65528706502593290, guid: ae0036c86d147ad41bc9a9f39ae9ebd8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b3271f9742861b44fa27c84cd333a363,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0036c86d147ad41bc9a9f39ae9ebd8, type: 2}
   m_IsPrefabAsset: 0
