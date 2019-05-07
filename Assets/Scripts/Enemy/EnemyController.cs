@@ -25,8 +25,8 @@ public abstract class EnemyController : MonoBehaviour {
             else if (health < old)
             {
                 hitScript.HitMarker();
-                anim.SetTrigger("Hurt");
                 RuntimeManager.PlayOneShot(enemyHitEventRef, transform.position);
+                anim.SetTrigger("Hurt");
             }
         }
     }
