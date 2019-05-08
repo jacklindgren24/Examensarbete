@@ -41,7 +41,7 @@ public class MobSpawner : MonoBehaviour
     void Spawn()
     {
         Vector3 extentsEnemy = Vector3.one * 2;
-        Vector3 extentsPlayer = Vector3.one * 10;
+        Vector3 extentsPlayer = Vector3.one * 20;
 
         Transform spawner;
         List<int> rolledSpawners = new List<int>();

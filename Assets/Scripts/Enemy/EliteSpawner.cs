@@ -41,7 +41,7 @@ public class EliteSpawner : MonoBehaviour
     void Spawn()
     {
         Vector3 extentsEnemy = Vector3.one * 3;
-        Vector3 extentsPlayer = Vector3.one * 10;
+        Vector3 extentsPlayer = Vector3.one * 20;
 
         Transform spawner;
         List<int> rolledSpawners = new List<int>();
