@@ -26,7 +26,10 @@ public class PlayerMovement : MonoBehaviour {
             if (value != isGrounded)
             {  // Value changed.
                 if (value == true)
+                {
                     RuntimeManager.PlayOneShot(playerLand, transform.position);
+                    canDoublejump = true;
+                } 
             }
 
             isGrounded = value;
@@ -140,7 +143,6 @@ public class PlayerMovement : MonoBehaviour {
             { // Jump.
                 rb.velocity += transform.up * jumpHeight;
                 RuntimeManager.PlayOneShot(playerJump);
-                canDoublejump = true;
             }
         }
         else
