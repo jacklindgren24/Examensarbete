@@ -4,8 +4,10 @@ public class DisablerTrigger : MonoBehaviour {
 
     public float timeToDisable = 4;
     public float timeToEnable = 5;
+    public float resetRate = 1;
 
     float timer = 0;
+    bool active = false;
 
     MeshRenderer mr;
     BoxCollider[] colliders;
@@ -15,7 +17,23 @@ public class DisablerTrigger : MonoBehaviour {
         mr = GetComponent<MeshRenderer>();
         colliders = GetComponents<BoxCollider>();
 	}
-	
+
+    void Update()
+    {
+        if (!active)
+            timer -= resetRate * Time.deltaTime;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        active = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        active = false;
+    }
+
     void OnTriggerStay(Collider other)
     {
         timer += Time.deltaTime;
@@ -23,20 +41,9 @@ public class DisablerTrigger : MonoBehaviour {
         if (timer >= timeToDisable)
         {
             timer = 0;
-
-            mr.enabled = false;
-            foreach (BoxCollider coll in colliders)
-            {
-                coll.enabled = false;
-            }
-
+            Disable();
             Invoke("Enable", timeToEnable);
         }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        timer = 0;
     }
 
     void Enable()
@@ -45,6 +52,16 @@ public class DisablerTrigger : MonoBehaviour {
         foreach (BoxCollider coll in colliders)
         {
             coll.enabled = true;
+        }
+    }
+
+    void Disable()
+    {
+        active = false;
+        mr.enabled = false;
+        foreach (BoxCollider coll in colliders)
+        {
+            coll.enabled = false;
         }
     }
 }
