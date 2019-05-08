@@ -5,7 +5,7 @@ using FMODUnity;
 
 public class PlayerController : MonoBehaviour {
 
-    public enum Weapon { Projectile, Hitscan, Melee };
+    public enum Weapon { Projectile, Hitscan };
 
     public bool godMode = false;
     public int baseHealth = 100;
@@ -55,11 +55,9 @@ public class PlayerController : MonoBehaviour {
     public string playerDie;
 
     float gunTimer = 0;
-    float meleeTimer = 0;
     static float[] intensities = new float[] { 100, 100, 100 };
 
     Camera cam;
-    LayerMask meleeMask;
     PlayerHealthBar playerHealthBar;
     Coroutine invCo;
 
@@ -68,7 +66,6 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         cam = Camera.main;
-        meleeMask = LayerMask.GetMask("Enemy");
         playerHealthBar = GameObject.FindWithTag("GameCanvas").GetComponentInChildren<PlayerHealthBar>();
         hitscanText.color = Color.gray;
 
@@ -82,10 +79,9 @@ public class PlayerController : MonoBehaviour {
             position = transform.position;
 
             gunTimer += Time.deltaTime;
-            meleeTimer += Time.deltaTime;
 
             if (Input.GetButton("Fire1") || CustomInput.GetAxis("Fire1"))
-            { // Fire (or melee if selected).
+            { // Fire.
                 switch (weapon)
                 {
                     case Weapon.Projectile:
@@ -168,23 +164,10 @@ public class PlayerController : MonoBehaviour {
         GameManager.totalHitscanShots++;
     }
 
-    void Melee()
-    {
-        meleeTimer = 0;
-
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, cam.transform.forward, out hit, MeleeWeapon.range, meleeMask))
-        { // Ray hit an enemy, hurt enemy.
-            hit.transform.GetComponent<EnemyController>().Health -= MeleeWeapon.damage;
-            hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * MeleeWeapon.knockback, ForceMode.Impulse);
-        }
-    }
-
-    public static void SetIntensities(float projectile, float hitscan, float melee)
+    public static void SetIntensities(float projectile, float hitscan)
     {
         intensities[(int)Weapon.Projectile] = projectile;
         intensities[(int)Weapon.Hitscan] = hitscan;
-        intensities[(int)Weapon.Melee] = melee;
     }
 
     IEnumerator Death(Vector3 camPos, Quaternion camRot)

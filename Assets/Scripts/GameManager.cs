@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour {
 
             SetSpawnersPaused(true); // Pause spawners.
 
-            PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity, w.meleeIntensity);
+            PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity);
 
             waveCounter.CrossFadeAlpha(0, 2, false);
 
