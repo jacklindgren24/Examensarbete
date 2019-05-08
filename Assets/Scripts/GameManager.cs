@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour {
     [EventRef]
     public string waveClearEventRef;
 
-    int currentWave = -1;
-    public int CurrentWave
+    static int currentWave = -1;
+    public static int CurrentWave
     {
         get { return currentWave; }
         set { currentWave = value; }
@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
-        CurrentWave = -1;
         NextWave();
 
         Cursor.visible = false;
@@ -118,9 +117,9 @@ public class GameManager : MonoBehaviour {
 
     void NextWave()
     {
-        PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        if (player != null && player.Health < 100)
-            player.Health = 100;
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null && player.GetComponent<PlayerController>().Health < 100)
+            player.GetComponent<PlayerController>().Health = 100;
 
         if (CurrentWave == waves.Length - 1)
         {
@@ -134,21 +133,21 @@ public class GameManager : MonoBehaviour {
             }
 
             CurrentWave++;
-            Wave w = waves[CurrentWave];
+            Wave wave = waves[CurrentWave];
 
             // Prepare spawners.
             MobSpawner.timer = 0;
-            MobSpawner.maxActive = w.maxMobAmount;
-            MobSpawner.minSpawnTime = w.mobMinSpawnTime;
-            MobSpawner.maxSpawnTime = w.mobMaxSpawnTime;
+            MobSpawner.maxActive = wave.maxMobAmount;
+            MobSpawner.minSpawnTime = wave.mobMinSpawnTime;
+            MobSpawner.maxSpawnTime = wave.mobMaxSpawnTime;
             EliteSpawner.timer = 0;
-            EliteSpawner.maxActive = w.maxEliteAmount;
-            EliteSpawner.minSpawnTime = w.eliteMinSpawnTime;
-            EliteSpawner.maxSpawnTime = w.eliteMaxSpawnTime;
+            EliteSpawner.maxActive = wave.maxEliteAmount;
+            EliteSpawner.minSpawnTime = wave.eliteMinSpawnTime;
+            EliteSpawner.maxSpawnTime = wave.eliteMaxSpawnTime;
 
             SetSpawnersPaused(true); // Pause spawners.
 
-            PlayerController.SetIntensities(w.projectileIntensity, w.hitscanIntensity);
+            PlayerController.SetIntensities(wave.projectileIntensity, wave.hitscanIntensity);
 
             waveCounter.CrossFadeAlpha(0, 2, false);
 
@@ -156,7 +155,7 @@ public class GameManager : MonoBehaviour {
 
             print("Wave " + (CurrentWave + 1));
 
-            StartCoroutine(StartWave(w.startDelay));
+            StartCoroutine(StartWave(wave.startDelay));
         }
     }
 
@@ -207,8 +206,15 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0;
     }
 
-    public void Restart()
+    public void Restart(bool fromGameStart)
     {
+        StopAllCoroutines();
+
+        if (fromGameStart)
+            CurrentWave = -1;
+        else
+            CurrentWave--;
+
         ScoreCounter.Score = 0;
 
         RuntimeManager.GetBus("bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);

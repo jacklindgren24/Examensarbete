@@ -67,6 +67,8 @@ public abstract class EnemyController : MonoBehaviour {
 
     protected abstract void Attack();
 
+    float originalSpeed;
+
     void OnEnable()
     {
         if (GetType() == typeof(EliteEnemy))
@@ -88,12 +90,13 @@ public abstract class EnemyController : MonoBehaviour {
 
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        target = player.gameObject.transform;
+        target = player.transform;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         hitScript = FindObjectOfType<HitScript>();
 
         agent.speed += Random.Range(-speedRandomness, speedRandomness);
+        originalSpeed = agent.speed;
 
         EventInstance spawnEv = RuntimeManager.CreateInstance(enemySpawnEventRef);
         RuntimeManager.AttachInstanceToGameObject(spawnEv, transform, rb);
@@ -115,6 +118,11 @@ public abstract class EnemyController : MonoBehaviour {
             { // Moving.
                 anim.SetBool("Moving", true);
                 PlayFootstep();
+
+                if (Vector3.Distance(target.position, transform.position) > 60)
+                    agent.speed = originalSpeed + 5;
+                else
+                    agent.speed = originalSpeed;
             }
             else
             { // Stationary.
