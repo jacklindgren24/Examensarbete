@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour {
 
         RaycastHit hit;
         Vector3 dir = bulletSpawn.transform.forward;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity, LayerMask.GetMask("Ignore Player"), QueryTriggerInteraction.Ignore))
         { // Player is aiming at an object, get direction from bullet spawn to point of raycast hit.
             dir = (hit.point - bulletSpawn.transform.position).normalized;
         }
