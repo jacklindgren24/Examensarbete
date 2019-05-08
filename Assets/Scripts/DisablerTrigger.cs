@@ -4,7 +4,6 @@ public class DisablerTrigger : MonoBehaviour {
 
     public float timeToDisable = 4;
     public float timeToEnable = 5;
-    public float resetRate = 1;
 
     float timer = 0;
     bool active = false;
@@ -12,7 +11,9 @@ public class DisablerTrigger : MonoBehaviour {
     MeshRenderer mr;
     BoxCollider[] colliders;
 
-	void Start()
+    const float resetRate = 0.25f;
+
+    void Start()
     {
         mr = GetComponent<MeshRenderer>();
         colliders = GetComponents<BoxCollider>();
@@ -21,7 +22,11 @@ public class DisablerTrigger : MonoBehaviour {
     void Update()
     {
         if (!active)
-            timer -= resetRate * Time.deltaTime;
+            timer = Mathf.Clamp(timer - resetRate * Time.deltaTime, 0, float.PositiveInfinity);
+
+        Color materialColor = mr.material.color;
+        materialColor.a = 1 - timer / timeToDisable;
+        mr.material.color = materialColor;
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,6 +53,7 @@ public class DisablerTrigger : MonoBehaviour {
 
     void Enable()
     {
+        timer = 0;
         mr.enabled = true;
         foreach (BoxCollider coll in colliders)
         {
@@ -58,6 +64,7 @@ public class DisablerTrigger : MonoBehaviour {
     void Disable()
     {
         active = false;
+
         mr.enabled = false;
         foreach (BoxCollider coll in colliders)
         {

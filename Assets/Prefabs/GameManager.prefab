@@ -88,7 +88,7 @@ MonoBehaviour:
   goalSpawnerParent: {fileID: 0}
   waveGoalPrefab: {fileID: 1863249050442574, guid: 48fc3da754077cc42a611b17226a460c,
     type: 2}
-  minimumGoalDistance: 50
+  minimumGoalDistance: 60
   pauseGame: event:/Menu/Pause
   unpauseGame: event:/Menu/Start
   waves:
@@ -97,8 +97,8 @@ MonoBehaviour:
     projectileIntensity: 100
     meleeIntensity: 100
     maxMobAmount: 6
-    mobMinSpawnTime: 2
-    mobMaxSpawnTime: 3
+    mobMinSpawnTime: 1.5
+    mobMaxSpawnTime: 2
     maxEliteAmount: 1
     eliteMinSpawnTime: 4
     eliteMaxSpawnTime: 6
@@ -107,21 +107,21 @@ MonoBehaviour:
     projectileIntensity: 50
     meleeIntensity: 50
     maxMobAmount: 8
-    mobMinSpawnTime: 1
-    mobMaxSpawnTime: 2
+    mobMinSpawnTime: 0.5
+    mobMaxSpawnTime: 1
     maxEliteAmount: 2
     eliteMinSpawnTime: 4
-    eliteMaxSpawnTime: 6
+    eliteMaxSpawnTime: 5
   - startDelay: 7
     hitscanIntensity: 0
     projectileIntensity: 0
     meleeIntensity: 0
     maxMobAmount: 10
-    mobMinSpawnTime: 0.5
-    mobMaxSpawnTime: 1.5
+    mobMinSpawnTime: 0.25
+    mobMaxSpawnTime: 0.75
     maxEliteAmount: 2
     eliteMinSpawnTime: 3
-    eliteMaxSpawnTime: 5
+    eliteMaxSpawnTime: 4
   waveCountdownEventRef: event:/Wave/WaveCountdown
   waveClearEventRef: event:/Wave/WaveClear
   isPaused: 0
